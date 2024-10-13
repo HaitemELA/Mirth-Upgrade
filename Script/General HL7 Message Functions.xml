@@ -1,0 +1,2233 @@
+<codeTemplateLibrary version="4.5.0">
+  <id>704705de-0ac0-4dee-99b4-70efc59d0a0d</id>
+  <name>General HL7 Message Functions</name>
+  <revision>271</revision>
+  <lastModified>
+    <time>1727878746009</time>
+    <timezone>Europe/London</timezone>
+  </lastModified>
+  <description>$Id: General HL7 Message Functions.xml 193 2018-11-15 12:00:11Z cse-servelec\richard.coles $</description>
+  <includeNewChannels>true</includeNewChannels>
+  <enabledChannelIds>
+    <string>5c109299-022b-4a98-94cb-51ae83237d02</string>
+    <string>7836c81b-7bda-42f4-985a-18d4060c4bd1</string>
+    <string>5ef16407-fbe5-465c-9657-e52d0ad8c0a6</string>
+    <string>4f5c5e01-2d90-42df-932b-f5c197a8f88d</string>
+    <string>87777ece-605e-455a-9e55-284444f9e6bc</string>
+    <string>3c02142a-ccea-4ecd-98a0-84d8ec45b0b5</string>
+    <string>94adc426-2b3c-4956-b7bd-33b8412c11be</string>
+    <string>01389c3f-524e-4423-a024-2637a7d811c1</string>
+    <string>59a56c25-0ae2-4dfd-b4ff-0005cc26fca9</string>
+    <string>aacc026f-e0ef-492d-9d0a-03f13e138743</string>
+    <string>7bbe66a5-8b54-473e-b797-b99dbe15641e</string>
+    <string>e247f476-10eb-4d87-a13b-041b2b1f2107</string>
+    <string>95b8fa72-248f-4673-af15-38f2c20a62cd</string>
+    <string>cea14815-faa0-44c6-ae66-4539dcb99681</string>
+    <string>b2438478-840e-4cbc-8314-eae8a366fbd3</string>
+    <string>a5d1d604-1a48-4e62-bd4b-cf5485c62f9b</string>
+    <string>12b8cddb-478e-4121-a22a-3b6a79fe5f39</string>
+    <string>a3a53602-aa2a-4a74-8ef7-64b225030181</string>
+    <string>5ffa3574-98d1-424f-985c-4bd6faff5d82</string>
+    <string>1119039d-7624-4e37-afec-bccd899e342a</string>
+    <string>7b040e8c-c95c-40e2-84a0-616bad0ca3d6</string>
+    <string>3cb46b72-e401-4e0c-8c93-6ffb91673097</string>
+    <string>d6848ec1-e77c-4a61-82d1-1354f70e0ec7</string>
+    <string>4955d7f4-4b98-4178-a7dd-4b57619a2c36</string>
+    <string>0ccd7cf3-5183-479c-aaf8-9539c353369e</string>
+    <string>80de8bc7-42e7-4ad1-8c3b-63385540305c</string>
+    <string>670f6c60-55e6-42fa-b196-b3417fba734a</string>
+    <string>3031c9b0-54a5-4561-b485-991abcce09e9</string>
+    <string>acdd4c6d-1588-4838-b546-d3457bd0f5b4</string>
+    <string>4ed524dd-8b99-4d5d-836a-37b8a3767a4a</string>
+    <string>5b6fa407-c1a1-49be-8965-f559ff12f6e8</string>
+    <string>19678e2c-23d3-431a-93f9-472a19560305</string>
+    <string>324f9588-a3f6-4671-bfc8-f4a9c6a52922</string>
+    <string>d374188d-07e1-4a12-9e57-51534d0407ab</string>
+    <string>553a10b2-9795-4b71-8f4a-1148cbce73c6</string>
+    <string>bdb604f9-41f3-47bd-8e8b-95866197bdbb</string>
+    <string>0f2120a2-f6f2-4508-ab7a-85956314cea9</string>
+    <string>37552071-3ff7-46e3-9e70-509afec10342</string>
+    <string>4a955697-1d04-4c09-885f-273d9bc7f45e</string>
+    <string>12509bc1-a665-4d75-af5a-8ba7b0020fbb</string>
+    <string>fd602998-83be-4147-9af1-42847065b857</string>
+    <string>919ad500-d911-41b7-8489-f5e4d733f0ab</string>
+    <string>b5e4bdc8-ce67-4f13-9ae3-539cbfa49b42</string>
+    <string>163c415c-b477-4235-aaaa-156fa4347c4c</string>
+    <string>77d720ec-4b12-4188-be75-ad842e4333bf</string>
+    <string>6021ebbb-e527-404e-9ba5-15f21cbdaee6</string>
+    <string>90197de7-ee27-4766-bba3-55b070623790</string>
+    <string>6e4cd3a4-c4ea-4ea3-b4ab-716f007398bc</string>
+    <string>5dac87a1-ccf0-4eca-9284-2c5f106a7f9a</string>
+    <string>5706e291-828e-40f0-acc1-0db422375fa2</string>
+    <string>e792040c-a363-4339-8745-c68696a81e8a</string>
+    <string>1c5ab197-11e7-4fd1-85da-8d8d8378fbec</string>
+    <string>26d55830-4a15-45b1-a7eb-e549325fa8d4</string>
+    <string>57388e8f-c3a8-448c-9cb6-a608feb7b293</string>
+    <string>bb3e24ba-b16f-4321-af6a-2fe3c9b1f702</string>
+    <string>215d0f2f-28c9-4399-8e04-e04004399708</string>
+    <string>a8b83cd5-7a3a-4fb6-8ea7-322dbf5ecc27</string>
+    <string>bd99a12a-5e4f-4e2c-8556-4cca939d751d</string>
+    <string>09926d87-99c7-468f-a580-53c1f57ab369</string>
+    <string>8e2241fe-a501-4dc7-803a-c4008ac9d0e5</string>
+    <string>cfe0f14a-7a4e-4665-85ef-bb64ec86cd2c</string>
+    <string>4ceec200-600a-4cb6-9806-939d089f4fdd</string>
+    <string>2d211cdc-72b5-4e11-9c7c-8b2d3ab77f58</string>
+    <string>bc83a021-6889-4c36-9381-0d249f6405e8</string>
+    <string>2443d4ed-87df-433d-85cd-c71f34d47aea</string>
+    <string>09e04dcb-ff58-4602-8493-f8fc9f76c74a</string>
+    <string>c95de877-2901-4641-b51a-6f050a7cc05f</string>
+    <string>b3881cde-0d02-4c1c-8cef-e7e16c8ea56a</string>
+    <string>3f9a1c43-8f3b-49e6-a2bf-ffab4b9e6b5d</string>
+    <string>c8694165-3f8c-4421-81c5-97f6febfd22d</string>
+    <string>c4f1f1e7-29e9-4ce7-8578-a11a23ffbe26</string>
+    <string>f2bc6f0f-1565-4ec1-b3dc-84d549e41155</string>
+    <string>2a5948d5-923d-4cce-a4a0-1ef8603370e6</string>
+    <string>3c98bbf7-e058-4629-ae32-e6882076d961</string>
+    <string>6fa15a36-a5b1-4012-9400-4779fef9043d</string>
+    <string>ca475ceb-b78c-4ee6-a5bf-f91690a359f6</string>
+    <string>85746246-e8d2-4ecc-9474-9b85996f41a2</string>
+    <string>6ebd19c0-ca45-4e44-859c-3c1a0953a156</string>
+    <string>c92bccfe-6686-4fb9-a3d3-0c15a2ed040b</string>
+    <string>6cf073d3-6c86-43ef-8d2b-ff20e5664476</string>
+    <string>51b6b9d8-93a0-44ee-b414-cf3bd1d1893c</string>
+    <string>70f9c24d-8f22-46d3-8631-6247813859a3</string>
+    <string>0d89b537-035b-4dce-83f8-9402ae4fa86b</string>
+    <string>9148985c-4b71-44ff-ad7b-4f97573a5988</string>
+    <string>1b602ac3-d929-47bc-875e-040395c75d32</string>
+    <string>39354f8d-1163-48a5-ad8f-54781cad2ea4</string>
+    <string>745c627d-aa32-411a-88d9-262fd67cff77</string>
+    <string>137746f2-0e66-4a6c-acd6-6f1666b88728</string>
+    <string>665500a7-2315-41bd-b504-c4f6c72e4872</string>
+    <string>588efa2c-def9-4975-98e0-74cd3ea783a7</string>
+    <string>8336035b-8ba6-4ba5-8cfd-58fc71260307</string>
+    <string>425170c3-74ab-42a0-9b6d-a19de6d36be4</string>
+    <string>50de96f1-246d-4cb9-bcc0-1ddb651d1be2</string>
+    <string>0eccc8ed-6619-41c8-8aba-002285182cae</string>
+    <string>4208189b-b88e-439d-b686-66c0e4493f4a</string>
+    <string>68280b22-9ac4-4e5c-a9ee-9ab4c3441907</string>
+    <string>f9176053-7f0b-41cb-bf7b-d751da04e822</string>
+    <string>ee8fb354-d437-4f80-b9ff-312c67e0700e</string>
+    <string>b235166f-4ebc-4b94-b30b-39950c3a2985</string>
+    <string>64eb7b01-88b5-4bab-a663-6fe34dc2de54</string>
+    <string>442a6879-2438-45ac-b87a-1b8b0543852d</string>
+    <string>7eadd95e-3948-4380-ac39-5c80380f913a</string>
+    <string>c64f57d6-9a27-4f90-a51f-bc39be959794</string>
+    <string>91afea7d-f801-48ab-a11d-6db158a0586f</string>
+    <string>2c7b6adf-656b-4135-981f-08fa57699279</string>
+    <string>447cc2dd-4b8e-4b8a-9f27-eb83a9b8cbfd</string>
+    <string>cef81c24-e0a8-4d38-8965-b17081397cd8</string>
+    <string>9e5ba713-72f9-4436-8c2a-a46c41e0c625</string>
+    <string>5b5cef27-1e97-4583-9bad-8a202c5f453c</string>
+    <string>fb199c1d-23d9-4165-8ee3-6149edf86d11</string>
+    <string>b90e382d-711f-4261-a124-1f180b0d032a</string>
+    <string>17e9a068-be59-4f76-84b3-e8322ced2f53</string>
+    <string>e39ba96c-50b8-45b0-b7ab-4e56fba33571</string>
+    <string>9344b6be-180c-433a-8dc1-f611e713c661</string>
+    <string>0183d0a9-fbe9-48c3-b3f1-cb836627b207</string>
+    <string>90c728ba-953f-4a0c-bc2a-61f7aa538f7a</string>
+    <string>29daf9d1-8601-4742-aa48-af696894fb20</string>
+    <string>a5dfbce1-6fee-49a8-bafc-77577c47bb37</string>
+    <string>9e54ed8c-4cde-4398-bdb8-8a0567c0be2d</string>
+    <string>07e79ab4-bb79-446f-8cde-08cd7dd8e0c3</string>
+    <string>f69d11ab-39f8-4e9a-b463-78d9408b263d</string>
+    <string>cf95f400-fde5-4df3-9a6c-24cd7da607d2</string>
+    <string>b7043bf3-7c1a-47da-950c-e3a46c3414eb</string>
+    <string>50b4e5bb-2291-4bec-a0ed-e396cbb83a67</string>
+    <string>e3732e9c-1f82-4ebb-b886-b69c595dd8c4</string>
+    <string>adc233b2-180c-49a6-8e26-c8792fd46426</string>
+    <string>382ba55d-6f2f-441c-963b-3eae0bb2669b</string>
+    <string>d81c2ba2-7be9-4a70-a0f6-d7df86031997</string>
+    <string>d2830066-b1b5-489d-8103-8fde08fb7c20</string>
+    <string>784209ac-2586-4177-abda-bc269d9737f8</string>
+    <string>5cd0d191-65cd-41b1-9a6e-49e242619f89</string>
+    <string>7b7fcffa-8c14-417f-9f68-85cdaf6da272</string>
+    <string>c88e8e80-f57b-45d7-84fd-287ae09fb208</string>
+    <string>a2df553f-c405-4cb1-bf82-8c5aaa1d2810</string>
+    <string>e1a717e2-b6c2-4370-adeb-cd998a8cf91b</string>
+    <string>1ba55adb-b3ed-4d3b-9914-7062c9c879db</string>
+    <string>b26fd16d-85b4-49f7-ac60-52be502bff9c</string>
+    <string>db36d0d9-0cc8-4961-bc93-ece12e3f00c0</string>
+    <string>10c88a9a-96e8-4dca-bc13-32c6a6f556d0</string>
+    <string>6a188141-2f87-45d0-8854-11c25e8dc3b8</string>
+    <string>8fa84220-f585-4db9-bf7e-99d65ac99c82</string>
+    <string>a8e8f989-58f3-400c-a5ae-6f4ecc189151</string>
+    <string>d16ecd7e-795c-49f0-96f4-3fff88c21899</string>
+    <string>19738856-e5b4-406c-a2ca-3414b39819e0</string>
+    <string>1c301c69-a2a7-4363-9775-d54cad828bca</string>
+    <string>45f9301d-c046-4b14-9a12-a2af82136e7e</string>
+    <string>e507c597-dff5-4305-844f-6f490165cfa4</string>
+    <string>978272a8-4036-48a7-8ad0-f100d7b31315</string>
+    <string>fba5d21b-b4fa-4642-b611-7d45bb9d3209</string>
+    <string>cb148051-3f8a-4f3b-b69a-f35e6236b998</string>
+    <string>76f744e1-d802-4130-ab3f-05336fee9296</string>
+    <string>4f367adc-e2d5-448b-94d6-2b280ec9024b</string>
+    <string>7ca5e68a-f809-445e-8fb4-ff1db11f18cf</string>
+    <string>423f937c-9d6a-4cf5-ae8a-7d493a8d36b7</string>
+    <string>169c4497-f49e-4178-8daf-7c28882446a2</string>
+    <string>2ed8e857-9be2-46d3-bb54-86173a1e62a9</string>
+    <string>e59a2b0d-81a2-4f14-adf6-61f8dc34bba2</string>
+    <string>3896cc06-976a-467b-86e9-95fc4d31bfac</string>
+    <string>9699ba36-3c94-451a-baf6-604631317dad</string>
+    <string>7b471862-b9ae-4336-85c4-235c3d6f6ba4</string>
+    <string>59c4d558-c608-4c9a-ba4a-c62d89d766ae</string>
+    <string>1a16a831-78d4-4bcf-a32f-23a3ed536456</string>
+    <string>b8544d07-b04a-4534-b18f-84adef57d910</string>
+    <string>9f6365a3-76b5-486a-b23a-15ec65655ca5</string>
+    <string>c1f823bd-bea5-4630-8e26-42532712c08e</string>
+    <string>fddfa70b-d496-4c63-a797-ce1073280a23</string>
+    <string>e34e0be8-f4aa-4df7-bfc0-f9faf0d1187d</string>
+    <string>bd519296-3a98-4ec6-81c7-b058c7f05c81</string>
+    <string>afcd2845-c58c-4c74-bc29-d769a333ac28</string>
+    <string>2167bb9b-dd2f-4188-8811-0dfbb8742e6a</string>
+    <string>07fb5426-aa10-4874-a714-db52630f544d</string>
+    <string>bc6d3ecc-da08-4a13-a7e8-c612214bd24c</string>
+    <string>2df9d743-35c1-4d55-ab23-d8428d668a7f</string>
+    <string>0cf3d25c-5be4-4f45-af6f-a68b7f23c153</string>
+    <string>3783aa7f-4d49-4d5d-b01e-7d40e74f38f9</string>
+    <string>31ed0580-3f65-455e-9826-17322503674f</string>
+    <string>1cb043b9-a85a-487c-bbe6-2f8cf4400134</string>
+    <string>90d0375a-ce74-4e60-b3bc-acc64dbca647</string>
+    <string>add90876-ac16-44d1-a210-67b4fb746410</string>
+    <string>4dd6c7ea-47f2-4d43-8c84-2d411e6c0174</string>
+    <string>0ff8df53-4c0f-4e2c-9942-3fe062334a97</string>
+    <string>d6be938c-f750-4483-b2ec-cec446c86a5c</string>
+    <string>ceef0ea7-2e0a-441e-b3c0-69f72232495f</string>
+    <string>5bff1abe-312c-48f9-832e-bf6739d939d5</string>
+    <string>60bd905f-f3e1-4750-aa3d-d860a6ed487c</string>
+    <string>5ac658a3-f5e5-483e-8353-94ae19ca2938</string>
+    <string>1e32ca51-bb09-4e89-a8bf-d7c428fc0208</string>
+    <string>fb8a5db7-190b-4966-b5c7-f7ab547c4cb2</string>
+    <string>a9ad105f-c0c2-4831-8179-2a039e6be3db</string>
+    <string>ecff2428-a47a-4f37-a5b4-959ae7bb38db</string>
+    <string>23574325-5e87-41ab-9a7d-5cae8fbfb4c6</string>
+    <string>fa31e91c-1db4-47dd-b591-5e0ed6634dfe</string>
+    <string>6ced62c5-6fdf-4557-9936-ee2e7688254e</string>
+    <string>fc28481c-5569-4658-91e6-21613ddc0254</string>
+    <string>1df631ff-bbea-4214-926b-4a194223dfd0</string>
+    <string>c3407467-c81b-4503-a349-bd46c8d62ccf</string>
+    <string>8328ef9c-b9e5-41b7-b273-453690ca45d5</string>
+    <string>91f225d8-f75c-4b06-a9b4-d5ba68e70fe1</string>
+    <string>a68e461c-a5ed-48f7-8465-2ecd334b9504</string>
+    <string>9f118235-625f-4785-ab0c-ee25d3ad44da</string>
+    <string>f8fd2537-0650-4b8f-a7e1-5dcc32cf3b84</string>
+    <string>5fa15bfa-69f6-4d84-b083-3fb79cb4e05f</string>
+    <string>9453edb4-79b9-4a7e-8773-6f9c0a7eb8f4</string>
+    <string>437caddb-2a35-4dc0-8a78-14c85f768982</string>
+    <string>5d159202-373a-4b0a-9aa9-f6ba149fcb9a</string>
+    <string>033b6469-2602-495f-83d8-7bb3316b47fd</string>
+    <string>f5b9d6b9-ace9-47d5-b65a-3ecba470b555</string>
+    <string>49acd59d-cbdc-4dce-9839-3e2ef23923b9</string>
+    <string>efac4623-8e64-49c4-b8a0-ac9ad3892b37</string>
+    <string>0e3d1cd5-02ed-4824-8cab-9f1f0ab5c479</string>
+    <string>0e48512e-9504-46d0-b539-207536658428</string>
+    <string>3645da56-afb1-4fa8-abc2-6dfcf73609ce</string>
+    <string>8c85425e-e78a-4590-980e-1eeae2da4fe7</string>
+    <string>7364d669-d31f-42e5-979b-2ea4d9ceedb9</string>
+    <string>09c11a76-e4e0-447c-a431-62468a50f441</string>
+    <string>0ea375cb-c77e-4a50-90c3-2f7f1aaba292</string>
+    <string>d222cd1d-33ea-4cd0-950e-38d29831795a</string>
+    <string>2cd5419c-b569-4d94-bc3a-3361e4b26b85</string>
+    <string>dcc75c39-e983-4b49-bd45-94231cb51528</string>
+    <string>c3c17de0-937e-4dac-82fa-8dbf679358fb</string>
+    <string>40a6d4cc-cf0f-401a-ad16-f3cae68b23e7</string>
+    <string>6843fc68-1945-4b7e-986d-5ba6c26675f4</string>
+    <string>973c5599-3e91-45c0-ab47-6dc5c26005f4</string>
+    <string>bb7fc12a-38d4-4b91-8737-b6d697db4483</string>
+    <string>4c01ad5a-f200-4cec-87a7-3ddf5604b340</string>
+    <string>d28ad3ce-8d11-4e3f-b447-62a58f3d741a</string>
+    <string>9062a556-6e05-4859-8b48-22ff0d1b8678</string>
+    <string>80bb6bbe-de31-4552-9956-532d5da86389</string>
+    <string>d8d57cac-e621-4b3a-ac11-ed0f523ee739</string>
+    <string>9bf5ccc7-1557-440f-bf44-91c357226a50</string>
+    <string>1d2366c9-fd97-4593-b25e-82d81406092c</string>
+    <string>cd42b523-a8b0-41ea-9ace-cb092403e78c</string>
+    <string>1d11ce30-53e9-47a4-b1bf-32011aea83c7</string>
+    <string>ee436778-6358-41bd-a5a2-cd407df2dbc3</string>
+    <string>6ae1a122-3286-4708-8b61-9b63e98da8da</string>
+    <string>967f640f-7cf2-44bc-afde-eb6cf48a2bbd</string>
+    <string>b56eea5a-1f3f-41c4-9d69-b5dfd59fed32</string>
+    <string>4124fc62-c0d9-43d4-b681-cd3b5551eab3</string>
+    <string>fed47b30-f77b-4273-a0fe-0a2ceeb218da</string>
+    <string>9eaceb64-2fc9-4c3d-9dfc-83e886ac140f</string>
+    <string>72faaae4-40a3-492a-8b60-9649b3c13aa8</string>
+    <string>3d1c82e2-2a31-47e9-aba0-f8023906af02</string>
+    <string>6ad360d3-92ea-47bc-b4ca-ca44ea8ebaea</string>
+    <string>6349405a-7135-4116-96fb-b8ebdf212a25</string>
+    <string>99a42496-cebb-46f9-bc38-71d5592d2f17</string>
+    <string>050dccac-3fae-4202-a929-8f7efe3ad3ba</string>
+    <string>3156eb60-336d-4eb5-a124-38f2eba9d8e5</string>
+    <string>f7ab2efc-40f4-42ad-baa8-87b2d547264c</string>
+    <string>9484bb8f-9a53-4ddd-814e-4e1dfc851b8d</string>
+    <string>669a3eae-ab3f-48d0-84c8-83a92d213884</string>
+    <string>b914ac20-0394-41bb-b6e5-18c2cc50fa0f</string>
+    <string>221a32f8-e2d1-4f39-8fde-2d9df443f8e9</string>
+    <string>339cdef5-1067-48be-8ab7-25f7a1e8fe2e</string>
+    <string>be574dd7-2aa0-4cb1-838b-a473750ee607</string>
+    <string>4458f9af-c058-4dcf-80ca-fba65f82e4e4</string>
+    <string>0ae395a4-f19f-49f1-8c0c-81fc197f5a9f</string>
+    <string>34789c69-e8e7-4aaf-8663-657d8db9dd94</string>
+    <string>0b54f9ea-c656-45a4-b1b6-35dd232a0592</string>
+    <string>c66d2822-d32e-4f3a-b0bb-92a5257f16b7</string>
+    <string>d015effc-8a08-434f-b614-f2a6e0f1ad63</string>
+    <string>693acba8-b104-4b16-8656-d82d2deed86d</string>
+    <string>65f0a229-deb9-4a86-8b98-29f02ed06c19</string>
+    <string>9f4c7197-a0ab-4ad1-bc76-440b085d9db9</string>
+    <string>7c92e309-a973-4ac5-a338-a6895ca595ae</string>
+    <string>e99ec424-40c5-4c50-a02e-b35ecdef907a</string>
+    <string>f1ab291b-4ead-4c2f-a9a0-91d3ee7243b2</string>
+    <string>0e0f9a7b-cbed-4ceb-8089-3597ec0791ee</string>
+    <string>adf22281-0491-4e9f-bf1c-6aea182e890b</string>
+    <string>cb504687-dd6a-4a86-a501-911094102c28</string>
+    <string>11629056-636e-425e-b441-89caf68770ac</string>
+    <string>ea932725-114d-43c0-b9ba-32673b968dbe</string>
+    <string>3a6f910a-0b15-4653-a192-e05cacb921a0</string>
+    <string>31a9a9a8-6081-453a-908b-c85714f3c08a</string>
+    <string>60375946-1531-425e-9301-17b9951a82b7</string>
+    <string>2b4cc4c4-4df7-4c00-88b9-8f3af05a438d</string>
+    <string>18e4707e-9bf2-42a1-a962-9d9e541c30fa</string>
+    <string>debe75fe-9b15-454c-b01a-74f3fb48e4c1</string>
+    <string>dc24c892-b244-4343-940c-6cd58a8e002f</string>
+    <string>fdf9d4e9-695f-4aea-a95d-790a798180ff</string>
+    <string>e7266028-86f5-4346-9308-4ccd2c0e9f98</string>
+    <string>3f88424c-8e29-49aa-812b-5bb2dfa948eb</string>
+    <string>70c89e0f-dc2f-4042-849d-4bbed79fcfe6</string>
+    <string>baa2f265-4dd2-41d2-a3d9-f9e14c6a2e49</string>
+    <string>7ce294ec-071c-4ce7-8c61-fa7f092062f3</string>
+    <string>831248c6-ff5f-47b2-a0fe-0984a59c3c2b</string>
+    <string>dd5986aa-b15a-4024-aad3-74ef1d6caad8</string>
+    <string>42be9234-1b5c-40b2-8213-89e1497242e6</string>
+    <string>0f7bf110-f8a8-4535-98b3-377aa955950a</string>
+    <string>6fc80e6d-1613-4bff-bc6e-13844597a1ee</string>
+    <string>6f9457df-473b-4b15-b813-07e4ff0d9c82</string>
+    <string>324a746f-ffb9-4f13-b1c9-824b0f96f233</string>
+    <string>db6926eb-c7e2-40b1-81bf-7dadbb8a8b0b</string>
+    <string>126434b2-6224-4dab-b2b2-cfa1f6486d61</string>
+    <string>a8d99099-8959-4dfa-9ac8-ee390333162b</string>
+    <string>2253f6b4-2f45-4d57-8a22-8a4947499057</string>
+    <string>86ce49cb-4bb9-439b-ab80-61b3f9b2f5cb</string>
+    <string>4bcfefe8-26df-4554-be33-05fe656003c7</string>
+    <string>295fa260-f08a-4395-92da-eb162c10e23f</string>
+    <string>db999982-dce2-4248-ab0b-29f95b447f9f</string>
+    <string>623365f9-97b6-4e63-9268-1c85cd6470cd</string>
+    <string>aeb0c62f-35d2-4607-a304-b4c53d557295</string>
+    <string>1b1ccc27-26ad-4966-a0e0-8937b9b7c506</string>
+    <string>dd3fb8ac-960e-4f41-85e9-2f8aba0ce755</string>
+    <string>c3c99878-c26f-4793-9789-ce235b414bc3</string>
+    <string>6dedfa98-c76f-400c-b0b8-b6227f42223a</string>
+    <string>b0a25fed-309f-4901-bfe3-5833d0df9ca0</string>
+    <string>30614b9d-b5b5-4c8e-88d3-7bbc0e10d76a</string>
+    <string>23d89e64-b983-447d-a5e9-4a6f4a866db4</string>
+    <string>109fb2d2-1a85-4dbe-ba57-d3183a5c8e76</string>
+    <string>cb1b50a3-3483-450e-84e6-5e9b79314867</string>
+    <string>8c2e07ba-2783-458a-abf2-c3fdb09a1b59</string>
+    <string>d31ab8d8-48e5-4fda-82e4-48c5a18a4683</string>
+    <string>873283ae-bd54-4fd5-90ef-27169f3bb82d</string>
+    <string>2a884fab-8500-4c51-84d9-36ff065c8066</string>
+    <string>e4c70dfe-2657-4d34-a1bb-8775ef886c0f</string>
+    <string>a6f58a32-3df8-4990-99b4-148d686ed2bc</string>
+    <string>4fb274ad-9fc6-4a6b-b00e-a078942364d7</string>
+    <string>da58efbb-5313-416f-a834-a3b4c3fec838</string>
+    <string>dd2ebb95-2a80-4cb3-93cc-ed037760d7c6</string>
+    <string>69fc8006-7181-4d2e-933f-9365df9339c5</string>
+    <string>a62901fe-6245-4d70-8413-02027080f217</string>
+    <string>b96bcc72-a872-401d-830c-46309bfe1b57</string>
+    <string>61e4316c-8530-43d3-b372-2eec11061271</string>
+    <string>b99e7887-1a24-4397-a025-0c7a894eb653</string>
+    <string>dd236504-2f60-434c-8311-f2bac8d34593</string>
+    <string>a6cbd222-578d-43be-9683-daec05ba82eb</string>
+    <string>b444ceeb-efd4-4f62-b898-3acb144afe2a</string>
+    <string>ae42116a-943a-4d14-9c9d-ccd00b0ae3c5</string>
+    <string>1b70a2b4-57dd-4303-9fd3-a2e4b54e051c</string>
+    <string>00bb065c-aef7-4281-9305-b8eac124623c</string>
+    <string>b2157103-17d9-41db-89d3-bcc0f27aec43</string>
+    <string>0afb2ca1-cd12-45f8-82b3-7fc012de2b15</string>
+    <string>ffbceadc-7188-4793-93ea-6099659f3bbf</string>
+    <string>ac6de710-4525-45f4-af33-dcea4c37b783</string>
+    <string>8edf9bc9-7ae1-48e7-acd9-7620ae2fb9e2</string>
+    <string>331a35d0-4e8f-4586-870e-9d4afc189417</string>
+    <string>1651ee5d-49e4-418b-96ff-0d5be4ca288b</string>
+    <string>cea6431d-a054-4be3-b365-0c9b52f2e1ff</string>
+    <string>90f2aeb9-5059-47b6-9a31-25a02c13bc46</string>
+    <string>1e3dd091-01d9-4170-a5fa-0dedd28f16ad</string>
+    <string>0ffadebc-95b6-43d7-b198-117cda36036b</string>
+    <string>60ab5afe-ccd4-42ec-af24-1fc1a11d5526</string>
+    <string>d3f9e5ac-b22b-4d90-9cdb-9c2124d6f7ca</string>
+    <string>d70795a9-ee71-4d3c-b783-43da295581b5</string>
+    <string>6cd9ba02-744c-4c8e-9bb6-5b88cb1dbedd</string>
+    <string>24e2cb9b-aa58-49c9-86ef-64564083c4f9</string>
+    <string>ec3f4596-1a1f-454a-9262-ee670437860f</string>
+    <string>dd5f1c2c-f3ca-4aae-aaf0-e548b5446a73</string>
+    <string>0558a36a-b4eb-4756-b551-400a04d60358</string>
+    <string>704d8b74-f401-40a8-9efe-2f6b6ae8d848</string>
+    <string>3a17b98e-00d7-4f7a-a829-1e717cb52999</string>
+    <string>c48eba0f-d460-4a3f-89ae-e61a44006051</string>
+    <string>b073b034-af5a-44c7-9436-9630c9fde8d4</string>
+    <string>7c7007bf-5244-4bc4-b4c2-a0e2dcc3ece4</string>
+    <string>c9466520-8c54-4abb-8bbc-fbd8cc827741</string>
+    <string>aa05b87c-dc46-450e-9091-b34cd0fda51c</string>
+    <string>c266c865-ad33-4417-b0ac-2b03d0671531</string>
+    <string>09a694f3-154f-4984-9842-b5a8c43eab6d</string>
+    <string>da6b10c2-a212-4b0a-a2f7-debde8aeea94</string>
+    <string>1eb0e5eb-7cfc-4748-9cb0-4aed5e8c21be</string>
+    <string>2abadd34-62b6-4b12-a69c-ca23fa7a7e1d</string>
+    <string>7434beb6-2f3f-4710-ab51-9ffc94d3172e</string>
+    <string>5a3e6e18-33ce-4683-94a4-3c297bbc4dd6</string>
+    <string>797f22cf-4283-48ad-8a36-ff87f027bff8</string>
+    <string>c2e193f9-55ee-4292-8f92-8915bbc2a5b3</string>
+    <string>914169af-74db-47fa-9d5b-e40d9179765b</string>
+    <string>c8df68a7-7396-45a4-883e-affff6498101</string>
+    <string>b222828e-4ebe-4ce7-9fc6-15b82b08059b</string>
+    <string>392126a1-0deb-4ee6-ad14-b08720f7b37f</string>
+    <string>035875d6-1d1c-4d53-8a7f-927190ab3406</string>
+    <string>d5ab234c-3188-4542-a2a3-1a49e021bdb1</string>
+    <string>0cbe30b4-0757-46fd-8934-4f240fd9b7f8</string>
+    <string>f747bda4-9f68-458d-badd-056e2b5d3a61</string>
+    <string>9104b429-7b6b-4ecf-ace7-8bf3afc68c11</string>
+    <string>d7970885-f6e9-4db7-8918-92d80eb71655</string>
+    <string>79ecc86e-ce84-4026-9b83-39b6a7c86e57</string>
+    <string>26ea5a91-2042-4e10-ba63-9c04cd2df939</string>
+    <string>e7873e04-49ed-4040-8a9a-593f5e41584b</string>
+    <string>50b13ba0-7c6f-407a-a026-4abc538c3c07</string>
+    <string>e0d280c3-a3d9-49f3-b5a2-7df247184809</string>
+    <string>633328ab-183f-45f4-901d-6bfc31e68422</string>
+    <string>bdc77531-450e-4094-b0e0-e316016ca8fc</string>
+    <string>5d4baf94-2ef5-4f26-afeb-fd7f04711ad8</string>
+    <string>77ef2dc4-3286-4301-8295-3dc5f4039c84</string>
+    <string>65beec9c-99a2-4ae4-8cd2-1fe0ce175936</string>
+    <string>efcd966e-33ed-41b6-9150-c0ae8cc06a43</string>
+    <string>530be5bf-2a50-4f3c-9252-f8d0f982e5b3</string>
+    <string>533b1b79-2218-48a8-bf2f-d51e98059de9</string>
+    <string>8e170f6e-5d3d-43a8-8cca-115b0e5d316d</string>
+    <string>f7e44e25-79d3-4d2c-9e13-b215fdcbe60c</string>
+    <string>463bc739-24e2-4bc0-b225-2126f8eba6d4</string>
+    <string>b2a6253a-cd5a-472b-8286-5563efd03945</string>
+    <string>e8794241-3ec7-4ea7-b011-f921aa95b4e2</string>
+    <string>7b82585e-1d0a-41ee-9bdc-f293fcb203f2</string>
+    <string>4a5a193e-9156-4df1-b0cd-f2c90a6daddb</string>
+    <string>eae23be1-b241-48bd-bfa7-6228ab707aca</string>
+    <string>79c794ac-9f05-4e76-9442-0ccf43e5955a</string>
+    <string>2883550f-82a5-4374-8eef-fcab4eb9d085</string>
+    <string>a297c2c6-38e1-4d75-bf2f-0a4b0eb76c6b</string>
+    <string>9dd17d95-9323-49b5-9450-1cb1346399f9</string>
+    <string>92b9c7d6-e137-4ee8-acf3-ed9ca2879273</string>
+    <string>3a68201e-481e-4f3d-9f2b-e43266875f02</string>
+    <string>8375f0de-6255-4c42-9b82-a4b23734ad97</string>
+    <string>59def895-086f-477f-ba5a-e99443b09825</string>
+    <string>c30a695e-e344-41e7-b637-f7bb5ab2ea9a</string>
+    <string>4ab60288-2dc1-4aef-bd1a-03afb6f53dd9</string>
+    <string>0e9f69f9-3ce3-4b39-9206-1891fae5516a</string>
+    <string>b20a47ac-a9ce-4d21-b98f-91aaec006ce1</string>
+    <string>effc554e-0b2a-4929-b934-4980161cd608</string>
+    <string>19f486a8-6532-440a-bb02-938283514667</string>
+    <string>f347c494-8aad-4e27-a268-9a1a006b02d2</string>
+    <string>9ecd299f-d4b3-499e-89ed-d4f05e03d5f7</string>
+    <string>d4eba0df-0130-43a9-9f56-c6776435ee4b</string>
+    <string>00cef41c-702f-4d5b-a337-6497a4bca8de</string>
+    <string>a57adc17-252f-4635-b38e-1b0b2812f5b1</string>
+    <string>a5216c6f-da06-4ad7-a1cb-db1db0281de7</string>
+    <string>491beb63-3a4a-4759-af90-bee3b44b26be</string>
+    <string>948ab688-b2a4-4915-9d44-c2dc8116471f</string>
+    <string>d8300afa-0644-4ee1-8670-8671ea660421</string>
+    <string>84677170-b8f0-41ce-8247-ead2d3a8eb32</string>
+    <string>c8a3feb5-e140-4100-a439-237a1bd56406</string>
+    <string>a38581b1-bb78-4d7f-a313-b019a77226d6</string>
+    <string>e02a83a7-b16d-4a54-81c9-f8d3456b49d3</string>
+    <string>f3d413f1-6fe2-459c-bfc4-c2846830ddba</string>
+    <string>f94cf933-f2d0-49e4-a020-709ff80fccf0</string>
+    <string>fd5f9bdb-131f-49d8-a526-298f5c2d6f3d</string>
+    <string>c2707444-baf0-4d8f-a7cf-300aa023a471</string>
+    <string>51287ea7-b54f-4091-bb84-137a847f820c</string>
+    <string>d589b265-0778-47a2-902f-2db8124cfc3a</string>
+    <string>3f211f29-c871-4972-82a8-cc404aed2e23</string>
+    <string>be76761f-4644-419d-8e33-2022300308fb</string>
+    <string>38d1ebd5-2f9c-4bd8-a003-95f8d5ab7c03</string>
+    <string>42aa58d8-e811-4ec0-a42e-a38433436963</string>
+    <string>e87e83e4-d113-43bb-8d86-c4f950b7ffa3</string>
+    <string>401b7b4d-dcad-4f27-8ea0-203de95a241e</string>
+    <string>37f3ec53-6b4a-4002-8abd-a96dec76bec8</string>
+    <string>b5f30d86-3e61-4c37-87bf-1804ca9ce7eb</string>
+    <string>e9246437-04fb-46e8-9e19-3271b549e82b</string>
+    <string>1cc9aac7-eced-4190-9261-bc4eeecca5f7</string>
+    <string>6d3fbad0-5957-429f-80c1-272fb4d66b76</string>
+    <string>68f14c88-789e-490b-828c-34088a59d6d3</string>
+    <string>f8d9fc16-0547-438c-bac6-016b64f66387</string>
+    <string>0f1a9522-5640-4a06-be3f-bb63964bbc13</string>
+    <string>e69e1306-55ef-45ec-8c70-e01745fc85fa</string>
+    <string>61a5b147-14d7-44ef-9ffa-1bc31b0de567</string>
+    <string>0cad55a8-a111-45c0-95b5-598eb8047225</string>
+    <string>f82535ff-c5c9-4abc-8754-9f3d21bce6b4</string>
+    <string>fea4ea75-b9b1-4fdb-82c5-ff2ffa95f8a4</string>
+    <string>f8b11556-3664-4166-b274-96b190fb4b64</string>
+    <string>821ef2e2-15c1-4ca4-8cba-821c4b0bddca</string>
+    <string>789fdadb-bbda-4885-8401-d2fc30e102d8</string>
+    <string>a06fb160-867a-47de-acaa-7382942e2f33</string>
+    <string>06ba5ab4-befb-48f9-a25a-5b47052c2f11</string>
+    <string>b2baf4e4-68ef-4347-9b78-be303ec893d1</string>
+    <string>2160b627-d84a-4f5e-a618-e5e9a5aed36b</string>
+    <string>f4b9226c-87f4-4431-b773-6dcd0d2d9936</string>
+    <string>d3d8f219-96eb-4d72-b5d7-d217fb2b2482</string>
+    <string>feeeb920-dd7f-43e1-bfeb-aca2ce08c7be</string>
+    <string>dad894f5-235b-4461-b1c7-45d537dd6ce5</string>
+    <string>997082b4-99d2-4c75-bafa-2c52a234176f</string>
+    <string>454279a4-c432-484a-b071-d2bad7d55738</string>
+    <string>45181d38-ca85-4f9c-b249-b77d49853956</string>
+    <string>f9fb6d0b-1916-4f85-88e2-af8b555f4cfa</string>
+    <string>5042a1e2-7e48-4868-97c0-9557ecfe54c5</string>
+    <string>509990bf-3f51-434a-8c80-92dbcf107bd1</string>
+    <string>b1ca9624-db0d-426c-83e7-e75e1a6ee300</string>
+    <string>5e8cc055-321e-4a54-8a84-229697fae135</string>
+    <string>91bd1f10-6578-4787-8793-a671e57c1507</string>
+    <string>3303780d-dfda-4e3f-a38f-5ac3e76ebb35</string>
+    <string>c8f2fd64-e131-4176-bdfc-ecd38c593d22</string>
+    <string>89d8b01f-e8be-4970-8615-bb1f53b89251</string>
+    <string>c60b6a0f-461e-4fe3-bbad-1513edf65dde</string>
+    <string>aa41eba3-90cd-47e5-8bae-8f62bf3996f7</string>
+    <string>28a663d3-c5d1-4e4b-93d2-4e2f8a8ffc9b</string>
+    <string>3c189384-a932-4dcc-beb8-3246e9d2a323</string>
+    <string>a203fafd-c339-4c84-a1ad-1a17f7517511</string>
+    <string>ed104b16-7175-41fc-bca2-bee56f06e205</string>
+    <string>f441fc90-86ed-4793-92f3-1ae0e964cdda</string>
+    <string>3166236c-2a7c-4505-881e-b5cb624558df</string>
+    <string>0c12e0b7-5db2-4404-816a-89c21026cc32</string>
+    <string>9690b680-c18d-49a2-80bd-9a564e0bec1b</string>
+    <string>eedbaabe-cb3f-40b6-bee6-d176818ca2ae</string>
+    <string>a1b1ac56-7f0e-4ae3-ad79-ee87bb32b493</string>
+    <string>0e6df548-f1c6-4aeb-a619-d0619f1464d0</string>
+    <string>101552f9-37fd-48d6-83ef-7939c410d738</string>
+    <string>e7dfd635-8a1c-47e6-80a8-bea93938ae69</string>
+    <string>3ca28dce-9609-456b-842c-2438e3bd1d82</string>
+    <string>0e01c45b-f64f-495d-9a50-e7bca86c6de1</string>
+    <string>790d011a-5744-449f-a825-594dcdd1746b</string>
+    <string>7fd87c0c-fbb8-4915-99aa-2a44e29f386a</string>
+    <string>ea295c08-06ef-4aef-9b08-115af99536e1</string>
+    <string>5d5d7319-d80a-46e7-b011-cf5d496561e5</string>
+    <string>f5b2913f-54af-4f16-8c59-a0cac6fc5e38</string>
+    <string>b823ac7e-69f3-4c54-986e-379ab8e22c67</string>
+    <string>8496f32b-4d31-42f4-8eaf-bf4619430e67</string>
+    <string>b477c00e-bb72-4e84-a476-99bfb7954947</string>
+    <string>442f6cbe-1835-42fb-bc9f-ae8f5937d09e</string>
+    <string>4303aeb0-f80f-4692-b539-fb6521187257</string>
+    <string>4fe7a4da-0751-489b-9924-257619725138</string>
+    <string>13c2848e-2ddf-4cd4-81e9-4979e3539eec</string>
+    <string>e7bfc4df-8e94-4f1b-8b2d-bb35052a351c</string>
+    <string>09ac68a8-4906-45b6-8e54-a3264383a9fe</string>
+    <string>389e51aa-ed42-4b06-9311-6a29f73a7e83</string>
+    <string>7b5ad10d-c3ee-4c65-96ee-a31933e9c5d0</string>
+    <string>09486549-827b-43d4-9a59-db569b22008a</string>
+    <string>e9e5227e-0c47-498a-9684-cc71dcaa7bec</string>
+    <string>16403065-c1bc-4fee-adf4-98fedbfae20f</string>
+    <string>22af1977-0bec-4fdc-856b-7f20f0f3dce2</string>
+    <string>214106b2-6c77-4602-ae75-38aafa105761</string>
+    <string>77da05e7-3fa4-4fcf-8e9d-fdfe20ffe333</string>
+    <string>7847ae1d-6f0b-4a95-9a7c-25924da77ddd</string>
+    <string>aa3f47c1-7078-41bb-a947-17a739d67879</string>
+    <string>beb8c3c9-b127-4520-9535-1961deaa5962</string>
+    <string>d7dc4570-06e2-4d4b-81d1-32fe28d72704</string>
+    <string>dca74b90-8eb7-423b-a574-b22514623d1b</string>
+    <string>17e504cf-1303-4144-b632-9ac1f832ea39</string>
+    <string>53cb985c-0125-40eb-871e-32a23a1b4151</string>
+    <string>6ecf690c-2ae9-4df6-b5cb-ce7b2a198ec6</string>
+    <string>e13b798d-fe1f-40fc-ab3e-ed50dbd77e98</string>
+    <string>5de6f3cf-bae5-413e-8b72-b6ee3ac195bd</string>
+    <string>8a66d871-488f-43cf-96fa-8c5ab222ff87</string>
+    <string>145b3bdb-0d1d-4181-9e46-7cafb7ccf54e</string>
+    <string>18228093-de38-4168-ab35-4585326c7663</string>
+    <string>3196cb73-20d9-4961-af4f-bcc94b4e7785</string>
+    <string>e2198096-9b75-4c16-9beb-5e44f72cc490</string>
+    <string>fadc64c5-4af3-432c-9831-0774fb3d53cc</string>
+    <string>021a24b9-ee1d-468e-a516-1829741a81dc</string>
+    <string>318064a5-ea5a-439e-8403-9eded1fa086b</string>
+    <string>dea79b6b-3207-46d3-81ec-3ef3c0020541</string>
+    <string>47665929-a32c-4763-a288-a2565b6a691b</string>
+    <string>813310c8-18ad-4bc4-864a-4f45ef0172cd</string>
+    <string>e30c6930-2af8-48ca-84aa-5814745c8e45</string>
+    <string>a3b38111-eef6-49f9-8b74-e05d2ffb96ef</string>
+    <string>4d7816ad-31a1-4bfb-985b-90a347ab347b</string>
+    <string>c0e3aa78-1719-4073-a4a7-5e1fe29d4213</string>
+    <string>68cd837e-ecfd-4e1c-b2b4-17cd3a9779ca</string>
+    <string>1b3ef9f6-5fb7-45bd-b1ee-6607293a2725</string>
+    <string>9895e0b9-210a-4f1b-809a-58724bfbd95c</string>
+    <string>16392040-d522-40b3-a90c-5da012eefa36</string>
+    <string>bd18ea29-6864-4148-974b-d3703cd227ac</string>
+    <string>7a4eb585-0bc7-405a-957e-6e75519fad73</string>
+    <string>a6b09086-44fc-4ce7-ae3a-6d2439d3ee8a</string>
+    <string>bfac36ee-4ce8-4156-b029-e021f4d7565e</string>
+    <string>8fac97cb-c53c-4921-8b7d-f5df02608dc3</string>
+    <string>a25e775d-49f6-4827-b705-dcf6f6da5b13</string>
+    <string>f599452c-fd69-4639-aad6-533f21d13ecc</string>
+  </enabledChannelIds>
+  <disabledChannelIds>
+    <string>d0a63032-af53-43b6-84b7-3bddb36ad162</string>
+    <string>8dda9036-4fff-40d1-a0c2-8298d14952ca</string>
+    <string>f1c57212-6797-4e3e-ae46-680614d80959</string>
+    <string>395361d0-67a1-49dd-9682-f8be443741a3</string>
+    <string>a3931774-ef6f-4db9-a9a7-0b5dd1fbc021</string>
+    <string>66343555-3467-4895-ad8c-270c6b6c741f</string>
+    <string>394d9038-9f9d-4458-a89f-1d5daef871b9</string>
+    <string>ffbbcaf8-e267-44c7-92fb-c1832323e8ce</string>
+    <string>2900137d-81c6-413a-896d-471a6c670b45</string>
+    <string>1dfd7aa1-d3ac-42e5-87ac-d412ecf41d36</string>
+    <string>637676c0-70cc-4d8c-8cb0-1e3566f0ca83</string>
+    <string>41f4a132-c93e-4d7a-835f-fd48cab3b461</string>
+    <string>97ff9678-bda5-4d71-8692-139fb7ab47f1</string>
+    <string>0a6e4ff9-6e53-4460-b5c3-89acd14bd17c</string>
+    <string>9a7e6d66-36e8-4134-91fa-d32eafc8eb52</string>
+    <string>a5699d0d-6e32-47ba-b58d-a2275e12cc31</string>
+    <string>65450260-3854-4a32-9fa5-64cea1a328b5</string>
+    <string>30ccedf2-05d1-482e-9f61-89d1bc6b3e26</string>
+    <string>ceddd6de-280c-42ca-8d23-f96652e17988</string>
+    <string>123a379c-c353-4ba7-97fb-19ab4d67e5e9</string>
+    <string>538b5c26-ab13-45f9-b731-cf71e417308d</string>
+    <string>a699be11-a9e6-43a7-bb66-8ecbf95ab0b6</string>
+  </disabledChannelIds>
+  <codeTemplates>
+    <codeTemplate version="4.5.0">
+      <id>9956582d-574f-4b35-9131-6bcff15e7e53</id>
+      <name>convertXML_RiO_HL7</name>
+      <revision>35</revision>
+      <lastModified>
+        <time>1726734221563</time>
+        <timezone>Europe/London</timezone>
+      </lastModified>
+      <contextSet>
+        <delegate>
+          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
+          <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
+          <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
+        </delegate>
+      </contextSet>
+      <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">
+        <type>FUNCTION</type>
+        <code>/**
+	Takes RiO XML and converts to HL7 XML that Mirth can understand and transform. Written here as a
+	Javascript code template so this logic can live outside the channel, reducing duplication of logic
+	between channels.
+	
+	Generated by adding an XSLT transformer in the channel and copying the content of the JS tab. All
+	the JS code wrapping the XSL was auto-generated by Mirth.
+
+	@param {String} xmlstring - the source XML generated by RiO
+	@return {String} xml string. Formatted so Mirth can convert it to HL7 using default transforms.
+*/
+/* $Id: General HL7 Message Functions.xml 193 2018-11-15 12:00:11Z cse-servelec\richard.coles $ */
+function SERVELEC_HL7_convertXML_RiO_HL7(xmlstring) {
+tFactory = Packages.javax.xml.transform.TransformerFactory.newInstance();
+xsltTemplate = new Packages.java.io.StringReader(&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+    &lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; version=&quot;1.0&quot;&gt;
+    &lt;xsl:variable name=&quot;mode&quot;&gt;
+       &lt;xsl:choose&gt;
+           &lt;xsl:when test=&quot;/Message/mode = &apos;ENHANCED&apos;&quot;&gt;ENHANCED&lt;/xsl:when&gt;
+           &lt;xsl:otherwise&gt;LEGACY&lt;/xsl:otherwise&gt;
+       &lt;/xsl:choose&gt;
+    &lt;/xsl:variable&gt;
+    &lt;xsl:template match=&quot;Message&quot;&gt;
+        &lt;HL7Message&gt;
+            &lt;xsl:call-template name=&quot;segment-MSH&quot;/&gt;
+            &lt;xsl:for-each select=&quot;Content/Event&quot;&gt;
+                &lt;xsl:call-template name=&quot;segment-EVN&quot;/&gt;
+            &lt;/xsl:for-each&gt;
+            &lt;xsl:for-each select=&quot;Content/Client&quot;&gt;
+                &lt;xsl:call-template name=&quot;segment-PID-PD1&quot;/&gt;
+            &lt;/xsl:for-each&gt;
+            &lt;xsl:if test=&quot;not(Content/Client/@flag = &apos;S&apos;)&quot;&gt;
+                &lt;xsl:for-each select=&quot;Content/Contacts/Contact&quot;&gt;
+                    &lt;xsl:call-template name=&quot;segment-NK1&quot;/&gt;
+                &lt;/xsl:for-each&gt;
+            &lt;/xsl:if&gt;
+            &lt;xsl:for-each select=&quot;Content/Merge&quot;&gt;
+                &lt;xsl:call-template name=&quot;segment-MRG&quot;/&gt;
+            &lt;/xsl:for-each&gt;
+            &lt;xsl:for-each select=&quot;Content/Visit[@type=&apos;inpatient&apos; or @type=&apos;planned&apos;]&quot;&gt;
+                &lt;xsl:call-template name=&quot;segment-PV1-PV2-Inpatient&quot;/&gt;
+            &lt;/xsl:for-each&gt;
+            &lt;xsl:for-each select=&quot;Content/Visit[@type=&apos;outpatient&apos;]&quot;&gt;
+                &lt;xsl:call-template name=&quot;segment-PV1-Outpatient&quot;/&gt;
+            &lt;/xsl:for-each&gt;
+            &lt;xsl:for-each select=&quot;Content/Visit[@type=&apos;urgentcare&apos;]&quot;&gt;
+                &lt;xsl:call-template name=&quot;segment-PV1-UrgentCare&quot;/&gt;
+            &lt;/xsl:for-each&gt;
+            &lt;xsl:for-each select=&quot;Content/AllergyList/Allergy&quot;&gt;
+                &lt;xsl:call-template name=&quot;segment-AL1&quot;/&gt;
+            &lt;/xsl:for-each&gt;
+            &lt;xsl:for-each select=&quot;Content/OrderCommon&quot;&gt;
+                &lt;xsl:call-template name=&quot;segment-ORC&quot;/&gt;
+            &lt;/xsl:for-each&gt;
+            &lt;xsl:for-each select=&quot;Content/ObservationRequest&quot;&gt;
+                &lt;xsl:call-template name=&quot;segment-OBR&quot;/&gt;
+            &lt;/xsl:for-each&gt;
+            &lt;xsl:for-each select=&quot;Content/ObservationList/Observation&quot;&gt;
+                &lt;xsl:call-template name=&quot;segment-OBX&quot;/&gt;
+            &lt;/xsl:for-each&gt;
+            &lt;xsl:for-each select=&quot;Content/CustomData[@type=&apos;ZU1&apos;]&quot;&gt;
+                &lt;xsl:call-template name=&quot;segment-ZU1&quot;/&gt;
+            &lt;/xsl:for-each&gt;
+            &lt;xsl:for-each select=&quot;Content/CustomData[@type=&apos;ZU3&apos;]&quot;&gt;
+                &lt;xsl:call-template name=&quot;segment-ZU3&quot;/&gt;
+            &lt;/xsl:for-each&gt;
+            &lt;xsl:for-each select=&quot;Content/CustomData[@type=&apos;ZU5&apos;]&quot;&gt;
+                &lt;xsl:call-template name=&quot;segment-ZU5&quot;/&gt;
+            &lt;/xsl:for-each&gt;
+            &lt;xsl:for-each select=&quot;Content/CustomData[@type=&apos;ZU8&apos;]&quot;&gt;
+                &lt;xsl:call-template name=&quot;segment-ZU8&quot;/&gt;
+            &lt;/xsl:for-each&gt;
+            &lt;xsl:for-each select=&quot;Content/CustomData[@type=&apos;ZCT&apos;]&quot;&gt;
+                &lt;xsl:call-template name=&quot;segment-ZCT&quot;/&gt;
+            &lt;/xsl:for-each&gt;
+            &lt;orig&gt;
+                &lt;xsl:copy-of select=&quot;.&quot;/&gt;
+            &lt;/orig&gt;
+        &lt;/HL7Message&gt;
+    &lt;/xsl:template&gt;
+    &lt;xsl:template name=&quot;segment-MSH&quot;&gt;
+        &lt;MSH&gt;
+            &lt;MSH.1&gt;|&lt;/MSH.1&gt;
+            &lt;MSH.2&gt;^~\&amp;amp;&lt;/MSH.2&gt;
+            &lt;MSH.3&gt;
+                &lt;MSH.3.1&gt;
+                    &lt;xsl:value-of select=&quot;SenderInfo/SendingApplication&quot;/&gt;
+                &lt;/MSH.3.1&gt;
+            &lt;/MSH.3&gt;
+            &lt;MSH.4&gt;
+                &lt;MSH.4.1&gt;
+                    &lt;xsl:value-of select=&quot;SenderInfo/SendingFacility&quot;/&gt;
+                &lt;/MSH.4.1&gt;
+            &lt;/MSH.4&gt;
+            &lt;MSH.5&gt;
+                &lt;MSH.5.1&gt;&amp;lt;REC-APP&amp;gt;&lt;/MSH.5.1&gt;
+            &lt;/MSH.5&gt;
+            &lt;MSH.6&gt;
+                &lt;MSH.6.1&gt;&amp;lt;REC-FACIL&amp;gt;&lt;/MSH.6.1&gt;
+            &lt;/MSH.6&gt;
+            &lt;MSH.7&gt;
+                &lt;MSH.7.1&gt;
+                    &lt;xsl:call-template name=&quot;formatdatetime&quot;&gt;
+                        &lt;xsl:with-param name=&quot;datestr&quot; select=&quot;Sent&quot;/&gt;
+                    &lt;/xsl:call-template&gt;
+                &lt;/MSH.7.1&gt;
+            &lt;/MSH.7&gt;
+            &lt;MSH.9&gt;
+                &lt;xsl:value-of select=&quot;Type&quot;/&gt;
+            &lt;/MSH.9&gt;
+            &lt;MSH.10&gt;
+                &lt;MSH.10.1&gt;&amp;lt;MSG-ID&amp;gt;&lt;/MSH.10.1&gt;
+            &lt;/MSH.10&gt;
+            &lt;MSH.11&gt;
+                &lt;MSH.11.1&gt;P&lt;/MSH.11.1&gt;
+            &lt;/MSH.11&gt;
+            &lt;MSH.12&gt;
+                &lt;MSH.12.1&gt;
+                	&lt;!-- allow HL7 verions to be overidden in the template, default to 2.4 --&gt;
+                   &lt;xsl:choose&gt;
+                       &lt;xsl:when test=&quot;HL7Version and HL7Version != &apos;&apos;&quot;&gt;
+                           &lt;xsl:value-of select=&quot;HL7Version&quot; /&gt;
+                       &lt;/xsl:when&gt;
+                       &lt;xsl:otherwise&gt;2.4&lt;/xsl:otherwise&gt;
+                   &lt;/xsl:choose&gt;
+                &lt;/MSH.12.1&gt;
+            &lt;/MSH.12&gt;
+            &lt;MSH.15&gt;
+                &lt;MSH.15.1&gt;AL&lt;/MSH.15.1&gt;
+            &lt;/MSH.15&gt;
+            &lt;MSH.16&gt;
+                &lt;MSH.16.1&gt;
+                	&lt;!-- allow HL7 verions to be overidden in the template, default to 2.4 --&gt;
+                   &lt;xsl:choose&gt;
+                       &lt;xsl:when test=&quot;HL7AppAckType and HL7AppAckType != &apos;&apos;&quot;&gt;
+                           &lt;xsl:value-of select=&quot;HL7AppAckType&quot; /&gt;
+                       &lt;/xsl:when&gt;
+                       &lt;xsl:otherwise&gt;NE&lt;/xsl:otherwise&gt;
+                   &lt;/xsl:choose&gt;
+                &lt;/MSH.16.1&gt;
+            &lt;/MSH.16&gt;
+            &lt;MSH.17&gt;
+                &lt;MSH.17.1&gt;GBR&lt;/MSH.17.1&gt;
+            &lt;/MSH.17&gt;
+            &lt;MSH.19&gt;
+                &lt;MSH.19.1&gt;EN&lt;/MSH.19.1&gt;
+            &lt;/MSH.19&gt;
+            &lt;MSH.21/&gt;
+        &lt;/MSH&gt;
+    &lt;/xsl:template&gt;
+    &lt;xsl:template name=&quot;segment-EVN&quot;&gt;
+        &lt;EVN&gt;
+            &lt;EVN.2&gt;
+                &lt;EVN.2.1&gt;
+                    &lt;xsl:call-template name=&quot;formatdatetime&quot;&gt;
+                        &lt;xsl:with-param name=&quot;datestr&quot; select=&quot;/Message/Sent&quot;/&gt;
+                    &lt;/xsl:call-template&gt;
+                &lt;/EVN.2.1&gt;
+            &lt;/EVN.2&gt;
+            &lt;EVN.5&gt;
+                &lt;EVN.5.1&gt;
+                    &lt;xsl:value-of select=&quot;OperatorCode&quot;/&gt;
+                &lt;/EVN.5.1&gt;
+                &lt;!-- in the XML but not in the software ADT implementation so leave them out for now --&gt;
+                &lt;!--
+                &lt;EVN.5.2&gt;&lt;xsl:value-of select=&quot;FamilyName&quot;/&gt;&lt;/EVN.5.2&gt;&lt;EVN.5.3&gt;&lt;xsl:value-of select=&quot;GivenName&quot;/&gt;&lt;/EVN.5.3&gt;
+                --&gt;
+            &lt;/EVN.5&gt;
+            &lt;EVN.6&gt;
+                &lt;xsl:call-template name=&quot;formatdatetime&quot;&gt;
+                    &lt;xsl:with-param name=&quot;datestr&quot; select=&quot;OccurredDateTime&quot;/&gt;
+                &lt;/xsl:call-template&gt;
+            &lt;/EVN.6&gt;
+            &lt;EVN.7/&gt;
+        &lt;/EVN&gt;
+    &lt;/xsl:template&gt;
+    &lt;xsl:template name=&quot;segment-PID-PD1&quot;&gt;
+        &lt;PID&gt;
+            &lt;PID.1&gt;
+                &lt;PID.1.1&gt;1&lt;/PID.1.1&gt;
+            &lt;/PID.1&gt;
+            &lt;xsl:if test=&quot;NNN and NNN != &apos;&apos;&quot;&gt;
+                &lt;PID.3&gt;
+                    &lt;PID.3.1&gt;
+                        &lt;xsl:value-of select=&quot;NNN&quot;/&gt;
+                    &lt;/PID.3.1&gt;
+                    &lt;PID.3.4&gt;NHS&lt;/PID.3.4&gt;
+                    &lt;PID.3.5&gt;
+                        &lt;xsl:value-of select=&quot;NNNTypeCode&quot;/&gt;
+                    &lt;/PID.3.5&gt;
+                &lt;/PID.3&gt;
+            &lt;/xsl:if&gt;
+            &lt;PID.3&gt;
+                &lt;PID.3.1&gt;
+                    &lt;xsl:value-of select=&quot;ClientID&quot;/&gt;
+                &lt;/PID.3.1&gt;
+                &lt;PID.3.4&gt;MRN&lt;/PID.3.4&gt;
+                &lt;PID.3.5&gt;
+                    &lt;xsl:value-of select=&quot;ClientIdTypeCode&quot;/&gt;
+                &lt;/PID.3.5&gt;
+            &lt;/PID.3&gt;
+            &lt;xsl:if test=&quot;$mode=&apos;ENHANCED&apos;&quot;&gt;
+                &lt;xsl:for-each select=&quot;AlternativeID&quot;&gt;
+	               &lt;PID.3&gt;
+	                   &lt;PID.3.1&gt;
+	                       &lt;xsl:value-of select=&quot;ID&quot;/&gt;
+	                   &lt;/PID.3.1&gt;
+	                   &lt;PID.3.4&gt;
+	                       &lt;xsl:value-of select=&quot;SystemID&quot;/&gt;
+	                   &lt;/PID.3.4&gt;
+	               &lt;/PID.3&gt;
+                &lt;/xsl:for-each&gt;
+            &lt;/xsl:if&gt;
+            &lt;PID.5&gt;
+                &lt;PID.5.1&gt;
+                    &lt;xsl:value-of select=&quot;Name/Surname&quot;/&gt;
+                &lt;/PID.5.1&gt;
+                &lt;PID.5.2&gt;
+                    &lt;xsl:value-of select=&quot;Name/GivenName1&quot;/&gt;
+                &lt;/PID.5.2&gt;
+                &lt;PID.5.3&gt;
+                    &lt;xsl:value-of select=&quot;Name/MiddleName&quot;/&gt;
+                &lt;/PID.5.3&gt;
+                &lt;PID.5.5&gt;
+                    &lt;xsl:value-of select=&quot;Name/Prefix&quot;/&gt;
+                &lt;/PID.5.5&gt;
+                &lt;PID.5.7&gt;L&lt;/PID.5.7&gt;
+            &lt;/PID.5&gt;
+            &lt;xsl:if test=&quot;Mother/Surname&quot;&gt;
+                &lt;PID.6&gt;
+                    &lt;PID.6.1&gt;
+                        &lt;xsl:value-of select=&quot;Mother/Surname&quot;/&gt;
+                    &lt;/PID.6.1&gt;
+                    &lt;PID.6.2&gt;
+                        &lt;xsl:value-of select=&quot;Mother/GivenName1&quot;/&gt;
+                    &lt;/PID.6.2&gt;
+                    &lt;PID.6.7&gt;L&lt;/PID.6.7&gt;
+                &lt;/PID.6&gt;
+            &lt;/xsl:if&gt;
+            &lt;PID.7&gt;
+                &lt;PID.7.1&gt;
+                    &lt;xsl:call-template name=&quot;formatdatetime&quot;&gt;
+                        &lt;xsl:with-param name=&quot;datestr&quot; select=&quot;DateOfBirth&quot;/&gt;
+                    &lt;/xsl:call-template&gt;
+                &lt;/PID.7.1&gt;
+            &lt;/PID.7&gt;
+            &lt;PID.8&gt;
+                &lt;PID.8.1&gt;
+                    &lt;xsl:value-of select=&quot;Gender&quot;/&gt;
+                &lt;/PID.8.1&gt;
+            &lt;/PID.8&gt;
+            &lt;xsl:if test=&quot;not(@flag = &apos;S&apos;)&quot;&gt;
+                &lt;xsl:for-each select=&quot;Address&quot;&gt;
+                    &lt;PID.11&gt;
+                        &lt;PID.11.1&gt;
+                            &lt;xsl:if test=&quot;AddressLine1 and AddressLine1 != &apos;&apos;&quot;&gt;
+                                &lt;xsl:value-of select=&quot;AddressLine1&quot;/&gt;
+                            &lt;/xsl:if&gt;
+                            &lt;xsl:if test=&quot;AddressLine1 and AddressLine1 != &apos;&apos; and AddressLine2 and AddressLine2 != &apos;&apos;&quot;&gt;, &lt;/xsl:if&gt;
+                            &lt;xsl:if test=&quot;AddressLine2 and AddressLine2 != &apos;&apos;&quot;&gt;
+                                &lt;xsl:value-of select=&quot;AddressLine2&quot;/&gt;
+                            &lt;/xsl:if&gt;
+                        &lt;/PID.11.1&gt;
+                        &lt;PID.11.2&gt;
+                            &lt;xsl:value-of select=&quot;AddressLine3&quot;/&gt;
+                        &lt;/PID.11.2&gt;
+                        &lt;PID.11.3&gt;
+                            &lt;xsl:value-of select=&quot;AddressLine4&quot;/&gt;
+                        &lt;/PID.11.3&gt;
+                        &lt;PID.11.4&gt;
+                            &lt;xsl:value-of select=&quot;AddressLine5&quot;/&gt;
+                        &lt;/PID.11.4&gt;
+                        &lt;PID.11.5&gt;
+                            &lt;xsl:value-of select=&quot;Postcode&quot;/&gt;
+                        &lt;/PID.11.5&gt;
+                        &lt;xsl:if test=&quot;AddressType&quot;&gt;
+                            &lt;PID.11.6/&gt;
+                            &lt;PID.11.7&gt;
+                                &lt;xsl:value-of select=&quot;AddressType&quot;/&gt;
+                            &lt;/PID.11.7&gt;
+                        &lt;/xsl:if&gt;
+                        &lt;xsl:if test=&quot;PAFKey&quot;&gt;
+                            &lt;PID.11.8&gt;
+                                &lt;xsl:value-of select=&quot;PAFKey&quot;/&gt;
+                            &lt;/PID.11.8&gt;
+                        &lt;/xsl:if&gt;
+                    &lt;/PID.11&gt;
+                &lt;/xsl:for-each&gt;
+                &lt;PID.12/&gt;
+                &lt;xsl:if test=&quot;HomePhone or Email&quot;&gt;
+                    &lt;xsl:choose&gt;
+                        &lt;xsl:when test=&quot;$mode=&apos;ENHANCED&apos;&quot;&gt;
+                            &lt;xsl:if test=&quot;HomePhone&quot;&gt;
+                                &lt;PID.13&gt;
+                                    &lt;PID.13.1&gt;
+                                        &lt;xsl:value-of select=&quot;HomePhone&quot;/&gt;
+                                    &lt;/PID.13.1&gt;
+                                    &lt;PID.13.2&gt;PRN&lt;/PID.13.2&gt; &lt;!-- Primary Residence Number --&gt;
+                                &lt;/PID.13&gt;
+                            &lt;/xsl:if&gt;
+                            &lt;xsl:if test=&quot;Email&quot;&gt;
+                                &lt;PID.13&gt;
+                                    &lt;PID.13.1&gt;
+                                        &lt;xsl:value-of select=&quot;Email&quot;/&gt;
+                                    &lt;/PID.13.1&gt;
+                                    &lt;PID.13.2&gt;NET&lt;/PID.13.2&gt; &lt;!-- network (email) address --&gt;
+                                    &lt;PID.13.3&gt;X.400&lt;/PID.13.3&gt; &lt;!-- X.400 email address --&gt;
+                                    &lt;PID.13.4&gt;
+                                        &lt;xsl:value-of select=&quot;Email&quot;/&gt;
+                                    &lt;/PID.13.4&gt;
+                                &lt;/PID.13&gt;
+                            &lt;/xsl:if&gt;
+                        &lt;/xsl:when&gt;
+                        &lt;xsl:otherwise&gt;
+                            &lt;PID.13&gt;
+                                &lt;PID.13.1&gt;
+                                    &lt;xsl:value-of select=&quot;HomePhone&quot;/&gt;
+                                &lt;/PID.13.1&gt;
+                                &lt;PID.13.2&gt;Home&lt;/PID.13.2&gt;
+                                &lt;PID.13.3/&gt;
+                                &lt;PID.13.4&gt;
+                                    &lt;xsl:value-of select=&quot;Email&quot;/&gt;
+                                &lt;/PID.13.4&gt;
+                            &lt;/PID.13&gt;
+                        &lt;/xsl:otherwise&gt;
+                    &lt;/xsl:choose&gt;
+                &lt;/xsl:if&gt;
+                &lt;xsl:if test=&quot;MobilePhone&quot;&gt;
+                    &lt;PID.13&gt;
+                        &lt;PID.13.1&gt;
+                            &lt;xsl:value-of select=&quot;MobilePhone&quot;/&gt;
+                        &lt;/PID.13.1&gt;
+                        &lt;xsl:choose&gt;
+                            &lt;xsl:when test=&quot;$mode = &apos;ENHANCED&apos;&quot;&gt;
+                                &lt;PID.13.2&gt;ORN&lt;/PID.13.2&gt; &lt;!-- other residence number --&gt;
+                                &lt;PID.13.3&gt;CP&lt;/PID.13.3&gt; &lt;!-- cellular phone --&gt;
+                            &lt;/xsl:when&gt;
+                            &lt;xsl:otherwise&gt;
+                                &lt;PID.13.2&gt;Mobile&lt;/PID.13.2&gt;
+                            &lt;/xsl:otherwise&gt;
+                        &lt;/xsl:choose&gt;
+                    &lt;/PID.13&gt;
+                &lt;/xsl:if&gt;
+                &lt;xsl:if test=&quot;WorkPhone&quot;&gt;
+                    &lt;PID.14&gt;
+                        &lt;PID.14.1&gt;
+                            &lt;xsl:value-of select=&quot;WorkPhone&quot;/&gt;
+                        &lt;/PID.14.1&gt;
+                        &lt;xsl:choose&gt;
+                            &lt;xsl:when test=&quot;$mode = &apos;ENHANCED&apos;&quot;&gt;
+                                &lt;PID.13.2&gt;WPN&lt;/PID.13.2&gt; &lt;!-- work number --&gt;
+                            &lt;/xsl:when&gt;
+                            &lt;xsl:otherwise&gt;
+                                &lt;PID.13.2&gt;Business&lt;/PID.13.2&gt;
+                            &lt;/xsl:otherwise&gt;
+                        &lt;/xsl:choose&gt;
+                    &lt;/PID.14&gt;
+                &lt;/xsl:if&gt;
+            &lt;/xsl:if&gt;
+            &lt;PID.15&gt;
+                &lt;xsl:value-of select=&quot;Language&quot;/&gt;
+            &lt;/PID.15&gt;
+            &lt;PID.16&gt;
+                &lt;PID.16.1&gt;
+                    &lt;xsl:value-of select=&quot;MaritalStatus&quot;/&gt;
+                &lt;/PID.16.1&gt;
+            &lt;/PID.16&gt;
+            &lt;PID.17&gt;
+                &lt;PID.17.1&gt;
+                    &lt;xsl:value-of select=&quot;Religion&quot;/&gt;
+                &lt;/PID.17.1&gt;
+            &lt;/PID.17&gt;
+            &lt;xsl:if test=&quot;Mother/NNN&quot;&gt;
+                &lt;PID.21&gt;
+                    &lt;PID.21.1&gt;
+                        &lt;xsl:value-of select=&quot;Mother/NNN&quot;/&gt;
+                    &lt;/PID.21.1&gt;
+                    &lt;PID.21.4&gt;NHS&lt;/PID.21.4&gt;
+                    &lt;PID.21.5&gt;
+                        &lt;xsl:value-of select=&quot;Mother/NNNTypeCode&quot;/&gt;
+                    &lt;/PID.21.5&gt;
+                &lt;/PID.21&gt;
+            &lt;/xsl:if&gt;
+            &lt;xsl:if test=&quot;Mother&quot;&gt;
+                &lt;PID.21&gt;
+                    &lt;PID.21.1&gt;
+                        &lt;xsl:value-of select=&quot;Mother/ClientID&quot;/&gt;
+                    &lt;/PID.21.1&gt;
+                    &lt;PID.21.4&gt;MRN&lt;/PID.21.4&gt;
+                    &lt;PID.21.5&gt;
+                        &lt;xsl:value-of select=&quot;Mother/ClientIdTypeCode&quot;/&gt;
+                    &lt;/PID.21.5&gt;
+                &lt;/PID.21&gt;
+            &lt;/xsl:if&gt;
+            &lt;PID.22&gt;
+                &lt;PID.22.1&gt;
+                    &lt;xsl:value-of select=&quot;Ethnicity&quot;/&gt;
+                &lt;/PID.22.1&gt;
+            &lt;/PID.22&gt;
+            &lt;PID.25&gt;
+                &lt;xsl:value-of select=&quot;BirthOrder&quot;/&gt;
+            &lt;/PID.25&gt;
+            &lt;PID.28&gt;
+                &lt;PID.28.1&gt;
+                    &lt;xsl:value-of select=&quot;Nationality&quot;/&gt;
+                &lt;/PID.28.1&gt;
+            &lt;/PID.28&gt;
+            &lt;PID.29&gt;
+                &lt;xsl:call-template name=&quot;formatdatetime&quot;&gt;
+                    &lt;xsl:with-param name=&quot;datestr&quot; select=&quot;DateOfDeath&quot;/&gt;
+                &lt;/xsl:call-template&gt;
+            &lt;/PID.29&gt;
+            &lt;PID.30&gt;
+                &lt;PID.30.1&gt;
+                    &lt;xsl:choose&gt;
+                        &lt;xsl:when test=&quot;DateOfDeath&quot;&gt;Y&lt;/xsl:when&gt;
+                        &lt;xsl:otherwise&gt;N&lt;/xsl:otherwise&gt;
+                    &lt;/xsl:choose&gt;
+                &lt;/PID.30.1&gt;
+            &lt;/PID.30&gt;
+            &lt;PID.38/&gt;
+        &lt;/PID&gt;
+        &lt;xsl:if test=&quot;not(Content/Client/@flag = &apos;S&apos;)&quot;&gt;
+            &lt;PD1&gt;
+                &lt;PD1.3&gt;
+                    &lt;xsl:if test=&quot;$mode = &apos;ENHANCED&apos;&quot;&gt;
+                        &lt;PD1.3.1&gt;
+                            &lt;xsl:value-of select=&quot;HealthcareProvider/PracticeDescription&quot;/&gt;
+                        &lt;/PD1.3.1&gt;
+                    &lt;/xsl:if&gt;
+                    &lt;PD1.3.3&gt;
+                        &lt;xsl:value-of select=&quot;HealthcareProvider/PracticeCode&quot;/&gt;
+                    &lt;/PD1.3.3&gt;
+                &lt;/PD1.3&gt;
+                &lt;PD1.4&gt;
+                    &lt;PD1.4.1&gt;
+                        &lt;xsl:value-of select=&quot;HealthcareProvider/GPCode&quot;/&gt;
+                    &lt;/PD1.4.1&gt;
+                &lt;/PD1.4&gt;
+                &lt;PD1.21/&gt;
+            &lt;/PD1&gt;
+        &lt;/xsl:if&gt;
+    &lt;/xsl:template&gt;
+    &lt;xsl:template name=&quot;segment-NK1&quot;&gt;
+        &lt;NK1&gt;
+            &lt;!-- Set ID - NK1 --&gt;
+            &lt;NK1.1&gt;
+                &lt;xsl:value-of select=&quot;position()&quot;/&gt;
+            &lt;/NK1.1&gt;
+            &lt;!-- NK Name --&gt;
+            &lt;NK1.2&gt;
+                &lt;NK1.2.1&gt;
+                    &lt;xsl:value-of select=&quot;Surname&quot;/&gt;
+                &lt;/NK1.2.1&gt;
+                &lt;NK1.2.2&gt;
+                    &lt;xsl:value-of select=&quot;Firstname&quot;/&gt;
+                &lt;/NK1.2.2&gt;
+                &lt;NK1.2.5&gt;
+                    &lt;xsl:value-of select=&quot;Title&quot;/&gt;
+                &lt;/NK1.2.5&gt;
+                &lt;NK1.2.7&gt;L&lt;/NK1.2.7&gt;
+            &lt;/NK1.2&gt;
+            &lt;!-- Relationship --&gt;
+            &lt;NK1.3&gt;
+                &lt;NK1.3.1&gt;
+                    &lt;xsl:value-of select=&quot;Relationship&quot;/&gt;
+                &lt;/NK1.3.1&gt;
+            &lt;/NK1.3&gt;
+            &lt;!-- Address --&gt;
+            &lt;NK1.4&gt;
+                &lt;NK1.4.1&gt;
+                    &lt;xsl:if test=&quot;AddressLine1 and AddressLine1 != &apos;&apos;&quot;&gt;
+                        &lt;xsl:value-of select=&quot;AddressLine1&quot;/&gt;
+                        &lt;xsl:if test=&quot;AddressLine2 and AddressLine2 != &apos;&apos;&quot;&gt;, &lt;/xsl:if&gt;
+                    &lt;/xsl:if&gt;
+                    &lt;xsl:if test=&quot;AddressLine2 and AddressLine2 != &apos;&apos;&quot;&gt;
+                        &lt;xsl:value-of select=&quot;AddressLine2&quot;/&gt;
+                    &lt;/xsl:if&gt;
+                &lt;/NK1.4.1&gt;
+                &lt;NK1.4.2&gt;
+                    &lt;xsl:value-of select=&quot;AddressLine3&quot;/&gt;
+                &lt;/NK1.4.2&gt;
+                &lt;NK1.4.3&gt;
+                    &lt;xsl:value-of select=&quot;AddressLine4&quot;/&gt;
+                &lt;/NK1.4.3&gt;
+                &lt;NK1.4.4&gt;
+                    &lt;xsl:value-of select=&quot;AddressLine5&quot;/&gt;
+                &lt;/NK1.4.4&gt;
+                &lt;NK1.4.5&gt;
+                    &lt;xsl:value-of select=&quot;Postcode&quot;/&gt;
+                &lt;/NK1.4.5&gt;
+            &lt;/NK1.4&gt;
+            &lt;!-- Phone Number --&gt;
+            &lt;NK1.5&gt;
+                &lt;NK1.5.1&gt;
+                    &lt;xsl:value-of select=&quot;MainPhone&quot;/&gt;
+                &lt;/NK1.5.1&gt;
+            &lt;/NK1.5&gt;
+            &lt;!-- Start Date --&gt;
+            &lt;NK1.8&gt;
+                &lt;xsl:call-template name=&quot;formatdatetime&quot;&gt;
+                    &lt;xsl:with-param name=&quot;datestr&quot; select=&quot;StartDate&quot;/&gt;
+                &lt;/xsl:call-template&gt;
+            &lt;/NK1.8&gt;
+            &lt;!-- End Date --&gt;
+            &lt;NK1.9&gt;
+                &lt;xsl:call-template name=&quot;formatdatetime&quot;&gt;
+                    &lt;xsl:with-param name=&quot;datestr&quot; select=&quot;EndDate&quot;/&gt;
+                &lt;/xsl:call-template&gt;
+            &lt;/NK1.9&gt;
+            &lt;NK1.37/&gt;
+        &lt;/NK1&gt;
+    &lt;/xsl:template&gt;
+    &lt;xsl:template name=&quot;segment-PV1-PV2-Inpatient&quot;&gt;
+        &lt;PV1&gt;
+            &lt;!-- Set ID - PV1 --&gt;
+            &lt;PV1.1&gt;1&lt;/PV1.1&gt;
+            &lt;!-- Patient Class --&gt;
+            &lt;PV1.2&gt;I&lt;/PV1.2&gt;
+            &lt;!-- Assigned Patient Location --&gt;
+            &lt;PV1.3&gt;
+                &lt;xsl:choose&gt;
+                    &lt;xsl:when test=&quot;@ExtraADTLocInfo=1&quot;&gt;
+                        &lt;PV1.3.1&gt;
+                            &lt;xsl:value-of select=&quot;Location/WardCode&quot;/&gt;
+                        &lt;/PV1.3.1&gt;
+                        &lt;PV1.3.2&gt;
+                            &lt;xsl:value-of select=&quot;Location/BayCode&quot;/&gt;
+                        &lt;/PV1.3.2&gt;
+                        &lt;PV1.3.3&gt;
+                            &lt;xsl:value-of select=&quot;Location/BedNumber&quot;/&gt;
+                        &lt;/PV1.3.3&gt;
+                        &lt;PV1.3.4&gt;
+                            &lt;PV1.3.4.1&gt;
+                                &lt;xsl:value-of select=&quot;Location/HospitalNationalCode&quot;/&gt;
+                            &lt;/PV1.3.4.1&gt;
+                        &lt;/PV1.3.4&gt;
+                        &lt;PV1.3.9&gt;
+                            &lt;xsl:value-of select=&quot;Location/LocationDescription&quot;/&gt;
+                        &lt;/PV1.3.9&gt;
+                    &lt;/xsl:when&gt;
+                    &lt;xsl:otherwise&gt;
+                        &lt;PV1.3.2&gt;
+                            &lt;xsl:value-of select=&quot;Location/WardCode&quot;/&gt;
+                        &lt;/PV1.3.2&gt;
+                        &lt;PV1.3.3&gt;
+                            &lt;xsl:value-of select=&quot;Location/BedNumber&quot;/&gt;
+                        &lt;/PV1.3.3&gt;
+                        &lt;PV1.3.4&gt;
+                            &lt;xsl:value-of select=&quot;/Message/SenderInfo/SendingFacility&quot;/&gt;
+                        &lt;/PV1.3.4&gt;
+                    &lt;/xsl:otherwise&gt;
+                &lt;/xsl:choose&gt;
+            &lt;/PV1.3&gt;
+            &lt;!-- Admission Type --&gt;
+            &lt;PV1.4&gt;
+                &lt;xsl:value-of select=&quot;Admission/Method&quot;/&gt;
+            &lt;/PV1.4&gt;
+            &lt;!-- Referring Doctor --&gt;
+            &lt;xsl:if test=&quot;$mode = &apos;ENHANCED&apos; and ReferringDoctor&quot;&gt;
+	            &lt;PV1.8&gt;
+	                &lt;PV1.8.1&gt;
+	                    &lt;xsl:value-of select=&quot;ReferringDoctor/@id&quot;/&gt;
+	                &lt;/PV1.8.1&gt;
+	                &lt;PV1.8.2&gt;
+	                    &lt;xsl:value-of select=&quot;ReferringDoctor/Surname&quot;/&gt;
+	                &lt;/PV1.8.2&gt;
+	                &lt;PV1.8.3&gt;
+	                    &lt;xsl:value-of select=&quot;ReferringDoctor/FirstName&quot;/&gt;
+	                &lt;/PV1.8.3&gt;
+	                &lt;PV1.8.4&gt;
+	                    &lt;xsl:value-of select=&quot;ReferringDoctor/Title&quot;/&gt;
+	                &lt;/PV1.8.4&gt;
+	            &lt;/PV1.8&gt;
+	       &lt;/xsl:if&gt;
+            &lt;!-- Consulting Doctor --&gt;
+            &lt;PV1.9&gt;
+                &lt;xsl:if test=&quot;Consultant/Surname or Consultant/FirstName&quot;&gt;
+                    &lt;PV1.9.1&gt;
+                        &lt;xsl:value-of select=&quot;Consultant/Code&quot;/&gt;
+                    &lt;/PV1.9.1&gt;
+                    &lt;PV1.9.2&gt;
+                        &lt;xsl:value-of select=&quot;Consultant/Surname&quot;/&gt;
+                    &lt;/PV1.9.2&gt;
+                    &lt;PV1.9.3&gt;
+                        &lt;xsl:value-of select=&quot;Consultant/FirstName&quot;/&gt;
+                    &lt;/PV1.9.3&gt;
+                    &lt;!-- software ADT didn&apos;t have title so put this in an if to avoid unecessary separators --&gt;
+                    &lt;xsl:if test=&quot;Consultant/Title&quot;&gt;
+                        &lt;PV1.9.6&gt;
+                            &lt;xsl:value-of select=&quot;Consultant/Title&quot;/&gt;
+                        &lt;/PV1.9.6&gt;
+                    &lt;/xsl:if&gt;
+                &lt;/xsl:if&gt;
+            &lt;/PV1.9&gt;
+            &lt;!-- Hospital Service --&gt;
+            &lt;PV1.10&gt;
+                &lt;xsl:value-of select=&quot;Consultant/SpecialtyCode&quot;/&gt;
+            &lt;/PV1.10&gt;
+            &lt;!-- Admit Source --&gt;
+            &lt;PV1.14&gt;
+                &lt;xsl:value-of select=&quot;Admission/Source&quot;/&gt;
+            &lt;/PV1.14&gt;
+            &lt;!-- VIP Indicator --&gt;
+            &lt;PV1.16&gt;
+                &lt;xsl:value-of select=&quot;/Message/Content/Client/@flag&quot;/&gt;
+            &lt;/PV1.16&gt;
+            &lt;!-- Admitting Doctor --&gt;
+            &lt;xsl:if test=&quot;AdmittingDoctor/Surname or AdmittingDoctor/FirstName&quot;&gt;
+                &lt;PV1.17&gt;
+                    &lt;PV1.17.1&gt;
+                        &lt;xsl:value-of select=&quot;AdmittingDoctor/Code&quot;/&gt;
+                    &lt;/PV1.17.1&gt;
+                    &lt;PV1.17.2&gt;
+                        &lt;xsl:value-of select=&quot;AdmittingDoctor/Surname&quot;/&gt;
+                    &lt;/PV1.17.2&gt;
+                    &lt;PV1.17.3&gt;
+                        &lt;xsl:value-of select=&quot;AdmittingDoctor/FirstName&quot;/&gt;
+                    &lt;/PV1.17.3&gt;
+                    &lt;PV1.17.6&gt;
+                        &lt;xsl:value-of select=&quot;AdmittingDoctor/Title&quot;/&gt;
+                   &lt;/PV1.17.6&gt;
+                &lt;/PV1.17&gt;
+            &lt;/xsl:if&gt;
+            &lt;!-- Patient Type --&gt;
+            &lt;PV1.18&gt;
+                &lt;xsl:value-of select=&quot;AdministrativeCategory/@code&quot;/&gt;
+            &lt;/PV1.18&gt;
+            &lt;!-- Visit Number --&gt;
+            &lt;PV1.19&gt;
+                &lt;PV1.19.1&gt;
+                    &lt;xsl:value-of select=&quot;EventNumber&quot;/&gt;
+                &lt;/PV1.19.1&gt;
+                &lt;PV1.19.4&gt;
+                    &lt;xsl:value-of select=&quot;/Message/SenderInfo/SendingFacility&quot;/&gt;
+                &lt;/PV1.19.4&gt;
+                &lt;PV1.19.5&gt;CE&lt;/PV1.19.5&gt;
+            &lt;/PV1.19&gt;
+            &lt;!-- Discharge Disposition --&gt;
+            &lt;PV1.36&gt;
+                &lt;xsl:value-of select=&quot;Discharge/Method/@code&quot;/&gt;
+            &lt;/PV1.36&gt;
+            &lt;!-- Discharged to Location --&gt;
+            &lt;PV1.37&gt;
+                &lt;PV1.37.1&gt;
+                    &lt;xsl:value-of select=&quot;Discharge/Destination/@code&quot;/&gt;
+                &lt;/PV1.37.1&gt;
+            &lt;/PV1.37&gt;
+            &lt;xsl:if test=&quot;not(@type=&apos;planned&apos;)&quot;&gt;
+                &lt;!-- Admit Date/Time --&gt;
+                &lt;PV1.44&gt;
+                    &lt;xsl:call-template name=&quot;formatdatetime&quot;&gt;
+                        &lt;xsl:with-param name=&quot;datestr&quot; select=&quot;Admission/ActualDate&quot;/&gt;
+                    &lt;/xsl:call-template&gt;
+                &lt;/PV1.44&gt;
+                &lt;!-- Discharge Date/Time --&gt;
+                &lt;PV1.45&gt;
+                    &lt;xsl:call-template name=&quot;formatdatetime&quot;&gt;
+                        &lt;xsl:with-param name=&quot;datestr&quot; select=&quot;Discharge/ActualDate&quot;/&gt;
+                    &lt;/xsl:call-template&gt;
+                &lt;/PV1.45&gt;
+            &lt;/xsl:if&gt;
+            &lt;PV1.52/&gt;
+        &lt;/PV1&gt;
+        &lt;xsl:if test=&quot;Admission/PlannedDate or Discharge/PlannedDate&quot;&gt;
+            &lt;PV2&gt;
+                &lt;xsl:if test=&quot;@type=&apos;planned&apos;&quot;&gt;
+                    &lt;PV2.8&gt;
+                        &lt;xsl:call-template name=&quot;formatdatetime&quot;&gt;
+                            &lt;xsl:with-param name=&quot;datestr&quot; select=&quot;Admission/PlannedDate&quot;/&gt;
+                        &lt;/xsl:call-template&gt;
+                    &lt;/PV2.8&gt;
+                &lt;/xsl:if&gt;
+                &lt;PV2.9&gt;
+                    &lt;xsl:call-template name=&quot;formatdatetime&quot;&gt;
+                        &lt;xsl:with-param name=&quot;datestr&quot; select=&quot;Discharge/PlannedDate&quot;/&gt;
+                    &lt;/xsl:call-template&gt;
+                &lt;/PV2.9&gt;
+                &lt;PV2.47/&gt;
+            &lt;/PV2&gt;
+        &lt;/xsl:if&gt;
+    &lt;/xsl:template&gt;
+    &lt;xsl:template name=&quot;segment-PV1-Outpatient&quot;&gt;
+        &lt;PV1&gt;
+            &lt;!--Set ID - PV1--&gt;
+            &lt;PV1.1&gt;1&lt;/PV1.1&gt;
+            &lt;!--Patient Class--&gt;
+            &lt;PV1.2&gt;O&lt;/PV1.2&gt;
+            &lt;!--Assigned Patient Location--&gt;
+            &lt;PV1.3&gt;
+                &lt;xsl:choose&gt;
+                    &lt;xsl:when test=&quot;@ExtraADTLocInfo=1&quot;&gt;
+                        &lt;PV1.3.1&gt;
+                            &lt;xsl:value-of select=&quot;ClinicID&quot;/&gt;
+                        &lt;/PV1.3.1&gt;
+                        &lt;PV1.3.2&gt;
+                            &lt;xsl:value-of select=&quot;StreamSequenceID&quot;/&gt;
+                        &lt;/PV1.3.2&gt;
+                        &lt;PV1.3.3 /&gt;
+                        &lt;PV1.3.4&gt;
+                            &lt;xsl:value-of select=&quot;Location&quot;/&gt;
+                        &lt;/PV1.3.4&gt;
+                        &lt;PV1.3.9&gt;
+                            &lt;xsl:value-of select=&quot;LocationDescription&quot;/&gt;
+                        &lt;/PV1.3.9&gt;
+                    &lt;/xsl:when&gt;
+                    &lt;xsl:otherwise&gt;
+                        &lt;PV1.3.2&gt;
+                            &lt;xsl:value-of select=&quot;ClinicID&quot;/&gt;
+                        &lt;/PV1.3.2&gt;
+                        &lt;PV1.3.3 /&gt;
+                        &lt;PV1.3.4&gt;
+                            &lt;xsl:value-of select=&quot;/Message/SenderInfo/SendingFacility&quot;/&gt;
+                        &lt;/PV1.3.4&gt;
+                    &lt;/xsl:otherwise&gt;
+                &lt;/xsl:choose&gt;
+            &lt;/PV1.3&gt;
+            &lt;!--Consulting Doctor--&gt;
+            &lt;PV1.9&gt;
+                &lt;xsl:if test=&quot;Consultant/Surname or Consultant/FirstName&quot;&gt;
+                    &lt;PV1.9.1&gt;
+                        &lt;xsl:value-of select=&quot;Consultant/Code&quot;/&gt;
+                    &lt;/PV1.9.1&gt;
+                    &lt;PV1.9.2&gt;
+                        &lt;xsl:value-of select=&quot;Consultant/Surname&quot;/&gt;
+                    &lt;/PV1.9.2&gt;
+                    &lt;PV1.9.3&gt;
+                        &lt;xsl:value-of select=&quot;Consultant/FirstName&quot;/&gt;
+                    &lt;/PV1.9.3&gt;
+                    &lt;!-- software ADT didn&apos;t have title so put this in an if to avoid unecessary separators --&gt;
+                    &lt;xsl:if test=&quot;Consultant/Title&quot;&gt;
+                        &lt;PV1.9.6&gt;
+                            &lt;xsl:value-of select=&quot;Consultant/Title&quot;/&gt;
+                        &lt;/PV1.9.6&gt;
+                    &lt;/xsl:if&gt;
+                &lt;/xsl:if&gt;
+            &lt;/PV1.9&gt;
+            &lt;!-- VIP Indicator --&gt;
+            &lt;PV1.16&gt;
+                &lt;xsl:value-of select=&quot;/Message/Content/Client/@flag&quot;/&gt;
+            &lt;/PV1.16&gt;
+            &lt;!--Visit Number--&gt;
+            &lt;PV1.19&gt;
+                &lt;PV1.19.1&gt;
+                    &lt;xsl:value-of select=&quot;SequenceID&quot;/&gt;
+                &lt;/PV1.19.1&gt;
+                &lt;PV1.19.4&gt;
+                    &lt;xsl:value-of select=&quot;/Message/SenderInfo/SendingFacility&quot;/&gt;
+                &lt;/PV1.19.4&gt;
+                &lt;PV1.19.5&gt;CE&lt;/PV1.19.5&gt;
+            &lt;/PV1.19&gt;
+            &lt;!--Admit Date/Time--&gt;
+            &lt;PV1.44&gt;
+                &lt;xsl:call-template name=&quot;formatdatetime&quot;&gt;
+                    &lt;xsl:with-param name=&quot;datestr&quot; select=&quot;Date&quot;/&gt;
+                &lt;/xsl:call-template&gt;
+            &lt;/PV1.44&gt;
+            &lt;!--Other Healthcare Provider--&gt;
+            &lt;PV1.52 /&gt;
+        &lt;/PV1&gt;
+    &lt;/xsl:template&gt;
+    &lt;xsl:template name=&quot;segment-PV1-UrgentCare&quot;&gt;
+        &lt;PV1&gt;
+            &lt;!--Set ID - PV1--&gt;
+            &lt;PV1.1&gt;1&lt;/PV1.1&gt;
+            &lt;!--Patient Class--&gt;
+            &lt;PV1.2&gt;O&lt;/PV1.2&gt;
+            &lt;!--Assigned Patient Location--&gt;
+            &lt;PV1.3&gt;
+                &lt;xsl:choose&gt;
+                    &lt;xsl:when test=&quot;@ExtraADTLocInfo=1&quot;&gt;
+                        &lt;PV1.3.1&gt;
+                            &lt;xsl:value-of select=&quot;ClinicID&quot;/&gt;
+                        &lt;/PV1.3.1&gt;
+                        &lt;PV1.3.2&gt;
+                            &lt;xsl:value-of select=&quot;StreamSequenceID&quot;/&gt;
+                        &lt;/PV1.3.2&gt;
+                        &lt;PV1.3.3 /&gt;
+                        &lt;PV1.3.4&gt;
+                            &lt;xsl:value-of select=&quot;Location&quot;/&gt;
+                        &lt;/PV1.3.4&gt;
+                        &lt;PV1.3.9&gt;
+                            &lt;xsl:value-of select=&quot;LocationDescription&quot;/&gt;
+                        &lt;/PV1.3.9&gt;
+                    &lt;/xsl:when&gt;
+                    &lt;xsl:otherwise&gt;
+                        &lt;PV1.3.2&gt;
+                            &lt;xsl:value-of select=&quot;ClinicID&quot;/&gt;
+                        &lt;/PV1.3.2&gt;
+                        &lt;PV1.3.3 /&gt;
+                        &lt;PV1.3.4&gt;
+                            &lt;xsl:value-of select=&quot;/Message/SenderInfo/SendingFacility&quot;/&gt;
+                        &lt;/PV1.3.4&gt;
+                    &lt;/xsl:otherwise&gt;
+                &lt;/xsl:choose&gt;
+            &lt;/PV1.3&gt;
+            &lt;!--Consulting Doctor--&gt;
+            &lt;PV1.9&gt;
+                &lt;xsl:if test=&quot;Consultant/Surname or Consultant/FirstName&quot;&gt;
+                    &lt;PV1.9.1&gt;
+                        &lt;xsl:value-of select=&quot;Consultant/Code&quot;/&gt;
+                    &lt;/PV1.9.1&gt;
+                    &lt;PV1.9.2&gt;
+                        &lt;xsl:value-of select=&quot;Consultant/Surname&quot;/&gt;
+                    &lt;/PV1.9.2&gt;
+                    &lt;PV1.9.3&gt;
+                        &lt;xsl:value-of select=&quot;Consultant/FirstName&quot;/&gt;
+                    &lt;/PV1.9.3&gt;
+                    &lt;!-- software ADT didn&apos;t have title so put this in an if to avoid unecessary separators --&gt;
+                    &lt;xsl:if test=&quot;Consultant/Title&quot;&gt;
+                        &lt;PV1.9.6&gt;
+                            &lt;xsl:value-of select=&quot;Consultant/Title&quot;/&gt;
+                        &lt;/PV1.9.6&gt;
+                    &lt;/xsl:if&gt;
+                &lt;/xsl:if&gt;
+            &lt;/PV1.9&gt;
+            &lt;!-- VIP Indicator --&gt;
+            &lt;PV1.16&gt;
+                &lt;xsl:value-of select=&quot;/Message/Content/Client/@flag&quot;/&gt;
+            &lt;/PV1.16&gt;
+            &lt;!--Visit Number--&gt;
+            &lt;PV1.19&gt;
+                &lt;PV1.19.1&gt;
+                    &lt;xsl:value-of select=&quot;SequenceID&quot;/&gt;
+                &lt;/PV1.19.1&gt;
+                &lt;PV1.19.4&gt;
+                    &lt;xsl:value-of select=&quot;/Message/SenderInfo/SendingFacility&quot;/&gt;
+                &lt;/PV1.19.4&gt;
+                &lt;PV1.19.5&gt;CE&lt;/PV1.19.5&gt;
+            &lt;/PV1.19&gt;
+            &lt;!--Admit Date/Time--&gt;
+            &lt;PV1.44&gt;
+                &lt;xsl:call-template name=&quot;formatdatetime&quot;&gt;
+                    &lt;xsl:with-param name=&quot;datestr&quot; select=&quot;Date&quot;/&gt;
+                &lt;/xsl:call-template&gt;
+            &lt;/PV1.44&gt;
+            &lt;!--Other Healthcare Provider--&gt;
+            &lt;PV1.52 /&gt;
+        &lt;/PV1&gt;
+    &lt;/xsl:template&gt;
+    &lt;xsl:template name=&quot;segment-AL1&quot;&gt;
+        &lt;AL1&gt;
+            &lt;AL1.1&gt;
+                &lt;xsl:value-of select=&quot;position()&quot;/&gt;
+            &lt;/AL1.1&gt;
+            &lt;AL1.2&gt;
+                &lt;AL1.2.1&gt;MA&lt;/AL1.2.1&gt;
+            &lt;/AL1.2&gt;
+            &lt;AL1.3&gt;
+                &lt;xsl:choose&gt;
+                    &lt;xsl:when test=&quot;$mode = &apos;ENHANCED&apos;&quot;&gt;
+		              &lt;AL1.3.1&gt;&lt;xsl:value-of select=&quot;Substance/@code&quot;/&gt;&lt;/AL1.3.1&gt;
+		              &lt;AL1.3.2&gt;&lt;xsl:value-of select=&quot;Substance&quot;/&gt;&lt;/AL1.3.2&gt;
+		              &lt;AL1.3.3&gt;&lt;xsl:value-of select=&quot;Substance/@codingScheme&quot;/&gt;&lt;/AL1.3.3&gt;
+		              &lt;xsl:if test=&quot;Substance/@altCode&quot;&gt;
+			             &lt;AL1.3.4&gt;&lt;xsl:value-of select=&quot;Substance/@altCode&quot;/&gt;&lt;/AL1.3.4&gt;
+			             &lt;AL1.3.6&gt;&lt;xsl:value-of select=&quot;Substance/@altCodingScheme&quot;/&gt;&lt;/AL1.3.6&gt;
+			         &lt;/xsl:if&gt;
+                    &lt;/xsl:when&gt;
+                    &lt;xsl:otherwise&gt;            
+		              &lt;xsl:value-of select=&quot;Substance&quot;/&gt;
+                    &lt;/xsl:otherwise&gt;
+                &lt;/xsl:choose&gt;
+            &lt;/AL1.3&gt;
+            &lt;AL1.4&gt;
+                &lt;AL1.4.1&gt;
+                    &lt;xsl:value-of select=&quot;Reaction/@severity&quot;/&gt;
+                &lt;/AL1.4.1&gt;
+            &lt;/AL1.4&gt;
+            &lt;AL1.5&gt;
+                &lt;xsl:value-of select=&quot;Reaction&quot;/&gt;
+            &lt;/AL1.5&gt;
+            &lt;AL1.6&gt;
+                &lt;xsl:value-of select=&quot;YearOfIdentification&quot;/&gt;
+            &lt;/AL1.6&gt;
+        &lt;/AL1&gt;
+        &lt;xsl:if test=&quot;AdditionalInfo&quot;&gt;
+            &lt;ZAL&gt;
+            	&lt;ZAL.1&gt;
+               	&lt;xsl:value-of select=&quot;position()&quot;/&gt;
+            	&lt;/ZAL.1&gt;
+                &lt;!-- Action Code --&gt;
+                &lt;ZAL.2&gt;
+                    &lt;xsl:value-of select=&quot;AdditionalInfo/ActionCode&quot;/&gt;
+                &lt;/ZAL.2&gt;
+                &lt;!-- Activate Date Time --&gt;
+                &lt;ZAL.3&gt;
+                    &lt;xsl:call-template name=&quot;formatdatetime&quot;&gt;
+                        &lt;xsl:with-param name=&quot;datestr&quot; select=&quot;AdditionalInfo/ActivateDateTime&quot;/&gt;
+                    &lt;/xsl:call-template&gt;
+                &lt;/ZAL.3&gt;
+                &lt;!-- Source of Information --&gt;
+                &lt;ZAL.8&gt;
+                    &lt;ZAL.8.1&gt;
+                        &lt;xsl:value-of select=&quot;AdditionalInfo/SourceOfInformation/IDNumber&quot;/&gt;
+                    &lt;/ZAL.8.1&gt;
+                    &lt;ZAL.8.2&gt;
+                        &lt;xsl:value-of select=&quot;AdditionalInfo/SourceOfInformation/FamilyName&quot;/&gt;
+                    &lt;/ZAL.8.2&gt;
+                    &lt;ZAL.8.3&gt;
+                        &lt;xsl:value-of select=&quot;AdditionalInfo/SourceOfInformation/GivenName&quot;/&gt;
+                    &lt;/ZAL.8.3&gt;
+                &lt;/ZAL.8&gt;
+                &lt;xsl:if test=&quot;AdditionalInfo/CancelReasonCode&quot;&gt;
+                    &lt;!-- Cancel Reason --&gt;
+                    &lt;ZAL.9&gt;
+                        &lt;xsl:value-of select=&quot;AdditionalInfo/CancelReasonCode&quot;/&gt;
+                    &lt;/ZAL.9&gt;
+                    &lt;!-- Cancel Reason Personnel --&gt;
+                    &lt;ZAL.10&gt;
+                        &lt;ZAL.10.1&gt;
+                            &lt;xsl:value-of select=&quot;AdditionalInfo/CancelReasonPersonnel/IDNumber&quot;/&gt;
+                        &lt;/ZAL.10.1&gt;
+                        &lt;ZAL.10.2&gt;
+                            &lt;xsl:value-of select=&quot;AdditionalInfo/CancelReasonPersonnel/FamilyName&quot;/&gt;
+                        &lt;/ZAL.10.2&gt;
+                        &lt;ZAL.10.3&gt;
+                            &lt;xsl:value-of select=&quot;AdditionalInfo/CancelReasonPersonnel/GivenName&quot;/&gt;
+                        &lt;/ZAL.10.3&gt;
+                    &lt;/ZAL.10&gt;
+                &lt;/xsl:if&gt;
+            &lt;/ZAL&gt;
+        &lt;/xsl:if&gt;
+    &lt;/xsl:template&gt;
+    &lt;xsl:template name=&quot;segment-MRG&quot;&gt;
+        &lt;MRG&gt;
+            &lt;xsl:if test=&quot;NNN&quot;&gt;
+                &lt;MRG.1&gt;
+                    &lt;MRG.1.1&gt;
+                        &lt;xsl:value-of select=&quot;NNN&quot;/&gt;
+                    &lt;/MRG.1.1&gt;
+                    &lt;MRG.1.4&gt;NHS&lt;/MRG.1.4&gt;
+                    &lt;MRG.1.5&gt;
+                        &lt;xsl:value-of select=&quot;NNNTypeCode&quot;/&gt;
+                    &lt;/MRG.1.5&gt;
+                &lt;/MRG.1&gt;
+            &lt;/xsl:if&gt;
+            &lt;MRG.1&gt;
+                &lt;MRG.1.1&gt;
+                    &lt;xsl:value-of select=&quot;ClientID&quot;/&gt;
+                &lt;/MRG.1.1&gt;
+                &lt;MRG.1.4&gt;MRN&lt;/MRG.1.4&gt;
+                &lt;MRG.1.5&gt;
+                    &lt;xsl:value-of select=&quot;ClientIdTypeCode&quot;/&gt;
+                &lt;/MRG.1.5&gt;
+            &lt;/MRG.1&gt;
+            &lt;MRG.7/&gt;
+        &lt;/MRG&gt;
+    &lt;/xsl:template&gt;
+    &lt;xsl:template name=&quot;segment-ORC&quot;&gt;
+        &lt;ORC&gt;
+            &lt;!-- Order Control --&gt;
+            &lt;ORC.1&gt;
+                &lt;xsl:value-of select=&quot;OrderControl&quot;/&gt;
+            &lt;/ORC.1&gt;
+            &lt;!-- Placer Order Number --&gt;
+            &lt;ORC.2&gt;
+                &lt;ORC.2.1&gt;
+                    &lt;xsl:value-of select=&quot;PlacerOrderNumber&quot;/&gt;
+                &lt;/ORC.2.1&gt;
+                &lt;ORC.2.2&gt;RiO&lt;/ORC.2.2&gt;
+            &lt;/ORC.2&gt;
+            &lt;!-- Filler Order Number --&gt;
+            &lt;ORC.3&gt;
+                &lt;ORC.3.1&gt;
+                    &lt;xsl:value-of select=&quot;FillerOrderNumber&quot;/&gt;
+                &lt;/ORC.3.1&gt;
+            &lt;/ORC.3&gt;
+            &lt;!-- Placer Group Number --&gt;
+            &lt;ORC.4&gt;
+                &lt;xsl:value-of select=&quot;PlacerGroupNumber&quot;/&gt;
+            &lt;/ORC.4&gt;
+            &lt;!-- Order Status --&gt;
+            &lt;ORC.5&gt;
+                &lt;xsl:value-of select=&quot;OrderControl&quot;/&gt;
+            &lt;/ORC.5&gt;
+            &lt;!-- Date Time of Transaction --&gt;
+            &lt;ORC.9&gt;
+                &lt;xsl:call-template name=&quot;formatdatetime&quot;&gt;
+					&lt;xsl:with-param name=&quot;datestr&quot; select=&quot;TransactionDateTime&quot;/&gt;
+                &lt;/xsl:call-template&gt;
+            &lt;/ORC.9&gt;
+            &lt;!-- Entered By --&gt;
+            &lt;ORC.10&gt;
+                &lt;ORC.10.1&gt;
+                    &lt;xsl:value-of select=&quot;EnteredBy/UserId&quot;/&gt;
+                &lt;/ORC.10.1&gt;
+                &lt;ORC.10.2&gt;
+                    &lt;xsl:value-of select=&quot;EnteredBy/Surname&quot;/&gt;
+                &lt;/ORC.10.2&gt;
+                &lt;ORC.10.3&gt;
+                    &lt;xsl:value-of select=&quot;EnteredBy/FirstName&quot;/&gt;
+                &lt;/ORC.10.3&gt;
+                &lt;ORC.10.9&gt;
+                    &lt;xsl:value-of select=&quot;EnteredBy/AssigningAuthority&quot;/&gt;
+                &lt;/ORC.10.9&gt;
+            &lt;/ORC.10&gt;
+            &lt;!-- Authorised By --&gt;
+            &lt;ORC.11&gt;
+                &lt;ORC.11.1&gt;
+                    &lt;xsl:value-of select=&quot;AuthorisedBy/UserId&quot;/&gt;
+                &lt;/ORC.11.1&gt;
+                &lt;ORC.11.2&gt;
+                    &lt;xsl:value-of select=&quot;AuthorisedBy/Surname&quot;/&gt;
+                &lt;/ORC.11.2&gt;
+                &lt;ORC.11.3&gt;
+                    &lt;xsl:value-of select=&quot;AuthorisedBy/FirstName&quot;/&gt;
+                &lt;/ORC.11.3&gt;
+                &lt;ORC.11.9&gt;
+                    &lt;xsl:value-of select=&quot;AuthorisedBy/AssigningAuthority&quot;/&gt;
+                &lt;/ORC.11.9&gt;
+            &lt;/ORC.11&gt;
+            &lt;!-- Ordering Provider --&gt;
+            &lt;ORC.12&gt;
+                &lt;ORC.12.1&gt;
+                    &lt;xsl:value-of select=&quot;OrderingProvider/UserId&quot;/&gt;
+                &lt;/ORC.12.1&gt;
+                &lt;ORC.12.2&gt;
+                    &lt;xsl:value-of select=&quot;OrderingProvider/Surname&quot;/&gt;
+                &lt;/ORC.12.2&gt;
+                &lt;ORC.12.3&gt;
+                    &lt;xsl:value-of select=&quot;OrderingProvider/FirstName&quot;/&gt;
+                &lt;/ORC.12.3&gt;
+                &lt;ORC.12.9&gt;
+                    &lt;xsl:value-of select=&quot;OrderingProvider/AssigningAuthority&quot;/&gt;
+                &lt;/ORC.12.9&gt;
+            &lt;/ORC.12&gt;
+            &lt;!-- Order Control Code Reason --&gt;
+            &lt;ORC.16&gt;
+            	&lt;xsl:if test=&quot;OrderControlCode != &apos;&apos;&quot;&gt;
+	            	&lt;ORC.16.1&gt;
+	                    &lt;xsl:value-of select=&quot;OrderControlCode/@NationalCode&quot;/&gt;
+	               &lt;/ORC.16.1&gt;
+	            	&lt;ORC.16.2&gt;
+	                    &lt;xsl:value-of select=&quot;OrderControlCode&quot;/&gt;
+	               &lt;/ORC.16.2&gt;
+	           &lt;/xsl:if&gt;
+            &lt;/ORC.16&gt;
+            &lt;!-- Action By --&gt;
+            &lt;ORC.19&gt;
+                &lt;ORC.19.1&gt;
+                    &lt;xsl:value-of select=&quot;ActionBy/UserId&quot;/&gt;
+                &lt;/ORC.19.1&gt;
+                &lt;ORC.19.2&gt;
+                    &lt;xsl:value-of select=&quot;ActionBy/Surname&quot;/&gt;
+                &lt;/ORC.19.2&gt;
+                &lt;ORC.19.3&gt;
+                    &lt;xsl:value-of select=&quot;ActionBy/FirstName&quot;/&gt;
+                &lt;/ORC.19.3&gt;
+                &lt;ORC.19.9&gt;
+                    &lt;xsl:value-of select=&quot;ActionBy/AssigningAuthority&quot;/&gt;
+                &lt;/ORC.19.9&gt;
+            &lt;/ORC.19&gt;
+            &lt;ORC.25/&gt;
+        &lt;/ORC&gt;
+    &lt;/xsl:template&gt;
+    &lt;xsl:template name=&quot;segment-OBR&quot;&gt;
+        &lt;OBR&gt;
+            &lt;!-- Set ID - OBR --&gt;
+            &lt;OBR.1&gt;
+                &lt;xsl:value-of select=&quot;position()&quot;/&gt;
+            &lt;/OBR.1&gt;
+            &lt;!-- Placer Order Number --&gt;
+            &lt;OBR.2&gt;
+                &lt;OBR.2.1&gt;
+                    &lt;xsl:value-of select=&quot;PlacerOrderNumber&quot;/&gt;
+                &lt;/OBR.2.1&gt;
+                &lt;OBR.2.2&gt;RiO&lt;/OBR.2.2&gt;
+            &lt;/OBR.2&gt;
+            &lt;!-- Filler Order Number --&gt;
+            &lt;OBR.3&gt;
+                &lt;OBR.3.1&gt;
+                    &lt;xsl:value-of select=&quot;FillerOrderNumber&quot;/&gt;
+                &lt;/OBR.3.1&gt;
+            &lt;/OBR.3&gt;
+            &lt;!-- Universal Service ID --&gt;
+            &lt;OBR.4&gt;
+                &lt;OBR.4.1&gt;
+                    &lt;xsl:value-of select=&quot;UniversalServiceID/@Identifier&quot;/&gt;
+                &lt;/OBR.4.1&gt;
+                &lt;OBR.4.2&gt;
+                    &lt;xsl:value-of select=&quot;UniversalServiceID/@Description&quot;/&gt;
+                &lt;/OBR.4.2&gt;
+                &lt;OBR.4.3&gt;
+                    &lt;xsl:value-of select=&quot;UniversalServiceID/@CodingSystem&quot;/&gt;
+                &lt;/OBR.4.3&gt;
+                &lt;OBR.4.4&gt;
+                    &lt;xsl:value-of select=&quot;UniversalServiceID/@AlternativeId&quot;/&gt;
+                &lt;/OBR.4.4&gt;
+                &lt;OBR.4.5&gt;
+                    &lt;xsl:value-of select=&quot;UniversalServiceID/@AlternativeText&quot;/&gt;
+                &lt;/OBR.4.5&gt;
+                &lt;OBR.4.6&gt;
+                    &lt;xsl:value-of select=&quot;UniversalServiceID/@AlternateCodingScheme&quot;/&gt;
+                &lt;/OBR.4.6&gt;
+            &lt;/OBR.4&gt;
+            &lt;!-- Observation Date/Time --&gt;
+            &lt;OBR.7&gt;
+                &lt;xsl:call-template name=&quot;formatdatetime&quot;&gt;
+                    &lt;xsl:with-param name=&quot;datestr&quot; select=&quot;ObservationDateTime&quot;/&gt;
+                &lt;/xsl:call-template&gt;
+            &lt;/OBR.7&gt;
+            &lt;!-- Collection Volume --&gt;
+            &lt;OBR.9&gt;
+                &lt;OBR.9.1&gt;
+                    &lt;xsl:value-of select=&quot;CollectionVolume/Quantity&quot;/&gt;
+                &lt;/OBR.9.1&gt;
+                &lt;OBR.9.2&gt;
+                    &lt;xsl:value-of select=&quot;CollectionVolume/Units&quot;/&gt;
+                &lt;/OBR.9.2&gt;
+            &lt;/OBR.9&gt;
+            &lt;!-- Collector Identifier --&gt;
+            &lt;OBR.10&gt;
+                &lt;OBR.10.1&gt;
+                    &lt;xsl:value-of select=&quot;CollectorIdentifier/@IdNumber&quot;/&gt;
+                &lt;/OBR.10.1&gt;
+                &lt;OBR.10.2&gt;
+                    &lt;xsl:value-of select=&quot;CollectorIdentifier/@FamilyName&quot;/&gt;
+                &lt;/OBR.10.2&gt;
+                &lt;OBR.10.3&gt;
+                    &lt;xsl:value-of select=&quot;CollectorIdentifier/@GivenName&quot;/&gt;
+                &lt;/OBR.10.3&gt;
+                &lt;OBR.10.9&gt;
+                    &lt;xsl:value-of select=&quot;CollectorIdentifier/@AssigningAuthority&quot;/&gt;
+                &lt;/OBR.10.9&gt;
+            &lt;/OBR.10&gt;
+            &lt;!-- Specimen Received Date/Time --&gt;
+            &lt;OBR.14&gt;
+                &lt;xsl:call-template name=&quot;formatdatetime&quot;&gt;
+                    &lt;xsl:with-param name=&quot;datestr&quot; select=&quot;SpecimenRecievedDateTime&quot;/&gt;
+                &lt;/xsl:call-template&gt;
+            &lt;/OBR.14&gt;
+            &lt;!-- Specimen Source --&gt;
+            &lt;OBR.15&gt;
+                &lt;OBR.15.1.1&gt;
+                    &lt;xsl:value-of select=&quot;SpecimenSource/@SpecimenSourceCode&quot;/&gt;
+                &lt;/OBR.15.1.1&gt;
+                &lt;OBR.15.1.2&gt;
+                    &lt;xsl:value-of select=&quot;SpecimenSource/@SourceDescription&quot;/&gt;
+                &lt;/OBR.15.1.2&gt;
+                &lt;OBR.15.1.3&gt;
+                    &lt;xsl:value-of select=&quot;SpecimenSource/@CodingSystem&quot;/&gt;
+                &lt;/OBR.15.1.3&gt;
+                &lt;OBR.15.4.1&gt;
+                    &lt;xsl:value-of select=&quot;SpecimenSource/BodySite/@Identifier&quot;/&gt;
+                &lt;/OBR.15.4.1&gt;
+                &lt;OBR.15.4.2&gt;
+                    &lt;xsl:value-of select=&quot;SpecimenSource/BodySite/@Description&quot;/&gt;
+                &lt;/OBR.15.4.2&gt;
+                &lt;OBR.15.4.3&gt;
+                    &lt;xsl:value-of select=&quot;SpecimenSource/BodySite/@CodingSystem&quot;/&gt;
+                &lt;/OBR.15.4.3&gt;
+                &lt;OBR.15.5.1&gt;
+                    &lt;xsl:value-of select=&quot;SpecimenSource/Laterality/@Identifier&quot;/&gt;
+                &lt;/OBR.15.5.1&gt;
+                &lt;OBR.15.5.2&gt;
+                    &lt;xsl:value-of select=&quot;SpecimenSource/Laterality/@Description&quot;/&gt;
+                &lt;/OBR.15.5.2&gt;
+                &lt;OBR.15.5.3&gt;
+                    &lt;xsl:value-of select=&quot;SpecimenSource/Laterality/@CodingSystem&quot;/&gt;
+                &lt;/OBR.15.5.3&gt;
+                &lt;OBR.15.6.1&gt;
+                    &lt;xsl:value-of select=&quot;SpecimenSource/CollectionMethod/@Code&quot;/&gt;
+                &lt;/OBR.15.6.1&gt;
+                &lt;OBR.15.6.2&gt;
+                    &lt;xsl:value-of select=&quot;SpecimenSource/CollectionMethod/@Description&quot;/&gt;
+                &lt;/OBR.15.6.2&gt;
+                &lt;OBR.15.6.3&gt;
+                    &lt;xsl:value-of select=&quot;SpecimenSource/CollectionMethod/@CodingSystem&quot;/&gt;
+                &lt;/OBR.15.6.3&gt;
+            &lt;/OBR.15&gt;
+			&lt;!-- Specimen Container Id --&gt;
+            &lt;OBR.18&gt;
+				&lt;xsl:value-of select=&quot;SpecimenContainerId&quot;/&gt;
+            &lt;/OBR.18&gt;
+            &lt;!-- Quantity/Timing --&gt;
+            &lt;OBR.27&gt;
+                &lt;OBR.27.4&gt;
+                    &lt;xsl:call-template name=&quot;formatdatetime&quot;&gt;
+                        &lt;xsl:with-param name=&quot;datestr&quot; select=&quot;QuantityTiming/StartDateTime&quot;/&gt;
+                    &lt;/xsl:call-template&gt;
+                &lt;/OBR.27.4&gt;
+                &lt;OBR.27.6&gt;
+                    &lt;xsl:value-of select=&quot;QuantityTiming/Priority&quot;/&gt;
+                &lt;/OBR.27.6&gt;
+            &lt;/OBR.27&gt;
+            &lt;!-- Result Copies To --&gt;
+            &lt;OBR.28&gt;
+                &lt;xsl:value-of select=&quot;ResultCopiesTo&quot;/&gt;
+            &lt;/OBR.28&gt;
+            &lt;!-- Reason for Study --&gt;
+            &lt;OBR.31&gt;
+                &lt;OBR.31.2&gt;
+                    &lt;xsl:value-of select=&quot;ReasonForStudy&quot;/&gt;
+                &lt;/OBR.31.2&gt;
+            &lt;/OBR.31&gt;
+            &lt;!-- Scheduled Date/Time --&gt;
+            &lt;OBR.36&gt;
+                &lt;xsl:call-template name=&quot;formatdatetime&quot;&gt;
+                    &lt;xsl:with-param name=&quot;datestr&quot; select=&quot;ScheduledDateTime&quot;/&gt;
+                &lt;/xsl:call-template&gt;
+            &lt;/OBR.36&gt;
+            &lt;OBR.47/&gt;
+        &lt;/OBR&gt;
+    &lt;/xsl:template&gt;
+    &lt;xsl:template name=&quot;segment-OBX&quot;&gt;
+        &lt;OBX&gt;
+            &lt;!-- Set ID --&gt;
+            &lt;OBX.1&gt;
+                &lt;xsl:value-of select=&quot;position()&quot;/&gt;
+            &lt;/OBX.1&gt;
+            &lt;!-- Value type --&gt;
+            &lt;OBX.2&gt;
+                &lt;xsl:value-of select=&quot;ObservationType&quot;/&gt;
+            &lt;/OBX.2&gt;
+            &lt;!-- Observation Identifier --&gt;
+            &lt;OBX.3&gt;
+                &lt;OBX.3.1&gt;
+                    &lt;xsl:value-of select=&quot;ObservationIdentifier/Code&quot;/&gt;
+                &lt;/OBX.3.1&gt;
+                &lt;OBX.3.2&gt;
+                    &lt;xsl:value-of select=&quot;ObservationIdentifier/Text&quot;/&gt;
+                &lt;/OBX.3.2&gt;
+                &lt;OBX.3.3&gt;
+                    &lt;xsl:value-of select=&quot;ObservationIdentifier/CodingSystem&quot;/&gt;
+                &lt;/OBX.3.3&gt;
+            &lt;/OBX.3&gt;
+            &lt;!-- Observation Value --&gt;
+            &lt;OBX.5&gt;
+                &lt;xsl:value-of select=&quot;ObservationValue&quot;/&gt;
+            &lt;/OBX.5&gt;
+            &lt;OBX.19/&gt;
+        &lt;/OBX&gt;
+    &lt;/xsl:template&gt;
+    &lt;xsl:template name=&quot;segment-ZU1&quot;&gt;
+        &lt;ZU1&gt;
+            &lt;!-- DecisionToAdmitDate --&gt;
+            &lt;ZU1.1&gt;
+                &lt;xsl:call-template name=&quot;formatdatetime&quot;&gt;
+                    &lt;xsl:with-param name=&quot;datestr&quot; select=&quot;DecideToAdmitDate&quot;/&gt;
+                &lt;/xsl:call-template&gt;
+            &lt;/ZU1.1&gt;
+            &lt;!-- IntendedManagement --&gt;
+            &lt;ZU1.2&gt;
+                &lt;xsl:value-of select=&quot;IntendedManagement/@code&quot;/&gt;
+            &lt;/ZU1.2&gt;
+            &lt;!-- CodingStatus --&gt;
+            &lt;ZU1.3/&gt;
+            &lt;!-- ConsultantEpisodeStartDate --&gt;
+            &lt;ZU1.4&gt;
+                &lt;xsl:call-template name=&quot;formatdatetime&quot;&gt;
+                    &lt;xsl:with-param name=&quot;datestr&quot; select=&quot;ConsultantEpisode/StartDateTime&quot;/&gt;
+                &lt;/xsl:call-template&gt;
+            &lt;/ZU1.4&gt;
+            &lt;!--- ConsultantEpisodeEndDate --&gt;
+            &lt;ZU1.5&gt;
+                &lt;xsl:call-template name=&quot;formatdatetime&quot;&gt;
+                    &lt;xsl:with-param name=&quot;datestr&quot; select=&quot;ConsultantEpisode/EndDateTime&quot;/&gt;
+                &lt;/xsl:call-template&gt;
+            &lt;/ZU1.5&gt;
+            &lt;!-- ConsultantMainSpecialty --&gt;
+            &lt;ZU1.6&gt;
+                &lt;ZU1.6.1&gt;
+                    &lt;xsl:value-of select=&quot;ConsultantEpisode/SpecialtyCode&quot;/&gt;
+                &lt;/ZU1.6.1&gt;
+            &lt;/ZU1.6&gt;
+            &lt;!-- ReferralSource --&gt;
+            &lt;ZU1.13&gt;
+                &lt;ZU1.13.1&gt;
+                    &lt;xsl:value-of select=&quot;ReferralSource/@code&quot;/&gt;
+                &lt;/ZU1.13.1&gt;
+                &lt;!-- description in the XML but not in the software ADT implementation so leave it out --&gt;
+                &lt;!--
+                &lt;ZU1.13.2&gt;&lt;xsl:value-of select=&quot;ReferralSource&quot;/&gt;&lt;/ZU1.13.2&gt;
+                --&gt;
+            &lt;/ZU1.13&gt;
+            &lt;!-- ReferralReceivedDate --&gt;
+            &lt;ZU1.15&gt;
+                &lt;xsl:call-template name=&quot;formatdatetime&quot;&gt;
+                    &lt;xsl:with-param name=&quot;datestr&quot; select=&quot;Referral/ReferralReceivedDate&quot;/&gt;
+                &lt;/xsl:call-template&gt;
+            &lt;/ZU1.15&gt;
+            &lt;!-- ReferralDate --&gt;
+            &lt;ZU1.16&gt;
+                &lt;xsl:call-template name=&quot;formatdatetime&quot;&gt;
+                    &lt;xsl:with-param name=&quot;datestr&quot; select=&quot;Referral/ReferralDateTime&quot;/&gt;
+                &lt;/xsl:call-template&gt;
+            &lt;/ZU1.16&gt;
+            &lt;!-- FirstRegularAdmission --&gt;
+            &lt;ZU1.19&gt;
+                &lt;ZU1.19.1&gt;
+                    &lt;xsl:if test=&quot;FirstInSeries&quot;&gt;
+                        &lt;xsl:choose&gt;
+                            &lt;xsl:when test=&quot;FirstInSeries = 1&quot;&gt;0&lt;/xsl:when&gt;
+                            &lt;xsl:otherwise&gt;1&lt;/xsl:otherwise&gt;
+                        &lt;/xsl:choose&gt;
+                    &lt;/xsl:if&gt;
+                &lt;/ZU1.19.1&gt;
+            &lt;/ZU1.19&gt;
+            &lt;!-- PsychiatricAdmissionStatus --&gt;
+            &lt;ZU1.20&gt;
+                &lt;ZU1.20.1&gt;
+                    &lt;xsl:value-of select=&quot;PsychiatricStatus&quot;/&gt;
+                &lt;/ZU1.20.1&gt;
+            &lt;/ZU1.20&gt;
+            &lt;!-- ReadyForDischarge --&gt;
+            &lt;ZU1.24&gt;
+                &lt;xsl:call-template name=&quot;formatdatetime&quot;&gt;
+                    &lt;xsl:with-param name=&quot;datestr&quot; select=&quot;DischargeReadyDate&quot;/&gt;
+                &lt;/xsl:call-template&gt;
+            &lt;/ZU1.24&gt;
+            &lt;ZU1.27/&gt;
+        &lt;/ZU1&gt;
+    &lt;/xsl:template&gt;
+    &lt;xsl:template name=&quot;segment-ZU3&quot;&gt;
+        &lt;ZU3&gt;
+            &lt;!-- LocationType --&gt;
+            &lt;ZU3.1&gt;
+                &lt;xsl:value-of select=&quot;LocationType&quot;/&gt;
+            &lt;/ZU3.1&gt;
+            &lt;!-- MedicalStaffType --&gt;
+            &lt;ZU3.2&gt;4&lt;/ZU3.2&gt;
+            &lt;!-- AttendedOrDNA --&gt;
+            &lt;ZU3.3&gt;
+                &lt;xsl:value-of select=&quot;Outcome&quot;/&gt;
+            &lt;/ZU3.3&gt;
+            &lt;!-- AppointmentType --&gt;
+            &lt;ZU3.8&gt;
+                &lt;xsl:value-of select=&quot;AppointmentType&quot;/&gt;
+            &lt;/ZU3.8&gt;
+            &lt;!-- Cancelled By --&gt;
+            &lt;ZU3.13&gt;
+                &lt;xsl:value-of select=&quot;CancellationBy&quot;/&gt;
+            &lt;/ZU3.13&gt;
+            &lt;ZU3.14 /&gt;
+        &lt;/ZU3&gt;
+    &lt;/xsl:template&gt;
+    &lt;xsl:template name=&quot;segment-ZU5&quot;&gt;
+        &lt;ZU5&gt;
+            &lt;ZU5.1&gt;
+                &lt;xsl:value-of select=&quot;substring(/Message/Sent, 1, 4)&quot;/&gt;
+            &lt;/ZU5.1&gt;
+            &lt;ZU5.2&gt;
+                &lt;xsl:value-of select=&quot;LegalStatus&quot;/&gt;
+            &lt;/ZU5.2&gt;
+            &lt;ZU5.3 /&gt;
+            &lt;ZU5.4&gt;
+                &lt;xsl:value-of select=&quot;MentalCategory&quot;/&gt;
+            &lt;/ZU5.4&gt;
+            &lt;ZU5.5&gt;
+                &lt;xsl:call-template name=&quot;formatdatetime&quot;&gt;
+                    &lt;xsl:with-param name=&quot;datestr&quot; select=&quot;AdmissionDate&quot;/&gt;
+                &lt;/xsl:call-template&gt;
+            &lt;/ZU5.5&gt;
+            &lt;ZU5.6 /&gt;
+        &lt;/ZU5&gt;
+    &lt;/xsl:template&gt;
+    &lt;xsl:template name=&quot;segment-ZU8&quot;&gt;
+        &lt;ZU8&gt;
+            &lt;ZU8.1&gt;
+                &lt;!-- sexual orientation - always set to &apos;U&apos; because in hard coded ADT messages there was no way to support this--&gt;
+                &lt;ZU8.1.1&gt;U&lt;/ZU8.1.1&gt;
+            &lt;/ZU8.1&gt;
+            &lt;ZU8.2&gt;
+                &lt;!-- DCR Consent --&gt;
+                &lt;ZU8.2.1&gt;
+                    &lt;xsl:choose&gt;
+                        &lt;xsl:when test=&quot;Consent = &apos;0&apos;&quot;&gt;1&lt;/xsl:when&gt;
+                        &lt;xsl:when test=&quot;Consent = &apos;1&apos;&quot;&gt;2&lt;/xsl:when&gt;
+                        &lt;xsl:when test=&quot;not(Consent)&quot;&gt;3&lt;/xsl:when&gt;
+                    &lt;/xsl:choose&gt;
+                &lt;/ZU8.2.1&gt;
+            &lt;/ZU8.2&gt;
+            &lt;!-- SCR Consent --&gt;
+            &lt;ZU8.3/&gt;
+            &lt;ZU8.4&gt;
+                &lt;!-- Location Hiding, fixed to 2 --&gt;
+                &lt;ZU8.4.1&gt;2&lt;/ZU8.4.1&gt;
+            &lt;/ZU8.4&gt;
+        &lt;/ZU8&gt;
+    &lt;/xsl:template&gt;
+    &lt;xsl:template name=&quot;segment-ZCT&quot;&gt;
+        &lt;ZCT&gt;
+            &lt;!-- Set ID --&gt;
+            &lt;ZCT.1&gt;
+                &lt;xsl:value-of select=&quot;position()&quot;/&gt;
+            &lt;/ZCT.1&gt;
+            &lt;!-- Container Identifier --&gt;
+            &lt;ZCT.2&gt;
+                &lt;xsl:value-of select=&quot;ContainerIdentifier&quot;/&gt;
+            &lt;/ZCT.2&gt;
+            &lt;!-- Accession Container Number --&gt;
+            &lt;ZCT.3&gt;
+                &lt;xsl:value-of select=&quot;AccessionContainernumber&quot;/&gt;
+            &lt;/ZCT.3&gt;
+            &lt;!-- Container Type Code --&gt;
+            &lt;ZCT.4&gt;
+                &lt;xsl:value-of select=&quot;ContainerTypeCode&quot;/&gt;
+            &lt;/ZCT.4&gt;
+            &lt;!-- Specimen Type Code --&gt;
+            &lt;ZCT.5&gt;
+                &lt;xsl:value-of select=&quot;SpecimenTypeCode&quot;/&gt;
+            &lt;/ZCT.5&gt;
+            &lt;!--Collection Class Code --&gt;
+            &lt;ZCT.6&gt;
+                &lt;xsl:value-of select=&quot;CollectionClass&quot;/&gt;
+            &lt;/ZCT.6&gt;
+            &lt;!-- Collection Volume --&gt;
+            &lt;ZCT.8&gt;
+                &lt;xsl:value-of select=&quot;CollectionVolume&quot;/&gt;
+            &lt;/ZCT.8&gt;
+            &lt;ZCT.9&gt;
+                &lt;xsl:value-of select=&quot;CollectionVolume/@units&quot;/&gt;
+            &lt;/ZCT.9&gt;
+            &lt;!-- Drawn Date and Time --&gt;
+            &lt;ZCT.10&gt;
+                &lt;xsl:call-template name=&quot;formatdatetime&quot;&gt;
+                    &lt;xsl:with-param name=&quot;datestr&quot; select=&quot;DrawnDateTime&quot;/&gt;
+                &lt;/xsl:call-template&gt;
+            &lt;/ZCT.10&gt;
+        &lt;/ZCT&gt;
+    &lt;/xsl:template&gt;
+    &lt;xsl:template name=&quot;formatdatetime&quot;&gt;
+        &lt;xsl:param name=&quot;datestr&quot;/&gt;
+        &lt;!-- assumes date format YYYY-MM-ddTHH:mm:ss --&gt;
+        &lt;!-- just strips -, T and : characters --&gt;
+        &lt;xsl:value-of select=&quot;substring(translate(translate(translate($datestr, &apos;-&apos;, &apos;&apos;), &apos;T&apos;, &apos;&apos;), &apos;:&apos;, &apos;&apos;), 1, 14)&quot;/&gt;
+    &lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;);
+transformer = tFactory.newTransformer(new Packages.javax.xml.transform.stream.StreamSource(xsltTemplate));
+sourceVar = new Packages.java.io.StringReader(xmlstring);
+resultVar = new Packages.java.io.StringWriter();
+transformer.transform(new Packages.javax.xml.transform.stream.StreamSource(sourceVar), new Packages.javax.xml.transform.stream.StreamResult(resultVar));
+return resultVar.toString();
+}</code>
+      </properties>
+    </codeTemplate>
+    <codeTemplate version="4.5.0">
+      <id>9ed58ed3-b73d-4580-b6a0-1b68f3f4fe56</id>
+      <name>escapeHl7CharactersInMsg</name>
+      <revision>1</revision>
+      <lastModified>
+        <time>1573550651382</time>
+        <timezone>Europe/London</timezone>
+      </lastModified>
+      <contextSet>
+        <delegate>
+          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
+          <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
+          <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
+        </delegate>
+      </contextSet>
+      <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">
+        <type>FUNCTION</type>
+        <code>/**
+	Escapes specific stings within the inbound XML from RiO that may contain special HL7 characters.
+	Uses SERVELEC_HL7_escapeHl7ControlCharacters for the actual escaping.
+
+	@param {xml} theMsg - the original XML message
+	@return no return value
+*/
+/* $Id: General HL7 Message Functions.xml 193 2018-11-15 12:00:11Z cse-servelec\richard.coles $ */
+function SERVELEC_HL7_escapeHl7CharactersInMsg(theMsg) {
+
+	//there must be a better way to do this but for now there&apos;s only a limited set of fields that could potentially contain control characters so this works well enough.
+
+	theMsg[&apos;Content&apos;][&apos;Visit&apos;][&apos;Location&apos;][&apos;LocationDescription&apos;] = SERVELEC_HL7_escapeHl7ControlCharacters(theMsg[&apos;Content&apos;][&apos;Visit&apos;][&apos;Location&apos;][&apos;LocationDescription&apos;].toString());
+	theMsg[&apos;Content&apos;][&apos;Visit&apos;][&apos;LocationDescription&apos;] = SERVELEC_HL7_escapeHl7ControlCharacters(theMsg[&apos;Content&apos;][&apos;Visit&apos;][&apos;LocationDescription&apos;].toString());
+	
+	for each(addr in theMsg[&apos;Content&apos;][&apos;Client&apos;][&apos;Address&apos;])
+	{
+		addr[&apos;AddressLine1&apos;] = SERVELEC_HL7_escapeHl7ControlCharacters(addr[&apos;AddressLine1&apos;].toString());
+		addr[&apos;AddressLine2&apos;] = SERVELEC_HL7_escapeHl7ControlCharacters(addr[&apos;AddressLine2&apos;].toString());
+		addr[&apos;AddressLine3&apos;] = SERVELEC_HL7_escapeHl7ControlCharacters(addr[&apos;AddressLine3&apos;].toString());
+		addr[&apos;AddressLine4&apos;] = SERVELEC_HL7_escapeHl7ControlCharacters(addr[&apos;AddressLine4&apos;].toString());
+		addr[&apos;AddressLine5&apos;] = SERVELEC_HL7_escapeHl7ControlCharacters(addr[&apos;AddressLine5&apos;].toString());
+	}
+	
+	for each(cont in theMsg[&apos;Content&apos;][&apos;Contacts&apos;][&apos;Contact&apos;])
+	{
+		cont[&apos;AddressLine1&apos;] = SERVELEC_HL7_escapeHl7ControlCharacters(cont[&apos;AddressLine1&apos;].toString());
+		cont[&apos;AddressLine2&apos;] = SERVELEC_HL7_escapeHl7ControlCharacters(cont[&apos;AddressLine2&apos;].toString());
+		cont[&apos;AddressLine3&apos;] = SERVELEC_HL7_escapeHl7ControlCharacters(cont[&apos;AddressLine3&apos;].toString());
+		cont[&apos;AddressLine4&apos;] = SERVELEC_HL7_escapeHl7ControlCharacters(cont[&apos;AddressLine4&apos;].toString());
+		cont[&apos;AddressLine5&apos;] = SERVELEC_HL7_escapeHl7ControlCharacters(cont[&apos;AddressLine5&apos;].toString());
+	}
+}</code>
+      </properties>
+    </codeTemplate>
+    <codeTemplate version="4.5.0">
+      <id>eacd4bee-8e6b-42cc-ae9d-936937c15ccb</id>
+      <name>escapeHl7ControlCharacters</name>
+      <revision>1</revision>
+      <lastModified>
+        <time>1573550651242</time>
+        <timezone>Europe/London</timezone>
+      </lastModified>
+      <contextSet>
+        <delegate>
+          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
+          <contextType>DESTINATION_DISPATCHER</contextType>
+          <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
+          <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
+          <contextType>SOURCE_RECEIVER</contextType>
+        </delegate>
+      </contextSet>
+      <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">
+        <type>FUNCTION</type>
+        <code>/**
+	Escapes all special HL7 control characters from a string.
+
+	@param {String} messageContent - the message content as a string
+	@return {String} A string with control characters escaped
+*/
+/* $Id: General HL7 Message Functions.xml 193 2018-11-15 12:00:11Z cse-servelec\richard.coles $ */
+function SERVELEC_HL7_escapeHl7ControlCharacters(messageContent) {
+	var hl7String = messageContent.replace(/\\/g, &apos;\\E\\&apos;); 
+	hl7String = hl7String.replace(/\|/g, &apos;\\F\\&apos;);	
+	hl7String = hl7String.replace(/\^/g, &apos;\\S\\&apos;);	
+	hl7String = hl7String.replace(/~/g, &apos;\\R\\&apos;);	
+	hl7String = hl7String.replace(/&amp;/g, &apos;\\T\\&apos;);	
+	hl7String = hl7String.replace(/\r?\n/g, &apos;\\.br\\*&apos;);
+
+	return hl7String;
+}
+
+//for backwards compatibility
+function escapeHl7ControlCharacters(messageContent) {
+	return SERVELEC_HL7_escapeHl7ControlCharacters(messageContent);
+}
+</code>
+      </properties>
+    </codeTemplate>
+    <codeTemplate version="4.5.0">
+      <id>4a178f62-3592-4ea7-a7de-8cf074a8d109</id>
+      <name>generateMessageID</name>
+      <revision>1</revision>
+      <lastModified>
+        <time>1573550651461</time>
+        <timezone>Europe/London</timezone>
+      </lastModified>
+      <contextSet>
+        <delegate>
+          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
+          <contextType>DESTINATION_DISPATCHER</contextType>
+          <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
+          <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
+          <contextType>SOURCE_RECEIVER</contextType>
+        </delegate>
+      </contextSet>
+      <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">
+        <type>FUNCTION</type>
+        <code>/**
+	Returns a string of random string to use as a message Id for HL7 messages.
+	Restricts to [a-f, 0-9] because that&apos;s what RiO did.
+
+	@param {String} string_length - the length of the Id you need
+	@return {String} return you message Id of required length
+*/
+/* $Id: General HL7 Message Functions.xml 193 2018-11-15 12:00:11Z cse-servelec\richard.coles $ */
+function SERVELEC_HL7_generateMessageID(string_length) {
+
+	var chars = &quot;0123456789abcdef&quot;;
+	var randomString = &apos;&apos;;
+	for (var i=0; i&lt;string_length; i++) {
+		var rnum = Math.floor(Math.random() * chars.length);
+		randomString += chars.substring(rnum,rnum+1);
+	}
+	return randomString;
+}
+
+//for backwards compatibility
+function generateMessageID(string_length) {
+	return SERVELEC_HL7_generateMessageID(string_length);
+}
+</code>
+      </properties>
+    </codeTemplate>
+    <codeTemplate version="4.5.0">
+      <id>3165d20a-706f-49a1-bd4b-1f7ea834578d</id>
+      <name>getOccurredTimeFromXML</name>
+      <revision>1</revision>
+      <lastModified>
+        <time>1573550651320</time>
+        <timezone>Europe/London</timezone>
+      </lastModified>
+      <contextSet>
+        <delegate>
+          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
+          <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
+          <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
+        </delegate>
+      </contextSet>
+      <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">
+        <type>FUNCTION</type>
+        <code>/**
+	Extracts the occurred time from the RiO XML.
+	Takes a list of xpaths and iterates through them in order until it finds a match
+
+	@param {String} strXML - the XML to search within
+	@param {nodeList} xPathList - the list of xPath strings to iterate through. Must have @path attribute
+	@return {String} return occurred date
+*/
+/* $Id: General HL7 Message Functions.xml 193 2018-11-15 12:00:11Z cse-servelec\richard.coles $ */
+function SERVELEC_HL7_getOccurredTimeFromXML(strXML, xPathList) {
+	try
+	{
+		//XMl contains the XPath to use to fetch the appropriate event occurred date
+		//Need to use proper Java objects to actually execute the XPath
+		var xpathFactory = javax.xml.xpath.XPathFactory.newInstance();
+		var xpath = xpathFactory.newXPath();
+		var xpathString;
+		var result;
+		
+		for(var i=0; i&lt;xPathList.length(); i++)
+		{
+			xpathString = xPathList[i][&apos;@path&apos;];
+			result = xpath.compile(xpathString).evaluate(new org.xml.sax.InputSource(new java.io.StringReader(strXML)));
+			if(result != null &amp;&amp; result != &apos;&apos;)
+			{
+				return result;
+			}
+		}
+	}
+	catch(e)
+	{
+		logger.error(&apos;Error determining event occurred time.\n&apos; + e.message)
+	}
+}</code>
+      </properties>
+    </codeTemplate>
+  </codeTemplates>
+</codeTemplateLibrary>

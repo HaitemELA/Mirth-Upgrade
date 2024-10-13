@@ -1,0 +1,328 @@
+<channel version="4.5.0">
+  <id>ae42116a-943a-4d14-9c9d-ccd00b0ae3c5</id>
+  <nextMetaDataId>3</nextMetaDataId>
+  <name>HL7 Receiver - State Hospital - TEST</name>
+  <description>HL7 Outbound Receiver channel generated for Nottingham - RHA [TEST]  
+
+$Id: [channelgroup] HL7 Outbound.xml.suggested 172 2018-08-21 15:45:52Z cse-servelec\richard.coles $</description>
+  <revision>7</revision>
+  <sourceConnector version="4.5.0">
+    <metaDataId>0</metaDataId>
+    <name>sourceConnector</name>
+    <properties class="com.mirth.connect.connectors.tcp.TcpReceiverProperties" version="4.5.0">
+      <pluginProperties>
+      </pluginProperties>
+      <listenerConnectorProperties version="4.5.0">
+        <host>0.0.0.0</host>
+        <port>${hl7-outbound-StateHospital-TEST-receiver-sourceport}</port>
+      </listenerConnectorProperties>
+      <sourceConnectorProperties version="4.5.0">
+        <responseVariable>Auto-generate (After source transformer)</responseVariable>
+        <respondAfterProcessing>true</respondAfterProcessing>
+        <processBatch>false</processBatch>
+        <firstResponse>true</firstResponse>
+        <processingThreads>1</processingThreads>
+        <resourceIds class="linked-hash-map">
+          <entry>
+            <string>Default Resource</string>
+            <string>[Default Resource]</string>
+          </entry>
+        </resourceIds>
+        <queueBufferSize>1000</queueBufferSize>
+      </sourceConnectorProperties>
+      <transmissionModeProperties class="com.mirth.connect.plugins.mllpmode.MLLPModeProperties">
+        <pluginPointName>MLLP</pluginPointName>
+        <startOfMessageBytes>0B</startOfMessageBytes>
+        <endOfMessageBytes>1C0D</endOfMessageBytes>
+        <useMLLPv2>false</useMLLPv2>
+        <ackBytes>06</ackBytes>
+        <nackBytes>15</nackBytes>
+        <maxRetries>2</maxRetries>
+      </transmissionModeProperties>
+      <serverMode>true</serverMode>
+      <remoteAddress></remoteAddress>
+      <remotePort></remotePort>
+      <overrideLocalBinding>false</overrideLocalBinding>
+      <reconnectInterval>5000</reconnectInterval>
+      <receiveTimeout>0</receiveTimeout>
+      <bufferSize>65536</bufferSize>
+      <maxConnections>10</maxConnections>
+      <keepConnectionOpen>true</keepConnectionOpen>
+      <dataTypeBinary>false</dataTypeBinary>
+      <charsetEncoding>DEFAULT_ENCODING</charsetEncoding>
+      <respondOnNewConnection>0</respondOnNewConnection>
+      <responseAddress></responseAddress>
+      <responsePort></responsePort>
+    </properties>
+    <transformer version="4.5.0">
+      <elements>
+        <com.mirth.connect.plugins.javascriptstep.JavaScriptStep version="4.5.0">
+          <name>Update Mirth metadata</name>
+          <sequenceNumber>0</sequenceNumber>
+          <enabled>true</enabled>
+          <script>// $Id: [channelgroup] HL7 Outbound.xml.suggested 172 2018-08-21 15:45:52Z cse-servelec\richard.coles $
+
+/*
+Update Mirth metadata so the dashboard shows useful information about sender and message type
+*/
+var sender = &apos;&apos;;
+var type = &apos;&apos;;
+
+try {
+    sender = msg[&apos;SenderInfo&apos;][&apos;SendingFacility&apos;].toString();
+    type = msg[&apos;Type&apos;].toString();
+} catch (e) {
+    logger.error(e);
+}
+
+channelMap.put(&apos;mirth_source&apos;, sender);
+channelMap.put(&apos;mirth_type&apos;, type);</script>
+        </com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
+        <com.mirth.connect.plugins.javascriptstep.JavaScriptStep version="4.5.0">
+          <name>Set occurred date time</name>
+          <sequenceNumber>1</sequenceNumber>
+          <enabled>true</enabled>
+          <script>// $Id: [channelgroup] HL7 Outbound.xml.suggested 172 2018-08-21 15:45:52Z cse-servelec\richard.coles $
+
+var occurredDateTime = SERVELEC_HL7_getOccurredTimeFromXML(msg.toString(), msg[&apos;Occurred&apos;][&apos;MIRTH-SelectValue&apos;]);
+if(occurredDateTime != null &amp;&amp; occurredDateTime != &apos;&apos;)
+{
+	msg[&apos;Content&apos;][&apos;Event&apos;][&apos;OccurredDateTime&apos;] = occurredDateTime;
+}</script>
+        </com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
+        <com.mirth.connect.plugins.javascriptstep.JavaScriptStep version="4.5.0">
+          <name>Escape HL7 Characters</name>
+          <sequenceNumber>2</sequenceNumber>
+          <enabled>true</enabled>
+          <script>// $Id: [channelgroup] HL7 Outbound.xml.suggested 172 2018-08-21 15:45:52Z cse-servelec\richard.coles $
+
+//escape text values for fields that could potentially contain naughty characters... &amp;, \ etc.
+SERVELEC_HL7_escapeHl7CharactersInMsg(msg);</script>
+        </com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
+        <com.mirth.connect.plugins.javascriptstep.JavaScriptStep version="4.5.0">
+          <name>Convert RiO XML to HL7 XML</name>
+          <sequenceNumber>3</sequenceNumber>
+          <enabled>true</enabled>
+          <script>// $Id: [channelgroup] HL7 Outbound.xml.suggested 172 2018-08-21 15:45:52Z cse-servelec\richard.coles $
+
+var resultVar = SERVELEC_HL7_convertXML_RiO_HL7(msg);
+channelMap.put(&apos;hl7_xml&apos;, resultVar);</script>
+        </com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
+      </elements>
+      <inboundTemplate encoding="base64"></inboundTemplate>
+      <outboundTemplate encoding="base64"></outboundTemplate>
+      <inboundDataType>XML</inboundDataType>
+      <outboundDataType>XML</outboundDataType>
+      <inboundProperties class="com.mirth.connect.plugins.datatypes.xml.XMLDataTypeProperties" version="4.5.0">
+        <serializationProperties class="com.mirth.connect.plugins.datatypes.xml.XMLSerializationProperties" version="4.5.0">
+          <stripNamespaces>true</stripNamespaces>
+        </serializationProperties>
+        <batchProperties class="com.mirth.connect.plugins.datatypes.xml.XMLBatchProperties" version="4.5.0">
+          <splitType>Element_Name</splitType>
+          <elementName>
+              </elementName>
+          <level>1</level>
+          <query>
+              </query>
+          <batchScript>
+              </batchScript>
+        </batchProperties>
+      </inboundProperties>
+      <outboundProperties class="com.mirth.connect.plugins.datatypes.xml.XMLDataTypeProperties" version="4.5.0">
+        <serializationProperties class="com.mirth.connect.plugins.datatypes.xml.XMLSerializationProperties" version="4.5.0">
+          <stripNamespaces>true</stripNamespaces>
+        </serializationProperties>
+        <batchProperties class="com.mirth.connect.plugins.datatypes.xml.XMLBatchProperties" version="4.5.0">
+          <splitType>Element_Name</splitType>
+          <elementName>
+              </elementName>
+          <level>1</level>
+          <query>
+              </query>
+          <batchScript>
+              </batchScript>
+        </batchProperties>
+      </outboundProperties>
+    </transformer>
+    <filter version="4.5.0">
+      <elements/>
+    </filter>
+    <transportName>TCP Listener</transportName>
+    <mode>SOURCE</mode>
+    <enabled>true</enabled>
+    <waitForPrevious>true</waitForPrevious>
+  </sourceConnector>
+  <destinationConnectors>
+    <connector version="4.5.0">
+      <metaDataId>1</metaDataId>
+      <name>HL7 Outbound</name>
+      <properties class="com.mirth.connect.connectors.vm.VmDispatcherProperties" version="4.5.0">
+        <pluginProperties/>
+        <destinationConnectorProperties version="4.5.0">
+          <queueEnabled>false</queueEnabled>
+          <sendFirst>false</sendFirst>
+          <retryIntervalMillis>10000</retryIntervalMillis>
+          <regenerateTemplate>false</regenerateTemplate>
+          <retryCount>0</retryCount>
+          <rotate>false</rotate>
+          <includeFilterTransformer>false</includeFilterTransformer>
+          <threadCount>1</threadCount>
+          <threadAssignmentVariable>
+              </threadAssignmentVariable>
+          <validateResponse>false</validateResponse>
+          <resourceIds class="linked-hash-map">
+            <entry>
+              <string>Default Resource</string>
+              <string>[Default Resource]</string>
+            </entry>
+          </resourceIds>
+          <queueBufferSize>1000</queueBufferSize>
+          <reattachAttachments>true</reattachAttachments>
+        </destinationConnectorProperties>
+        <channelId>6349405a-7135-4116-96fb-b8ebdf212a25</channelId>
+        <channelTemplate>${hl7_xml}</channelTemplate>
+        <mapVariables/>
+      </properties>
+      <transformer version="4.5.0">
+        <elements/>
+        <inboundTemplate encoding="base64"></inboundTemplate>
+        <outboundTemplate encoding="base64"></outboundTemplate>
+        <inboundDataType>XML</inboundDataType>
+        <outboundDataType>XML</outboundDataType>
+        <inboundProperties class="com.mirth.connect.plugins.datatypes.xml.XMLDataTypeProperties" version="4.5.0">
+          <serializationProperties class="com.mirth.connect.plugins.datatypes.xml.XMLSerializationProperties" version="4.5.0">
+            <stripNamespaces>true</stripNamespaces>
+          </serializationProperties>
+          <batchProperties class="com.mirth.connect.plugins.datatypes.xml.XMLBatchProperties" version="4.5.0">
+            <splitType>Element_Name</splitType>
+            <elementName>
+                </elementName>
+            <level>1</level>
+            <query>
+                </query>
+            <batchScript>
+                </batchScript>
+          </batchProperties>
+        </inboundProperties>
+        <outboundProperties class="com.mirth.connect.plugins.datatypes.xml.XMLDataTypeProperties" version="4.5.0">
+          <serializationProperties class="com.mirth.connect.plugins.datatypes.xml.XMLSerializationProperties" version="4.5.0">
+            <stripNamespaces>true</stripNamespaces>
+          </serializationProperties>
+          <batchProperties class="com.mirth.connect.plugins.datatypes.xml.XMLBatchProperties" version="4.5.0">
+            <splitType>Element_Name</splitType>
+            <elementName>
+                </elementName>
+            <level>1</level>
+            <query>
+                </query>
+            <batchScript>
+                </batchScript>
+          </batchProperties>
+        </outboundProperties>
+      </transformer>
+      <responseTransformer version="4.5.0">
+        <elements/>
+        <inboundTemplate encoding="base64"></inboundTemplate>
+        <outboundTemplate encoding="base64"></outboundTemplate>
+        <inboundDataType>XML</inboundDataType>
+        <outboundDataType>XML</outboundDataType>
+        <inboundProperties class="com.mirth.connect.plugins.datatypes.xml.XMLDataTypeProperties" version="4.5.0">
+          <serializationProperties class="com.mirth.connect.plugins.datatypes.xml.XMLSerializationProperties" version="4.5.0">
+            <stripNamespaces>true</stripNamespaces>
+          </serializationProperties>
+          <batchProperties class="com.mirth.connect.plugins.datatypes.xml.XMLBatchProperties" version="4.5.0">
+            <splitType>Element_Name</splitType>
+            <elementName>
+                </elementName>
+            <level>1</level>
+            <query>
+                </query>
+            <batchScript>
+                </batchScript>
+          </batchProperties>
+        </inboundProperties>
+        <outboundProperties class="com.mirth.connect.plugins.datatypes.xml.XMLDataTypeProperties" version="4.5.0">
+          <serializationProperties class="com.mirth.connect.plugins.datatypes.xml.XMLSerializationProperties" version="4.5.0">
+            <stripNamespaces>true</stripNamespaces>
+          </serializationProperties>
+          <batchProperties class="com.mirth.connect.plugins.datatypes.xml.XMLBatchProperties" version="4.5.0">
+            <splitType>Element_Name</splitType>
+            <elementName>
+                </elementName>
+            <level>1</level>
+            <query>
+                </query>
+            <batchScript>
+                </batchScript>
+          </batchProperties>
+        </outboundProperties>
+      </responseTransformer>
+      <filter version="4.5.0">
+        <elements/>
+      </filter>
+      <transportName>Channel Writer</transportName>
+      <mode>DESTINATION</mode>
+      <enabled>true</enabled>
+      <waitForPrevious>true</waitForPrevious>
+    </connector>
+  </destinationConnectors>
+  <preprocessingScript>return message;</preprocessingScript>
+  <postprocessingScript>// This script executes once after a message has been processed
+// Responses returned from here will be stored as &quot;Postprocessor&quot; in the response map
+return;</postprocessingScript>
+  <deployScript>// This script executes once when the channel is deployed
+// You only have access to the globalMap and globalChannelMap here to persist data
+return;</deployScript>
+  <undeployScript>// This script executes once when the channel is undeployed
+// You only have access to the globalMap and globalChannelMap here to persist data
+return;</undeployScript>
+  <properties version="4.5.0">
+    <clearGlobalChannelMap>true</clearGlobalChannelMap>
+    <messageStorageMode>PRODUCTION</messageStorageMode>
+    <encryptData>false</encryptData>
+    <encryptAttachments>false</encryptAttachments>
+    <encryptCustomMetaData>false</encryptCustomMetaData>
+    <removeContentOnCompletion>false</removeContentOnCompletion>
+    <removeOnlyFilteredOnCompletion>false</removeOnlyFilteredOnCompletion>
+    <removeAttachmentsOnCompletion>false</removeAttachmentsOnCompletion>
+    <initialState>STARTED</initialState>
+    <storeAttachments>false</storeAttachments>
+    <metaDataColumns>
+      <metaDataColumn>
+        <name>SOURCE</name>
+        <type>STRING</type>
+        <mappingName>mirth_source</mappingName>
+      </metaDataColumn>
+      <metaDataColumn>
+        <name>TYPE</name>
+        <type>STRING</type>
+        <mappingName>mirth_type</mappingName>
+      </metaDataColumn>
+    </metaDataColumns>
+    <attachmentProperties version="4.5.0">
+      <type>None</type>
+      <properties/>
+    </attachmentProperties>
+    <resourceIds class="linked-hash-map">
+      <entry>
+        <string>Default Resource</string>
+        <string>[Default Resource]</string>
+      </entry>
+    </resourceIds>
+  </properties>
+  <exportData>
+    <metadata>
+      <enabled>true</enabled>
+      <lastModified>
+        <time>1727964141339</time>
+        <timezone>Europe/London</timezone>
+      </lastModified>
+      <pruningSettings>
+        <pruneMetaDataDays>14</pruneMetaDataDays>
+        <pruneContentDays>7</pruneContentDays>
+        <archiveEnabled>true</archiveEnabled>
+        <pruneErroredMessages>false</pruneErroredMessages>
+      </pruningSettings>
+    </metadata>
+  </exportData>
+</channel>
