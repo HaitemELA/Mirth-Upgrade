@@ -1,0 +1,113 @@
+<Message xmlns="http://cse-healthcare.com/integration/ADT">
+    <Type>ADT^A08^ADT_A01</Type>
+    <Destinations xmlns="" xmlns:rn="http://cse-healthcare.com/integration/ADT">
+        <Destination>
+            <OrganisationCode>TAHTIETEST</OrganisationCode>
+            <SystemCode>TAHTIETEST</SystemCode>
+            <Transport>0</Transport>
+            <Endpoint/>
+        </Destination>
+        <Destination>
+            <OrganisationCode>TAHTIETEST</OrganisationCode>
+            <SystemCode>TAHTIETEST</SystemCode>
+            <Transport>0</Transport>
+            <Endpoint/>
+        </Destination>
+    </Destinations>
+    <Occurred>
+        <MIRTH-SelectValue path="/Message/Content/Visit/Admission/ActualDate"/>
+        <MIRTH-SelectValue path="/Message/Content/Visit/ExtraInfo/EventOccured"/>
+        <MIRTH-SelectValue path="/Message/Sent"/>
+    </Occurred>
+    <Sent>2022-09-14T15:55:21</Sent>
+    <SenderInfo xmlns="" xmlns:rn="http://cse-healthcare.com/integration/ADT">
+        <SendingFacility>TAH</SendingFacility>
+        <SendingApplication>RiO</SendingApplication>
+    </SenderInfo>
+    <Content>
+        <Event xmlns="" xmlns:rn="http://cse-healthcare.com/integration/ADT">
+            <OperatorCode>655211329107</OperatorCode>
+            <FamilyName>Tontoh</FamilyName>
+            <GivenName>Michael</GivenName>
+        </Event>
+        <Client xmlns="" xmlns:rn="http://cse-healthcare.com/integration/ADT">
+            <NNNTypeCode>CE</NNNTypeCode>
+            <ClientID>1000004</ClientID>
+            <ClientIdTypeCode>CE</ClientIdTypeCode>
+            <Name>
+                <Prefix>Mr</Prefix>
+                <GivenName1>Pay</GivenName1>
+                <Surname>JONES</Surname>
+                <MiddleName/>
+            </Name>
+            <Address>
+                <AddressLine1>56 Waghorn Street</AddressLine1>
+                <AddressLine3>Peckam Rye</AddressLine3>
+                <AddressLine4>London</AddressLine4>
+                <Postcode>SE15 4JZ</Postcode>
+                <AddressType>PRIMARY</AddressType>
+            </Address>
+            <DateOfBirth>1975-07-29T00:00:00</DateOfBirth>
+            <DateRegistered>2022-09-13T00:00:00</DateRegistered>
+            <Gender>M</Gender>
+            <Language>e1-EN</Language>
+            <Ethnicity>E</Ethnicity>
+            <Nationality>GB</Nationality>
+            <Religion>C67</Religion>
+            <MaritalStatus>M</MaritalStatus>
+            <MobilePhone>0785123456</MobilePhone>
+            <HealthcareProvider>
+                <GPCode>G9999998</GPCode>
+                <PracticeCode>999</PracticeCode>
+            </HealthcareProvider>
+        </Client>
+        <Visit xmlns="" xmlns:rn="http://cse-healthcare.com/integration/ADT" ExtraADTLocInfo="1" type="inpatient">
+            <EventNumber>1</EventNumber>
+            <VisitID>2</VisitID>
+            <SequenceID>3</SequenceID>
+            <Admission>
+                <ActualDate>2022-09-13T08:44:00</ActualDate>
+                <Method>12</Method>
+                <Source>19</Source>
+            </Admission>
+            <Location>
+                <WardCode>ExampleMH</WardCode>
+                <BayCode>Bay2</BayCode>
+                <BedNumber>3</BedNumber>
+                <LocationDescription>Example MH Ward\nExample Bay 2</LocationDescription>
+            </Location>
+            <Consultant id="NHSTrain01">
+                <Code/>
+                <SpecialtyCode/>
+                <FirstName>Super</FirstName>
+                <Surname>User</Surname>
+            </Consultant>
+            <AdministrativeCategory code=" "> GenAdministrativeCategory</AdministrativeCategory>
+            <Discharge/>
+            <ExtraInfo>
+                <EventOccured>2022-09-13T08:44:00</EventOccured>
+                <AWOLStartDate>2022-09-13T10:19:00</AWOLStartDate>
+                <AWOLReturnDate>2022-09-13T10:21:00</AWOLReturnDate>
+            </ExtraInfo>
+        </Visit>
+        <AllergyList xmlns="" xmlns:rn="http://cse-healthcare.com/integration/ADT"/>
+        <CustomData xmlns="" xmlns:rn="http://cse-healthcare.com/integration/ADT" type="ZU1">
+            <FirstInSeries>0</FirstInSeries>
+            <ConsultantEpisode>
+                <StartDateTime>2022-09-13T10:16:00</StartDateTime>
+                <SpecialtyCode/>
+            </ConsultantEpisode>
+            <ReferralSource>AmsReferralSource</ReferralSource>
+            <Referral>
+                <ReferralReceivedDate>2022-09-02T08:43:00</ReferralReceivedDate>
+                <ReferralDateTime>2022-09-02T08:39:00</ReferralDateTime>
+            </Referral>
+            <PsychiatricStatus>XXXXXX</PsychiatricStatus>
+        </CustomData>
+        <CustomData xmlns="" xmlns:rn="http://cse-healthcare.com/integration/ADT" type="ZU5">
+            <AdmissionDate>2022-09-13T08:44:00</AdmissionDate>
+            <LegalStatusAtAdmission>01</LegalStatusAtAdmission>
+            <LegalStatusAtCensus>01</LegalStatusAtCensus>
+        </CustomData>
+    </Content>
+</Message>
