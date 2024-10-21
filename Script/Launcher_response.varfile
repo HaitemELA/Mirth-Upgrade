@@ -1,0 +1,19 @@
+# install4j response file for Mirth Connect Administrator Launcher 1.4.2
+executeLauncherAction$Boolean=true
+sys.adminRights$Boolean=true
+sys.component.1639$Boolean=true
+sys.component.openjdk8$Boolean=true
+sys.fileAssociation.extensions$StringArray="jnlp"
+sys.fileAssociation.launchers$StringArray="60"
+sys.installationDir=C\:\\Program Files\\Mirth Connect Administrator Launcher
+sys.languageId=en
+sys.programGroupAllUsers$Boolean=true
+sys.programGroupDisabled$Boolean=false
+sys.programGroupName=Mirth Connect Administrator Launcher
+# New additions for silent installation
+
+#sys.confirmedUpdateInstallation$Boolean=true  # Prevents update confirmation
+
+#sys.installationSucceeded$Boolean=true        # Ensures the installation succeeds without error dialogs
+
+#sys.exitAfterInstall$Boolean=true             # Automatically exits after installation completion
