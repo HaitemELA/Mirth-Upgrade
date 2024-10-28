@@ -30,6 +30,13 @@ import sys
 
 load_dotenv()
 
+# %%
+def print_step(step_description):
+    # Print a separator and the step description in a formatted way
+    print("\n" + "-" * 50)
+    print("-" * 15 + "step_description")
+    print("-" * 50 + "\n")
+
 # %% [markdown]
 # # Response file: set the ports + the license key
 # 
@@ -40,6 +47,8 @@ load_dotenv()
 # ![image.png](attachment:image.png)
 
 # %%
+print_step("Prepare response file: Ports / License key")
+
 HttpPort = os.getenv("http.port")
 HttpSport = os.getenv("https.port")
 key = os.getenv("INSTALL_KEY_URL")
@@ -177,6 +186,7 @@ except Exception as e:
 # The ".env" file should be located in the same directory as this notebook.
 
 # %%
+print_step("Extract Mirth credentials from ssshh.accesshosting.co.uk")
 credentialsUrl = os.getenv("MIRTH_CREDENTIALS_URL")
 
 extracted_credentials = extract_secret_text(credentialsUrl)
@@ -276,6 +286,9 @@ cookies = {"JSESSIONID": str(session_token)}  #Cookies for Mirth APIs
 headers = {'X-Requested-With': 'XMLHttpRequest', "Content-Type": "application/xml"}  #Headers for Mirth APIs
 
 # %%
+
+print_step("Export deployed/Undeployed channels list")
+
 # Function to get channel details
 def get_channel_statuses():
     url = f"{mirth_url}/api/channels/statuses?includeUndeployed=true"
@@ -335,43 +348,45 @@ df
 # # Undeploy the channels
 
 # %%
-# Function to filter and undeploy the "STARTED" channels
-def undeploy_started_channels(df):
-    # Filter channels that are currently deployed
-    started_channels = df[df["IsDeployed"] == "STARTED"]["ChannelID"].tolist()
-    print(started_channels)
-    
-    if not started_channels:
-        print("No channels are currently deployed.")
-        return
-    
-    # Create XML body for the undeploy request
-    root = ET.Element("set")
-    for channel_id in started_channels:
-        string_elem = ET.SubElement(root, "string")
-        string_elem.text = channel_id
-    
-    # Convert XML structure to string
-    xml_body = ET.tostring(root, encoding="unicode", method="xml")
-    
-    # Define API endpoint and headers
-    url = f"{mirth_url}/api/channels/_undeploy"
-    
-    # Send the undeploy request
-    response = requests.post(url, headers=headers, cookies=cookies, data=xml_body, verify=False)
-    
-    if response.status_code in [200, 204]:
-        print("Successfully undeployed the channels.")
-    else:
-        print(f"Failed to undeploy channels: {response.status_code}")
-
-undeploy_started_channels(df)
+## Function to filter and undeploy the "STARTED" channels
+#def undeploy_started_channels(df):
+#    # Filter channels that are currently deployed
+#    started_channels = df[df["IsDeployed"] == "STARTED"]["ChannelID"].tolist()
+#    print(started_channels)
+#    
+#    if not started_channels:
+#        print("No channels are currently deployed.")
+#        return
+#    
+#    # Create XML body for the undeploy request
+#    root = ET.Element("set")
+#    for channel_id in started_channels:
+#        string_elem = ET.SubElement(root, "string")
+#        string_elem.text = channel_id
+#    
+#    # Convert XML structure to string
+#    xml_body = ET.tostring(root, encoding="unicode", method="xml")
+#    
+#    # Define API endpoint and headers
+#    url = f"{mirth_url}/api/channels/_undeploy"
+#    
+#    # Send the undeploy request
+#    response = requests.post(url, headers=headers, cookies=cookies, data=xml_body, verify=False)
+#    
+#    if response.status_code in [200, 204]:
+#        print("Successfully undeployed the channels.")
+#    else:
+#        print(f"Failed to undeploy channels: {response.status_code}")
+#
+#undeploy_started_channels(df)
 
 # %% [markdown]
 # # Backup Configuration, Channels, Libraries and Logs !/!/!/!/!/!/!/!/!/!/!
 # The following code would use Python subprocesses to interact with the file system and shell commands:
 
 # %%
+print_step("Backup configuration, properties, Libraries and Logs")
+
 # Define paths and variables
 backup_dir = os.path.join(Upgrade_dir, "BackUp")
 vm_options = os.path.join(Upgrade_dir, "VMoptions.txt")
@@ -382,6 +397,7 @@ mirth_dir = r"C:\Program Files\Mirth Connect"
 mirth_config_dir = os.path.join(mirth_dir, "conf")
 mirth_libraries_dir = os.path.join(mirth_dir, "custom-lib")
 mirth_logs_dir = os.path.join(mirth_dir, "logs")
+mirth_appdata_dir = os.path.join(mirth_dir, "appdata")
 mirth_properties_file = os.path.join(mirth_config_dir, "mirth.properties")
 
 # Create backup directory if it doesn't exist
@@ -400,6 +416,10 @@ shutil.copytree(mirth_libraries_dir, lib_backup_path)
 # Step 1.3: Backup Mirth Logs
 logs_backup_path = os.path.join(backup_dir, "logs_backup")
 shutil.copytree(mirth_logs_dir, logs_backup_path)
+
+# Step 1.4: Backup Mirth Appdata
+appdata_backup_path = os.path.join(backup_dir, "appdata_backup")
+shutil.copytree(mirth_appdata_dir, appdata_backup_path)
 
 # BackUp mirth_channels_file.xml
 mirth_channels = os.path.join(backup_dir, "mirth_channels.xml")
@@ -451,14 +471,34 @@ else:
 # # Stop the Mirth Service
 
 # %%
+print_step("Stop Mirth service and End execution task")
+
 MirthServices = ["Mirth Connect Service"]
 for MirthService in MirthServices:
     subprocess.run(["net", "stop", MirthService], capture_output=True, text=True)
 
 # %% [markdown]
+# # End Mirth Tasks
+
+# %%
+# List of processes to terminate
+processes_to_kill = ["mcservice.exe", "mcmanager.exe", "launcher.exe", "launch.exe"]
+
+for process in processes_to_kill:
+    try:
+        # Run taskkill command to terminate the process
+        subprocess.run(["taskkill", "/f", "/im", process], check=True)
+        print(f"Successfully terminated {process}")
+    except subprocess.CalledProcessError:
+        print(f"Failed to terminate {process} or it was not running.")
+
+
+# %% [markdown]
 # # Install Mirth
 
 # %%
+print_step("Install Java JRE 17 (AWS corretto) / Mirth connect")
+
 # Define the installers directory
 installers_dir = os.path.join(Upgrade_dir, "Installers")
 Launcher_response_file = os.path.join(Upgrade_dir, "Launcher_response.varfile")
@@ -588,19 +628,11 @@ if Java_Installed and Mirth_installed:
 # # Include a Step to set in the properties file
 
 # %% [markdown]
-# #### Key
-
-# %% [markdown]
-# #### ports
-#  
-# 
-
-# %% [markdown]
 #  
 # ### Update TLS AND configurationmap
 
 # %%
-import re
+print_step("Update mirth.properties file content: cipher list / ConfigurationMap / DB config / JDBC URL")
 
 mirth_properties_path = r'C:\Users\Haitem.ELAaouani\Desktop\MirthDev\DemoUpgrade\mirthDemo.properties'
 required_ciphers = ['TLS_EMPTY_RENEGOTIATION_INFO_SCSV', 'TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA']
@@ -670,9 +702,10 @@ update_mirth_properties()
 # # Service / Server VM Options update
 
 # %%
+print_step("Update service.vmoptions file content: To resolve java 17 limitations")
+
 # Define paths
 #source_file = 'C:\Users\Haitem.ELAaouani\OneDrive - Access UK Ltd\Documents\MirthDev\DemoUpgrade'  # This is the source file in the current directory
-destination_path = r'C:\Program Files\Mirth Connect'
 files_to_update = ['mcservice.vmoptions', 'mcserver.vmoptions']
 
 # Read content of the source file
@@ -681,7 +714,7 @@ try:
         content_to_append = "\n" + src.read()
 
     for file_name in files_to_update:
-        destination_file = os.path.join(destination_path, file_name)
+        destination_file = os.path.join(mirth_dir, file_name)
         
         # Check if the destination file exists
         if os.path.exists(destination_file):
@@ -689,7 +722,7 @@ try:
                 dest.write(content_to_append)
             print(f"Content appended to {file_name}")
         else:
-            print(f"File {file_name} not found in {destination_path}")
+            print(f"File {file_name} not found in {mirth_dir}")
 
 except Exception as e:
     print(f"Error: {e}")
@@ -698,16 +731,29 @@ except Exception as e:
 # # Restore the Libraries
 
 # %%
+print_step("Restore the libraries")
+
 # Copy the previous configuration and libraries to the new Mirth installation
-new_mirth_dir = r"C:\Program Files\Mirth Connect"
-new_mirth_libraries_dir = os.path.join(new_mirth_dir, "custom-lib")
+mirth_libraries_dir = os.path.join(mirth_dir, "custom-lib")
 
-# Copy old libraries to the new version
-shutil.copytree(lib_backup_path, new_mirth_libraries_dir, dirs_exist_ok=True)
+# Check if NewLibraries exists and is not empty
+new_libraries_dir = os.path.join(Upgrade_dir, "NewLibraries")
 
-#new_mirth_config_dir = os.path.join(new_mirth_dir, "conf")
-# Copy old configuration to the new version
-#shutil.copytree(config_backup_path, new_mirth_config_dir, dirs_exist_ok=True)
+# Copy libraries to custom-lib
+if os.path.isdir(new_libraries_dir) and os.listdir(new_libraries_dir):
+    # NewLibraries exists and is not empty, copy its contents
+    for item in os.listdir(new_libraries_dir):
+        source = os.path.join(new_libraries_dir, item)
+        destination = os.path.join(mirth_libraries_dir, item)
+        if os.path.isdir(source):
+            shutil.copytree(source, destination, dirs_exist_ok=True)
+        else:
+            shutil.copy2(source, destination)
+else:
+    # NewLibraries doesn't exist or is empty, copy from lib_backup_path
+    shutil.copytree(lib_backup_path, mirth_libraries_dir, dirs_exist_ok=True)
+
+print_step("Restore the libraries")
 
 
 # %%
@@ -766,8 +812,7 @@ except Exception as e:
 
 # %%
 # Define the path to the Mirth Connect directory
-mirth_installation_path = r"C:\Program Files\Mirth Connect"  # Adjust the path if necessary
-mirth_executable = os.path.join(mirth_installation_path, "mcservice.exe")  # The Mirth Connect server executable
+mirth_executable = os.path.join(mirth_dir, "mcservice.exe")  # The Mirth Connect server executable
 
 print("Starting Mirth Connect...")
 

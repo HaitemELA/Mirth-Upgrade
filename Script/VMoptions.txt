@@ -18,3 +18,5 @@
 --add-opens=java.xml/com.sun.org.apache.xalan.internal.xsltc.trax=ALL-UNNAMED
 --add-exports=java.xml/com.sun.org.apache.xpath.internal.jaxp=ALL-UNNAMED
 --add-opens=java.xml/javax.xml.transform=ALL-UNNAMED
+--add-opens=java.base/sun.net.www.protocol.https=ALL-UNNAMED
+--add-opens=java.base/sun.net.www.http=ALL-UNNAMED
