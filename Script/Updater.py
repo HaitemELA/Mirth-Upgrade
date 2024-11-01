@@ -15,27 +15,35 @@
 import time
 start_time = time.time()
 
+from datetime import datetime
+
 import subprocess
 import requests
 import os
 import shutil
 from dotenv import load_dotenv
-#import xml.etree.ElementTree as ET
 import lxml.etree as ET
 import pandas as pd
-#from IPython.display import display
 import re
-
 import sys
+
+import warnings
+from requests.packages.urllib3.exceptions import InsecureRequestWarning
+
+# Suppress the warning
+warnings.simplefilter('ignore', InsecureRequestWarning)
 
 load_dotenv()
 
 # %%
 def print_step(step_description):
+    # Get the current time and format it
+    current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
     # Print a separator and the step description in a formatted way
-    print("\n" + "-" * 50)
-    print("-" * 15 + "step_description")
-    print("-" * 50 + "\n")
+    print("\n" + "-" * 70)
+    print(f"{' ' * 10}{step_description} - {current_time}")
+    print("-" * 70 + "\n")
 
 # %% [markdown]
 # # Response file: set the ports + the license key
@@ -44,7 +52,7 @@ def print_step(step_description):
 
 # %% [markdown]
 # ### Get Mirth https/https ports from .env file
-# ![image.png](attachment:image.png)
+# ![image-2.png](attachment:image-2.png)
 
 # %%
 print_step("Prepare response file: Ports / License key")
@@ -53,8 +61,7 @@ HttpPort = os.getenv("http.port")
 HttpSport = os.getenv("https.port")
 key = os.getenv("INSTALL_KEY_URL")
 databaseUrl = os.getenv("databaseUrl")
-
-HttpPort, HttpSport, key, databaseUrl
+databaseType = os.getenv("database")
 
 # %% [markdown]
 # ## Using Access Hosting Encrypting portal for Mirth authentication + sharing the License Key
@@ -237,7 +244,7 @@ mirth_host = "https://localhost"
 mirth_url = mirth_host + ":" + HttpSport
 
 # Function to get the API session token
-def get_session_token(username, password, retries=5, delay=5):
+def get_session_token(username, password, retries=5, delay=10):
     url = f"{mirth_url}/api/users/_login"
     print(f"Attempting to log in at: {url}")
     payload = "username=" + username + "&password=" + password
@@ -341,13 +348,9 @@ df.to_csv(csv_file, index=False)
 
 df
 
-# %% [markdown]
-# # Stop RIO
-
-# %% [markdown]
-# # Undeploy the channels
-
 # %%
+# Undeploy the channels
+
 ## Function to filter and undeploy the "STARTED" channels
 #def undeploy_started_channels(df):
 #    # Filter channels that are currently deployed
@@ -398,7 +401,11 @@ mirth_config_dir = os.path.join(mirth_dir, "conf")
 mirth_libraries_dir = os.path.join(mirth_dir, "custom-lib")
 mirth_logs_dir = os.path.join(mirth_dir, "logs")
 mirth_appdata_dir = os.path.join(mirth_dir, "appdata")
+mirth_VMops_service = os.path.join(mirth_dir, "mcservice.vmoptions")
+mirth_VMops_server = os.path.join(mirth_dir, "mcserver.vmoptions")
+
 mirth_properties_file = os.path.join(mirth_config_dir, "mirth.properties")
+
 
 # Create backup directory if it doesn't exist
 if not os.path.exists(backup_dir):
@@ -421,27 +428,35 @@ shutil.copytree(mirth_logs_dir, logs_backup_path)
 appdata_backup_path = os.path.join(backup_dir, "appdata_backup")
 shutil.copytree(mirth_appdata_dir, appdata_backup_path)
 
+# Step 1.5: Backup Mirth mcservice.vmoptions
+VMops_service_backup_path = os.path.join(backup_dir, "mcservice.vmoptions")
+shutil.copy(mirth_VMops_service, VMops_service_backup_path)
+
+# Step 1.6: Backup Mirth mcserver.vmoptions
+VMops_server_backup_path = os.path.join(backup_dir, "mcserver.vmoptions")
+shutil.copy(mirth_VMops_server, VMops_server_backup_path)
+
 # BackUp mirth_channels_file.xml
-mirth_channels = os.path.join(backup_dir, "mirth_channels.xml")
-url = f"{mirth_url}/api/channels"
+#mirth_channels = os.path.join(backup_dir, "mirth_channels.xml")
 
 # Send GET request
-response = requests.get(url, headers=headers, cookies=cookies, verify=False)  # Set verify='/path/to/mirth_cert.pem' if using SSL
-
-# Check if the request was successful
-if response.status_code == 200:
-    # Write response content to the output file
-    with open(mirth_channels_file, 'wb') as file:
-        file.write(response.content)
-    print("Channels exported successfully.")
-else:
-    print(f"Failed to export channels. Status code: {response.status_code}")
-
-# Check if the backup file was created successfully
-if os.path.exists(mirth_channels_file):
-    print(f"Channels successfully exported to: {mirth_channels_file}")
-else:
-    print("Failed to export channels. Please check the error messages.")
+#url = f"{mirth_url}/api/channels"
+#response = requests.get(url, headers=headers, cookies=cookies, verify=False)  # Set verify='/path/to/mirth_cert.pem' if using SSL
+#
+## Check if the request was successful
+#if response.status_code == 200:
+#    # Write response content to the output file
+#    with open(mirth_channels_file, 'wb') as file:
+#        file.write(response.content)
+#    print("Channels exported successfully.")
+#else:
+#    print(f"Failed to export channels. Status code: {response.status_code}")
+#
+## Check if the backup file was created successfully
+#if os.path.exists(mirth_channels_file):
+#    print(f"Channels successfully exported to: {mirth_channels_file}")
+#else:
+#    print("Failed to export channels. Please check the error messages.")
 
 # %%
 # BackUp mirth_config.xml
@@ -497,7 +512,7 @@ for process in processes_to_kill:
 # # Install Mirth
 
 # %%
-print_step("Install Java JRE 17 (AWS corretto) / Mirth connect")
+print_step("Install Java JRE (AWS corretto) / Mirth connect")
 
 # Define the installers directory
 installers_dir = os.path.join(Upgrade_dir, "Installers")
@@ -528,6 +543,52 @@ print(f"Mirth Installer: {mirth_installer}")
 print(f"Mirth Installer: {mirth_launcher_installer}")
 print(f"Java Installer: {java_installer}")
 print(f"Response File: {response_file}")
+
+# %%
+
+def uninstall_existing_corretto():
+    print("Checking for existing Amazon Corretto installation...")
+    try:
+        # Get the list of installed products
+        search_cmd = ["wmic", "product", "get", "Name,IdentifyingNumber"]
+        result = subprocess.run(search_cmd, capture_output=True, text=True, check=True)
+        
+        # Check if "Amazon Corretto" is in the list of installed products
+        lines = result.stdout.splitlines()
+        product_code = None
+        
+        for line in lines:
+            if "Amazon Corretto" in line:
+                # Extract the product code from the line
+                parts = line.split()
+                if len(parts) > 1:
+                    product_code = parts[-1]  # The last part is the IdentifyingNumber
+                    break
+        
+        if product_code:
+            print(f"Existing Corretto installation found with product code: {product_code}")
+            
+            # Uninstall command for the identified product code
+            uninstall_cmd = ["msiexec", "/x", product_code, "/qn", "/norestart"]
+            uninstall_result = subprocess.run(uninstall_cmd, capture_output=True, text=True)
+            
+            if uninstall_result.returncode == 0:
+                print("Amazon Corretto uninstalled successfully.")
+            else:
+                print(f"Failed to uninstall Amazon Corretto. Return code: {uninstall_result.returncode}")
+                print(f"Error output: {uninstall_result.stderr}")
+        else:
+            print("No existing Amazon Corretto installation found.")
+    except subprocess.CalledProcessError as e:
+        print(f"Error checking/uninstalling existing Corretto: {e}")
+        print(f"Error output: {e.stderr}")
+        sys.exit(1)
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}")
+        sys.exit(1)
+
+# Run the uninstallation check and proceed with installation
+uninstall_existing_corretto()
 
 # %%
 # Install Java Corretto in silent mode
@@ -583,8 +644,6 @@ if Java_Installed:
 
         sys.exit(1)
 
-
-
 # %%
 
 # Install Mirth Connect Launcher
@@ -620,8 +679,12 @@ if Java_Installed and Mirth_installed:
         else:
             print("No installer log found in the expected location.")
 
+        sys.exit(1)
+
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
+
+        sys.exit(1)
 
 
 # %% [markdown]
@@ -634,12 +697,11 @@ if Java_Installed and Mirth_installed:
 # %%
 print_step("Update mirth.properties file content: cipher list / ConfigurationMap / DB config / JDBC URL")
 
-mirth_properties_path = r'C:\Users\Haitem.ELAaouani\Desktop\MirthDev\DemoUpgrade\mirthDemo.properties'
 required_ciphers = ['TLS_EMPTY_RENEGOTIATION_INFO_SCSV', 'TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA']
 
 def update_mirth_properties():
     # Read the file contents
-    with open(mirth_properties_path, 'r') as file:
+    with open(mirth_properties_file, 'r') as file:
         config_data = file.read()
 
     # Modify https.ciphersuites to include required ciphers if they are missing
@@ -676,7 +738,7 @@ def update_mirth_properties():
     # Replace database = derby with database = sqlserver
     config_data = re.sub(
         r'^database\s*=\s*derby$', 
-        'database = sqlserver', 
+        f'database = {databaseType}', 
         config_data, 
         flags=re.MULTILINE
     )
@@ -690,7 +752,7 @@ def update_mirth_properties():
     )
 
     # Write the updated configuration back to the file
-    with open(mirth_properties_path, 'w') as file:
+    with open(mirth_properties_file, 'w') as file:
         file.write(config_data)
     
     print("Ciphersuites, configurationmap, database, and database.url updated successfully.")
@@ -704,28 +766,48 @@ update_mirth_properties()
 # %%
 print_step("Update service.vmoptions file content: To resolve java 17 limitations")
 
-# Define paths
-#source_file = 'C:\Users\Haitem.ELAaouani\OneDrive - Access UK Ltd\Documents\MirthDev\DemoUpgrade'  # This is the source file in the current directory
-files_to_update = ['mcservice.vmoptions', 'mcserver.vmoptions']
+files_to_update = [VMops_service_backup_path, VMops_server_backup_path]
 
 # Read content of the source file
 try:
     with open(vm_options, 'r') as src:
-        content_to_append = "\n" + src.read()
+        content_to_append = src.readlines()  # Read lines into a list
 
-    for file_name in files_to_update:
-        destination_file = os.path.join(mirth_dir, file_name)
+    for destination_file in files_to_update:
         
         # Check if the destination file exists
         if os.path.exists(destination_file):
-            with open(destination_file, 'a') as dest:
-                dest.write(content_to_append)
-            print(f"Content appended to {file_name}")
+            # Read the content of the destination file
+            with open(destination_file, 'r') as dest:
+                existing_lines = dest.readlines()
+            
+            # Determine which lines need to be added (skip those already in destination file)
+            lines_to_add = [line for line in content_to_append if line not in existing_lines]
+
+            if lines_to_add:
+                # Open the destination file in append mode
+                with open(destination_file, 'a') as dest:
+                    # Add a newline if the file does not end with one
+                    if existing_lines and not existing_lines[-1].endswith('\n'):
+                        dest.write("\n")
+                    
+                    # Write only the new lines
+                    dest.writelines(lines_to_add)
+                
+                print(f"New content appended to {destination_file}")
+                
+                # Copy the updated file to the mirth_dir
+                shutil.copy(destination_file, mirth_dir)
+                print(f"Updated file copied to {mirth_dir}")
+            else:
+                print(f"No new content to append to {destination_file}; all lines already present.")
         else:
-            print(f"File {file_name} not found in {mirth_dir}")
+            print(f"File {destination_file} not found.")
 
 except Exception as e:
     print(f"Error: {e}")
+
+    sys.exit(1)
 
 # %% [markdown]
 # # Restore the Libraries
@@ -791,24 +873,75 @@ print_step("Restore the libraries")
 # 
 
 # %%
+print_step("Start the New Mirth Service")
+
+MirthServiceCredentials = os.getenv("MIRTH_SERVICE_CREDENTIALS", "")  # Default to empty string if the env variable is not set
+
+if MirthServiceCredentials:
+    extracted_MirthServiceCredentials = extract_secret_text(MirthServiceCredentials)
+    if extracted_MirthServiceCredentials:
+        # Splitting the string using '///' as the separator
+        MirthService_username = extracted_MirthServiceCredentials.split("///")[0]
+        MirthService_password = extracted_MirthServiceCredentials.split("///")[1]
+        print("Mirth Service Credentials extracted.")
+    else:
+        print("Failed to extract the URL of the encrypted Mirth Service Credentials.")
+else:
+    extracted_MirthServiceCredentials = ""
+    print("No URL provided for MIRTH_SERVICE_CREDENTIALS.")
+
+
+# %%
 mirth_service_name = "Mirth Connect Service"
 
-try:
-    print(f"Starting {mirth_service_name}...")
-    
-    # Start the service using subprocess.run
-    result = subprocess.run(f'net start "{mirth_service_name}"', shell=True, capture_output=True, text=True)
-
-    # Check the return code
-    if result.returncode == 0:
-        print(f"{mirth_service_name} started successfully.")
-    else:
-        print(f"Failed to start {mirth_service_name}.")
-        print(f"Standard Output:\n{result.stdout}")
-        print(f"Standard Error:\n{result.stderr}")
+def update_credentials_in_properties():
+    try:
+        with open(mirth_properties_file, "r") as file:
+            content = file.read()
         
+        # Use re.sub to replace existing empty values for database.username and database.password
+        content = re.sub(r"(?m)^database\.username=.*", f"database.username={MirthService_username}", content)
+        content = re.sub(r"(?m)^database\.password=.*", f"database.password={MirthService_password}", content)
+        
+        with open(mirth_properties_file, "w") as file:
+            file.write(content)
+        
+        print(f"Credentials updated in {mirth_properties_file} successfully.")
+    except Exception as e:
+        print(f"Failed to update credentials in {mirth_properties_file}: {e}")
+        sys.exit(1)
+
+try:
+    # Configure the service to log on as a specific account
+    print(f"Configuring logon for {mirth_service_name}...")
+    config_command = f'sc config "{mirth_service_name}" obj= "{MirthService_username}" password= "{MirthService_password}"'
+    config_result = subprocess.run(config_command, shell=True, capture_output=True, text=True)
+
+    # Check the result of the configuration command
+    if config_result.returncode == 0:
+        print(f"{mirth_service_name} configured to log on as {MirthService_username}.")
+        
+        # Start the service
+        print(f"Starting {mirth_service_name}...")
+        start_result = subprocess.run(f'net start "{mirth_service_name}"', shell=True, capture_output=True, text=True)
+
+        # Check the return code of the start command
+        if start_result.returncode == 0:
+            print(f"{mirth_service_name} started successfully.")
+        else:
+            print(f"Failed to start {mirth_service_name}. Network configuration failed. Updating credentials in mirth.properties instead.")
+            print(f"Standard Output:\n{start_result.stdout}")
+            print(f"Standard Error:\n{start_result.stderr}")
+            update_credentials_in_properties()
+    else:
+        print(f"Failed to configure logon for {mirth_service_name}. Network configuration failed. Updating credentials in mirth.properties instead.")
+        print(f"Standard Output:\n{config_result.stdout}")
+        print(f"Standard Error:\n{config_result.stderr}")
+        update_credentials_in_properties()
+
 except Exception as e:
     print(f"An error occurred: {e}")
+    update_credentials_in_properties()
 
 # %%
 # Define the path to the Mirth Connect directory
@@ -826,20 +959,26 @@ except subprocess.CalledProcessError as e:
     print(f"Failed to start Mirth Connect: {e}")
     print(f"Standard Output:\n{e.stdout}")
     print(f"Standard Error:\n{e.stderr}")
+
+    sys.exit(1)
 except Exception as e:
     print(f"An unexpected error occurred: {e}")
+
+    sys.exit(1)
 
 
 # %% [markdown]
 # # IMPORT CONFIGURATION FILE
 
 # %%
+print_step("Import Mirth Configuration")
+
 session_token = None
 
 session_token = get_session_token(username, password)
 #del username
 #del password
-session_token
+print(session_token)
 
 # %%
 cookies = {"JSESSIONID": str(session_token)}  #Cookies for Mirth APIs
@@ -847,7 +986,7 @@ headers = {'X-Requested-With': 'XMLHttpRequest', "Content-Type": "application/xm
 
 # %%
 # Define the URL with the deploy and overwriteConfigMap parameters as false
-url = f"{mirth_url}/api/server/configuration?deploy=false&overwriteConfigMap=true"
+url = f"{mirth_url}/api/server/configuration?deploy=false&overwriteConfigMap=false"
 
 # Check if the mirth_config.xml file exists before sending the request
 if os.path.exists(mirth_config):
@@ -868,16 +1007,51 @@ else:
 
 
 # %% [markdown]
+# # Deploy the channels
+
+# %%
+def deploy_stopped_channels(df):
+    # Filter channels that are currently stopped
+    channels_to_deploy = df[df["IsDeployed"] == "STARTED"]["ChannelID"].tolist()
+    
+    if not channels_to_deploy:
+        print("No channel is to deploy.")
+        return
+    
+    # Set query parameters
+    params = {
+            "returnErrors": "true",     # Return errors if any occur
+            "debugOptions": "f,f,f,f,f,f,f"  # No debugging by default
+    }
+    
+    # Loop through each stopped channel and send a deployment request
+    for channel_id in channels_to_deploy:
+        # Define API endpoint for each channel
+        url = f"{mirth_url}/api/channels/{channel_id}/_deploy"
+   
+        # Send the deploy request for each channel
+        response = requests.post(url, headers=headers, cookies=cookies, params=params, verify=False)
+
+        # Check response status
+        if response.status_code in [200, 204]:
+            print(f"Successfully deployed channel {channel_id}.")
+        else:
+            print(f"Failed to deploy channel {channel_id}: {response.status_code} - {response.text}")
+
+
+deploy_stopped_channels(df)
+
+# %% [markdown]
 # # Execution time
 
 # %%
-end_time = time.time()
-total_time = end_time - start_time
-
-minutes = int(total_time // 60)
-seconds = total_time % 60
-
-print(f"Total execution time: {minutes}min {seconds:.2f}sec")
+#end_time = time.time()
+#total_time = end_time - start_time
+#
+#minutes = int(total_time // 60)
+#seconds = total_time % 60
+#
+#print(f"Total execution time: {minutes}min {seconds:.2f}sec")
 
 
 
