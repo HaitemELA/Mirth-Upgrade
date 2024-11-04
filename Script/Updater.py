@@ -253,6 +253,9 @@ def get_session_token(username, password, retries=5, delay=10):
         "X-Requested-With": "XMLHttpRequest"
     }
 
+
+    response = None  # Initialize response to None to avoid UnboundLocalError
+
     # Try to log in up to 'retries' times based on exceptions
     for attempt in range(1, retries + 1):
         try:
@@ -265,7 +268,10 @@ def get_session_token(username, password, retries=5, delay=10):
                 print(f"Failed to log in (HTTP error) on attempt {attempt}: {response.status_code}")
 
         except requests.exceptions.RequestException as e:  # Catch network-related errors
-            print(f"Error occurred on attempt {attempt}: {e}")
+            if response is not None:
+                print(f"Error occurred on attempt {attempt} with HTTP status code {response.status_code}: {e}")
+            else:
+                print(f"Error occurred on attempt {attempt}: {e}")
 
         if attempt < retries:
             print(f"Retrying in {delay} seconds...")
@@ -348,40 +354,41 @@ df.to_csv(csv_file, index=False)
 
 df
 
-# %%
-# Undeploy the channels
+# %% [markdown]
+# # Undeploy the channels
 
-## Function to filter and undeploy the "STARTED" channels
-#def undeploy_started_channels(df):
-#    # Filter channels that are currently deployed
-#    started_channels = df[df["IsDeployed"] == "STARTED"]["ChannelID"].tolist()
-#    print(started_channels)
-#    
-#    if not started_channels:
-#        print("No channels are currently deployed.")
-#        return
-#    
-#    # Create XML body for the undeploy request
-#    root = ET.Element("set")
-#    for channel_id in started_channels:
-#        string_elem = ET.SubElement(root, "string")
-#        string_elem.text = channel_id
-#    
-#    # Convert XML structure to string
-#    xml_body = ET.tostring(root, encoding="unicode", method="xml")
-#    
-#    # Define API endpoint and headers
-#    url = f"{mirth_url}/api/channels/_undeploy"
-#    
-#    # Send the undeploy request
-#    response = requests.post(url, headers=headers, cookies=cookies, data=xml_body, verify=False)
-#    
-#    if response.status_code in [200, 204]:
-#        print("Successfully undeployed the channels.")
-#    else:
-#        print(f"Failed to undeploy channels: {response.status_code}")
-#
-#undeploy_started_channels(df)
+# %%
+# Function to filter and undeploy the "STARTED" channels
+def undeploy_started_channels(df):
+    # Filter channels that are currently deployed
+    started_channels = df[df["IsDeployed"] == "STARTED"]["ChannelID"].tolist()
+    print(started_channels)
+    
+    if not started_channels:
+        print("No channels are currently deployed.")
+        return
+    
+    # Create XML body for the undeploy request
+    root = ET.Element("set")
+    for channel_id in started_channels:
+        string_elem = ET.SubElement(root, "string")
+        string_elem.text = channel_id
+    
+    # Convert XML structure to string
+    xml_body = ET.tostring(root, encoding="unicode", method="xml")
+    
+    # Define API endpoint and headers
+    url = f"{mirth_url}/api/channels/_undeploy"
+    
+    # Send the undeploy request
+    response = requests.post(url, headers=headers, cookies=cookies, data=xml_body, verify=False)
+    
+    if response.status_code in [200, 204]:
+        print("Successfully undeployed the channels.")
+    else:
+        print(f"Failed to undeploy channels: {response.status_code}")
+
+undeploy_started_channels(df)
 
 # %% [markdown]
 # # Backup Configuration, Channels, Libraries and Logs !/!/!/!/!/!/!/!/!/!/!
@@ -835,9 +842,6 @@ else:
     # NewLibraries doesn't exist or is empty, copy from lib_backup_path
     shutil.copytree(lib_backup_path, mirth_libraries_dir, dirs_exist_ok=True)
 
-print_step("Restore the libraries")
-
-
 # %%
 # Import Channels using Mirth REST API
 #import_channels_cmd = [
@@ -920,58 +924,59 @@ try:
     # Check the result of the configuration command
     if config_result.returncode == 0:
         print(f"{mirth_service_name} configured to log on as {MirthService_username}.")
-        
-        # Start the service
-        print(f"Starting {mirth_service_name}...")
-        start_result = subprocess.run(f'net start "{mirth_service_name}"', shell=True, capture_output=True, text=True)
 
-        # Check the return code of the start command
-        if start_result.returncode == 0:
-            print(f"{mirth_service_name} started successfully.")
-        else:
-            print(f"Failed to start {mirth_service_name}. Network configuration failed. Updating credentials in mirth.properties instead.")
-            print(f"Standard Output:\n{start_result.stdout}")
-            print(f"Standard Error:\n{start_result.stderr}")
-            update_credentials_in_properties()
     else:
         print(f"Failed to configure logon for {mirth_service_name}. Network configuration failed. Updating credentials in mirth.properties instead.")
         print(f"Standard Output:\n{config_result.stdout}")
         print(f"Standard Error:\n{config_result.stderr}")
         update_credentials_in_properties()
 
+    # Start the service
+    print(f"Starting {mirth_service_name}...")
+    start_result = subprocess.run(f'net start "{mirth_service_name}"', shell=True, capture_output=True, text=True)
+
+    # Check the return code of the start command
+    if start_result.returncode == 0:
+        print(f"{mirth_service_name} started successfully.")
+    else:
+            print(f"Failed to start {mirth_service_name}. Network configuration failed. Updating credentials in mirth.properties instead.")
+            print(f"Standard Output:\n{start_result.stdout}")
+            print(f"Standard Error:\n{start_result.stderr}")
+
 except Exception as e:
     print(f"An error occurred: {e}")
     update_credentials_in_properties()
+    sys.exit(1)
 
 # %%
-# Define the path to the Mirth Connect directory
-mirth_executable = os.path.join(mirth_dir, "mcservice.exe")  # The Mirth Connect server executable
-
-print("Starting Mirth Connect...")
-
-try:
-    # Run the Mirth Connect server executable
-    result = subprocess.run([mirth_executable], capture_output=True, text=True)
-    print("Mirth Connect started successfully.")
-    print("Standard Output:\n", result.stdout)
-    print("Standard Error:\n", result.stderr)
-except subprocess.CalledProcessError as e:
-    print(f"Failed to start Mirth Connect: {e}")
-    print(f"Standard Output:\n{e.stdout}")
-    print(f"Standard Error:\n{e.stderr}")
-
-    sys.exit(1)
-except Exception as e:
-    print(f"An unexpected error occurred: {e}")
-
-    sys.exit(1)
-
+## Define the path to the Mirth Connect directory
+#mirth_executable = os.path.join(mirth_dir, "mcservice.exe")  # The Mirth Connect server executable
+#
+#print("Starting Mirth Connect...")
+#
+#try:
+#    # Run the Mirth Connect server executable
+#    result = subprocess.run([mirth_executable], capture_output=True, text=True)
+#    print("Mirth Connect started successfully.")
+#    print("Standard Output:\n", result.stdout)
+#    print("Standard Error:\n", result.stderr)
+#except subprocess.CalledProcessError as e:
+#    print(f"Failed to start Mirth Connect: {e}")
+#    print(f"Standard Output:\n{e.stdout}")
+#    print(f"Standard Error:\n{e.stderr}")
+#
+#    sys.exit(1)
+#except Exception as e:
+#    print(f"An unexpected error occurred: {e}")
+#
+#    sys.exit(1)
+#
 
 # %% [markdown]
-# # IMPORT CONFIGURATION FILE
+# # Restore connexion
 
 # %%
-print_step("Import Mirth Configuration")
+print_step("Get session token")
 
 session_token = None
 
@@ -980,7 +985,13 @@ session_token = get_session_token(username, password)
 #del password
 print(session_token)
 
+# %% [markdown]
+# # IMPORT CONFIGURATION FILE
+
 # %%
+print_step("Import Mirth Configuration")
+
+
 cookies = {"JSESSIONID": str(session_token)}  #Cookies for Mirth APIs
 headers = {'X-Requested-With': 'XMLHttpRequest', "Content-Type": "application/xml"}  #Headers for Mirth APIs
 
